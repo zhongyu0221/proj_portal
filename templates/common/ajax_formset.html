@@ -1,0 +1,157 @@
+{% load menu_tags %}
+{% load static %}
+<style>
+    #myModal .modal-dialog {
+        width: 80%; /* your width */
+    }
+
+    /* dal bootstrap css fix */
+    .select2-container {
+        width: 100% !important;
+        min-width: 10em !important;
+    }
+
+    /* django-addanother bootstrap css fix */
+    .related-widget-wrapper {
+        padding-right: 16px;
+        position: relative;
+    }
+
+    .related-widget-wrapper-link {
+        position: absolute;
+        top: 3px;
+        right: 0px;
+    }
+</style>
+<form id="item_update_form" method="POST" class="form-horizontal" role="form" {% if form.is_multipart %}
+      enctype="multipart/form-data" {% endif %} action='{{ request.path }}'>
+    <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">
+            {{ formset.instance }}
+        </h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        {% csrf_token %}
+        {% load django_bootstrap5 %}
+
+        {# Display django.contrib.messages as Bootstrap alerts #}
+        {% bootstrap_messages %}
+        <div class=main>
+            <div class="panel panel-primary">
+                <div class="panel-heading">{{ view.object }}</div>
+                <div class="panel-body">
+
+                    {% bootstrap_formset_errors formset %}
+                    {{ formset.management_form }}
+
+                    <table id="formset" class="table form">
+                        {% for form in formset.forms %}
+                            {% if forloop.first %}
+                                <thead>
+                                <tr>
+                                    {% for field in form.visible_fields %}
+                                        <th>{{ field.label|capfirst }}</th>
+                                    {% endfor %}
+                                </tr>
+                                </thead>
+                            {% endif %}
+                            <tr>
+                                {% for field in form.visible_fields %}
+                                    <td>
+                                        {# Include the hidden fields in the form #}
+                                        {% if forloop.first %}
+                                            {% for hidden in form.hidden_fields %}
+                                                {{ hidden }}
+                                            {% endfor %}
+                                        {% endif %}
+                                        {% bootstrap_field field field_class='col-md-12' label_class='sr-only' show_label=False %}
+                                    </td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    {% load bootstrap_icons %}
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">
+            {% bs_icon "star" %} Save Changes
+        </button>
+    </div>
+</form>
+
+<style>
+
+    .ajax_loader {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(229, 229, 229, .5);
+    }
+
+    .ajax_loader i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+    }
+</style>
+<div class='ajax_loader' id='loadingDiv'><i class="fa fa-spinner fa-spin"></i></div>
+
+<script>
+    var $loading = $('#loadingDiv').hide();
+    $(document)
+        .ajaxStart(function () {
+            $loading.show();
+        })
+        .ajaxStop(function () {
+            $loading.hide();
+        });
+
+    $(document).ready(function () {
+        // bind form using ajaxForm
+        $('#item_update_form').ajaxForm({
+            // target identifies the element(s) to update with the server response
+            target: '#myModal .modal-content',
+
+            // success identifies the function to invoke when the server response
+            // has been received; here we apply a fade-in effect to the new content
+            success: function () {
+                $('.model').fadeIn('slow');
+            },
+            error: showResponse,
+        });
+        $('.datePicker').datepicker({maxDate: 0});
+
+    });
+
+    // post-submit callback
+    function showResponse(responseText, statusText, xhr, $form) {
+        // for normal html responses, the first argument to the success callback
+        // is the XMLHttpRequest object's responseText property
+
+        // if the ajaxForm method was passed an Options Object with the dataType
+        // property set to 'xml' then the first argument to the success callback
+        // is the XMLHttpRequest object's responseXML property
+
+        // if the ajaxForm method was passed an Options Object with the dataType
+        // property set to 'json' then the first argument to the success callback
+        // is the json data object returned by the server
+
+        alert('status: ' + statusText + '\n\nresponseText: \n' + responseText);
+    }
+</script>
+
+{{ form.media }}

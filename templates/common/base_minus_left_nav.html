@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    {% include 'common/styles.html' %}
+
+    {%block custom_cssjs %}
+
+    {% endblock %}
+
+    <title>CLEAR {% block page_title %} {% endblock %} </title>
+</head>
+<body class="content">
+    {% block topnav %}
+        {% include 'common/topnavigation.html' %}
+    {% endblock %}
+    <div class="container-fluid">
+        <div class="row main">
+                {% block content %}
+
+                {% endblock %}
+        </div>
+    </div>
+    {% block footer %}
+    <div class="clearfix"></div>
+    <div id="footer">
+        <div class="footer-container">
+        <!--
+  <p>
+Developed by CRI
+</p>
+</div>
+        -->
+
+    </div>
+    {% endblock %}
+
+</body>
+</html>

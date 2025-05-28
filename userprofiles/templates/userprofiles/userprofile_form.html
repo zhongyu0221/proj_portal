@@ -1,0 +1,31 @@
+{% extends 'common/base.html' %}
+{% load django_bootstrap5 %}
+{% load menu_tags %}
+
+{% load menu_tags %}
+
+{% block page_title %}Users{% endblock %}
+
+
+{% block contents %}
+
+    <h2 class="sub-header">User form</h2>
+    <form method="POST" class="form-horizontal" autocomplete="off" role="form"> {% csrf_token %}
+
+
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+    {% bootstrap_form user_form layout="horizontal" %}
+    {% bootstrap_form form layout="horizontal" %}
+
+    <div class="d-flex justify-content-between w-100">
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-star"></i> Submit
+        </button>
+        <a href="{% url 'userprofiles:userprofiles_list' %}" class="btn btn-secondary">
+            Back to list
+        </a>
+    </div>
+
+
+{% endblock %}

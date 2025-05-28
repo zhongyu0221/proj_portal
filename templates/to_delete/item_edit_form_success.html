@@ -1,0 +1,18 @@
+
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">{{item}}</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                
+              </div>
+              <div class="modal-body">
+                  <p>Successfully {{action}} the {{item}}</p>
+                  <script>
+                    setTimeout(function() { jQuery('#myModal').modal('hide'); }, 1000);
+                    $('body').on('hidden.bs.modal', '.modal', function () {
+                        $(this).removeData('bs.modal');
+                         location.reload(true);
+                    });
+                  </script>
+              </div>
+              <div class="modal-footer">
+              </div>

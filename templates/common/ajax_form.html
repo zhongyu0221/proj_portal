@@ -1,0 +1,86 @@
+{% load menu_tags %}
+{% load static %}
+<form id="item_update_form" method="POST" class="needs-validation" role="form" {% if form.is_multipart %}
+      enctype="multipart/form-data" {% endif %} action='{{ view.request.path }}'>
+    <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">
+            {% if view.object %}
+                Update {% get_verbose_name view %} - {{ view.object }}
+            {% else %}
+                Add new {% get_verbose_name view %}
+            {% endif %}
+        </h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+    </div>
+
+    <div class="modal-body">
+        {% csrf_token %}
+        {% load django_bootstrap5 %}
+        {% load bootstrap_icons %}
+
+        {# Display django.contrib.messages as Bootstrap alerts #}
+        {% bootstrap_messages %}
+        {% bootstrap_form form layout="horizontal" label_col="col-md-4" field_col="col-md-8" %}
+
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">
+            {% bs_icon "star" %} Save Changes
+        </button>
+    </div>
+</form>
+
+<div class="ajax_loader" id="loadingDiv">
+    <i class="fa fa-spinner fa-spin"></i>
+</div>
+
+<script>
+    var $loading = $('#loadingDiv').hide();
+    $(document)
+        .ajaxStart(function () {
+            $loading.show();
+        })
+        .ajaxStop(function () {
+            $loading.hide();
+        });
+
+    $(document).ready(function () {
+        // bind form using ajaxForm
+        $('#item_update_form').ajaxForm({
+            // target identifies the element(s) to update with the server response
+            target: '#myModal .modal-content',
+
+            // success identifies the function to invoke when the server response
+            // has been received; here we apply a fade-in effect to the new content
+            success: function () {
+                $('.modal').fadeIn('slow');
+            },
+            error: showResponse,
+        });
+
+        $('.datePicker').datepicker({maxDate: 0});
+    });
+
+    // post-submit callback
+    function showResponse(responseText, statusText, xhr, $form) {
+        // for normal html responses, the first argument to the success callback
+        // is the XMLHttpRequest object's responseText property
+
+        // if the ajaxForm method was passed an Options Object with the dataType
+        // property set to 'xml' then the first argument to the success callback
+        // is the XMLHttpRequest object's responseXML property
+
+        // if the ajaxForm method was passed an Options Object with the dataType
+        // property set to 'json' then the first argument to the success callback
+        // is the json data object returned by the server
+
+        alert('status: ' + statusText + '\n\nresponseText: \n' + responseText);
+    }
+</script>
+
+{{ form.media }}

@@ -1,0 +1,80 @@
+{% extends 'common/base.html' %}
+{% load django_bootstrap5 %}
+{% load menu_tags %}
+
+{% block page_title %}Users{% endblock %}
+
+
+{% block page-js %}
+    <script>
+        jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+            "alt-string-pre": function (a) {
+                return a.match(/alt="(.*?)"/)[1].toLowerCase();
+            },
+
+            "alt-string-asc": function (a, b) {
+                return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+            },
+
+            "alt-string-desc": function (a, b) {
+                return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+            }
+        });
+
+        $(document).ready(function () {
+            $('#user-table').dataTable({
+                columnDefs: [
+                    {type: 'alt-string', targets: -1}
+
+                ],
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+
+            });
+        });
+    </script>
+
+
+{% endblock %}
+
+{% block contents %}
+
+    {% bootstrap_messages %}
+    <div class="table-responsive">
+        <h2 class="sub-header">Existing Users
+            <div class="float-right">
+                <a href="{% url "userprofiles:userprofiles_new" %}" class="btn btn-primary pull-right">Add new user</a>
+            </div>
+        </h2>
+        <table id='user-table' class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>BSD ID</th>
+                <th>Email</th>
+                <th>Institution</th>
+                <th>Lab</th>
+                <th>Role</th>
+                <th>Active</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user_profile in object_list %}
+                <tr>
+                    <td>
+                        <a href='{% url 'userprofiles:userprofiles_update' username=user_profile.user.username %}'>{{ user_profile.get_full_name }}</a>
+                    </td>
+                    <td>{{ user_profile.bsd_id }}</td>
+                    <td>{{ user_profile.user.email }}</td>
+                    <td>{{ user_profile.lab.institution }}</td>
+                    <td>{{ user_profile.lab }}</td>
+                    <td>{{ user_profile.get_user_level_display }}</td>
+                    <td>{% boolean_img user_profile.user.is_active %}</td>
+                    <!--
+                <td><a href='{% url 'userprofiles:userprofiles_detail' slug=user_profile.user.username %}'>VIEW</td>
+                -->
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

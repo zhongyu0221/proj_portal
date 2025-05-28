@@ -1,0 +1,60 @@
+<form id="item_update_form" method="POST" class="form-horizontal" role="form" action='{{ request.path }}'>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Are you sure you want delete {{ object }}?</h4>
+    </div>
+
+    <div class="modal-body">
+        {% csrf_token %}
+        {% load django_bootstrap5 %}
+
+        {# Display django.contrib.messages as Bootstrap alerts #}
+        {% bootstrap_messages %}
+
+    </div>
+    {% load bootstrap_icons %}
+    <div class="modal-footer">
+        <input type="button" class="btn btn-default" data-dismiss="modal" value="Close"/>
+        <button type="submit" class="btn btn-primary">
+            {% bs_icon "star" %} Yes
+        </button>
+    </div>
+</form>
+
+<script>
+    $(document).ready(function () {
+        // bind form using ajaxForm
+        $('#item_update_form').ajaxForm({
+            // target identifies the element(s) to update with the server response
+            target: '#myModal .modal-content',
+
+            // success identifies the function to invoke when the server response
+            // has been received; here we apply a fade-in effect to the new content
+            success: function () {
+                $('.model').fadeIn('slow');
+                //location.reload(true);
+                // $('#subject-info').load("")
+            },
+            error: showResponse,
+
+        });
+
+    });
+
+    // post-submit callback
+    function showResponse(responseText, statusText, xhr, $form) {
+        // for normal html responses, the first argument to the success callback
+        // is the XMLHttpRequest object's responseText property
+
+        // if the ajaxForm method was passed an Options Object with the dataType
+        // property set to 'xml' then the first argument to the success callback
+        // is the XMLHttpRequest object's responseXML property
+
+        // if the ajaxForm method was passed an Options Object with the dataType
+        // property set to 'json' then the first argument to the success callback
+        // is the json data object returned by the server
+
+        alert('status: ' + statusText + '\n\nresponseText: \n' + responseText +
+            '\n\nThe output div should have already been updated with the responseText.');
+    }
+</script>

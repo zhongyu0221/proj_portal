@@ -1,0 +1,28 @@
+{% load menu_tags %}
+
+<!-- START LEFT Menu -->
+{% for status, group in cur_order_status_dict %}
+    <div class="panel panel-default">
+	<div class="panel-heading">
+	    <h5 class="panel-title">
+	    <a data-toggle="collapse" data-parent="#accordion" href="#{{status|slugify}}">
+	    <span class="glyphicon glyphicon-folder-close"></span>{{ status }}</a> <span class="label label-default pull-right">{{ group|length}}</span>
+
+	    </h5>
+	</div>
+	<div id="{{status|slugify}}" class="panel-collapse collapse {% if active_status == status %}in{%endif%}">
+	    <div class="panel-body">
+		<ul class="list-group">
+		{% for item in group %}
+		       <li>
+			<a class='list-group-item {{active_order|get_item:item.testorder_id}}' href="{% url "orders:orders-detail" pk=item.testorder_id %}">
+			<span class="glyphicon glyphicon-file"></span>{{ item.testorder }}</a>
+		      </li>
+		{% endfor %}
+		</ul>
+	    </div>
+	</div>
+    </div>
+{% endfor %}
+
+<!-- END LEFT Menu -->

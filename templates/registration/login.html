@@ -1,0 +1,24 @@
+{% extends "common/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block contents %}
+    <h1 class='page-header'>Welcome to Epi T2D System! </h1>
+    <div class="splash-container">
+        <div class="card card-border-color card-border-color-primary">
+            <div class="card-header">Please Sign In Here.</div>
+            <div class="card-body">
+                <form class="form-signin" method="post" action=""> {% csrf_token %}
+                    <div class="login-form">
+                        {% bootstrap_form form %}
+                        <div class="form-group row login-submit">
+                            <div class="col-12">
+                                <button class="btn btn-lg btn-primary btn-block" name='submit' type="submit">
+                                    Sign in
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+{% endblock %}

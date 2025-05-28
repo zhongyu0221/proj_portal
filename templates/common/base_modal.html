@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+{% load menu_tags %}
+<html>
+<head>
+    {% include 'common/styles.html' %}
+
+    {% block custom_cssjs %}
+
+    {% endblock %}
+
+    <title>CLEAR {% block page_title %}add {% get_verbose_name view.queryset %} {% endblock %}</title>
+</head>
+<body>
+{{ view.form.instance }}
+<div class="container-fluid">
+    <div class="row">
+        <div class="main">
+            {% block content %}
+                <h2 class="sub-header">Add new {% get_verbose_name view.queryset %}</h2>
+                <form method="POST" class="form-horizontal" role="form" action=""> {% csrf_token %}
+                    {% load django_bootstrap5 %}
+
+                    {# Display django.contrib.messages as Bootstrap alerts #}
+                    {% bootstrap_messages %}
+                    {% bootstrap_form form layout="horizontal" %}
+                    {% buttons layout='horizontal' %}
+                        <button type="submit" class="btn btn-primary">
+                            {% bootstrap_icon "star" %} Submit
+                        </button>
+                    {% endbuttons %}
+
+                </form>
+
+            {% endblock %}
+        </div>
+
+    </div>
+</div
+
+
+</body>
+</html>
+
+
+
+

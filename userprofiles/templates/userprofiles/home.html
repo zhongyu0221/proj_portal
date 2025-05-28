@@ -1,0 +1,162 @@
+{% extends "common/base.html" %}
+
+{% block contents %}
+    <style>
+        .huge {
+            font-size: 40px;
+        }
+
+        .card-green {
+            border-color: #5cb85c;
+            background-color: #5cb85c;
+        }
+
+        .card-green .card-header {
+            border-color: #5cb85c;
+            color: #fff;
+            background-color: #5cb85c;
+        }
+
+        .card-green a {
+            color: #5cb85c;
+        }
+
+        .card-green a:hover {
+            color: #3d8b3d;
+        }
+
+        .card-red {
+            border-color: #d9534f;
+            background-color: #d9534f;
+        }
+
+        .card-red .card-header {
+            border-color: #d9534f;
+            color: #fff;
+            background-color: #d9534f;
+        }
+
+        .card-red a {
+            color: #d9534f;
+        }
+
+        .card-red a:hover {
+            color: #b52b27;
+        }
+
+        .card-yellow {
+            border-color: #f0ad4e;
+            background-color: #f0ad4e;
+        }
+
+        .card-yellow .card-header {
+            border-color: #f0ad4e;
+            color: #fff;
+            background-color: #f0ad4e;
+        }
+
+        .card-yellow a {
+            color: #f0ad4e;
+        }
+
+        .card-yellow a:hover {
+            color: #df8a13;
+        }
+
+        .card-blue {
+            border-color: #0275d8;
+            background-color: #0275d8;
+        }
+
+        .card-blue .card-header {
+            border-color: #0275d8;
+            color: #fff;
+            background-color: #0275d8;
+        }
+
+        .card-blue a {
+            color: #0275d8;
+        }
+
+        .card-blue a:hover {
+            color: #0275d8;
+        }
+
+    </style>
+
+    {% for item in blocks %}
+        {% if forloop.first or forloop.counter == 5 %}
+            <div class="card-deck">{% endif %}
+    <div class="card {{ item.class }}">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-sm-3">
+                    <i class="fa {{ item.icon }} fa-4x"></i>
+                </div>
+                <div class="col-sm-9 text-right">
+                    <div class="huge">{{ item.count }}</div>
+                    <div>{{ item.desc }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <a href="{{ item.link }}">
+                <span class="float-left">View Details</span>
+                <span class="float-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+            </a>
+        </div>
+    </div>
+    {% if forloop.counter == 4 or forloop.last %}</div>{% endif %}
+    {% endfor %}
+
+
+    <div class="row">
+        <!-- Left Panel -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">New Collected Samples Within 30 Days</div>
+                <div class="card-body">
+                    <div class="panel-body" style="height:auto; overflow:auto; min-height: 350px; max-height: 100%;">
+                        <table class="table table-bordered table-condensed">
+                            <thead>
+                            <tr>
+                                <th>Patient ID</th>
+                                <th>Sample Collected Date</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for collected in new_collected %}
+                                <tr>
+                                    <td>{{ collected.patient_id }}</td>
+                                    <td>{{ collected.collected_date }}</td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="2">None</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Other Panel Title</div>
+                <div class="card-body">
+                    <!-- Replace this content with whatever you'd like -->
+                    <p>This is the right-hand side panel.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
