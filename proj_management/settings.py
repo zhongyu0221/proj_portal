@@ -18,11 +18,11 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print("BASE_DIR:", BASE_DIR)
 CONFIG_FILE = "config.ini"
 CONFIG = configparser.ConfigParser()
-CONFIG.read(os.path.join(os.path.dirname(BASE_DIR),
-                         "config", CONFIG_FILE))
-
+CONFIG.read(os.path.join(BASE_DIR, "config", CONFIG_FILE))
+print("Loaded config sections:", CONFIG)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -87,16 +87,19 @@ WSGI_APPLICATION = "proj_management.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'OPTIONS': {
-            'auth_plugin': 'caching_sha2_password',  # Optional
-        },
+    'default': {
+        'ENGINE': CONFIG['mysql']['ENGINE'],
+        'NAME': CONFIG['mysql']['NAME'],
+        'USER': CONFIG['mysql']['USER'],
+        'PASSWORD': CONFIG['mysql']["PASSWORD"],
+        'HOST': CONFIG['mysql']["HOST"],
+        'PORT': CONFIG['mysql']["PORT"],
+        'TEST': {}
     }
 }
+
+print("DATABASES config:", DATABASES)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -157,17 +160,6 @@ FIXTURE_DIRS = (
 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': CONFIG.get('mysql', 'ENGINE'),
-        'NAME': CONFIG.get('mysql', "NAME"),
-        'USER': CONFIG.get('mysql', "USER"),
-        'PASSWORD': CONFIG.get('mysql', "PASSWORD"),
-        'HOST': CONFIG.get('mysql', "HOST"),
-        'PORT': CONFIG.get('mysql', "PORT"),
-        'TEST': {}
-    }
-}
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_AGE = 3600
