@@ -18,11 +18,11 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print("BASE_DIR:", BASE_DIR)
+
 CONFIG_FILE = "config.ini"
 CONFIG = configparser.ConfigParser()
 CONFIG.read(os.path.join(BASE_DIR, "config", CONFIG_FILE))
-print("Loaded config sections:", CONFIG)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'userprofiles',
+    'project',
+    'ledgers',
 
 ]
 

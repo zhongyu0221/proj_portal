@@ -1,7 +1,7 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 
 
-# from .models import LoginAttempt, UserProfile, User
+from .models import UserProfile, User
 # from .forms import UserForm, UserProfileForm
 
 
@@ -142,3 +142,8 @@ class HomeView(TemplateView):
     template_name = 'index.html'
 
 
+class UserProfileListView(ListView):
+    """List all user profiles
+    """
+    template_name = 'userprofiles/members_list.html'
+    queryset = UserProfile.objects.all()
