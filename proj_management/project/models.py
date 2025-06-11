@@ -4,9 +4,10 @@ from django.utils import timezone
 # Create your models here.
 
 class Project(models.Model):
-    name = models.CharField(max_length=100, unique=True)
+    title = models.CharField(max_length=100, unique=True)
     description = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    deadline = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
@@ -47,6 +48,14 @@ class TaskAssignment(models.Model):
 
 class Issue(models.Model):
     task = models.ForeignKey('Task', related_name='issues', on_delete=models.CASCADE)
+    CATEGORY_CHOICES = [
+        ('product_design', 'Product design'),
+        ('development', 'Development'),
+        ('qa_testing', 'QA & Testing'),
+        ('customer_queries', 'Customer queries'),
+        ('r_and_d', 'R & D'),
+    ]
+    category = models.CharField(max_length=30, choices=CATEGORY_CHOICES, default='product_design')
     found_by = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     description = models.TextField()
     found_at = models.DateTimeField(default=timezone.now)

@@ -71,7 +71,13 @@
 
 </head>
 <body>
-
+{% if messages %}
+  <div>
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  </div>
+{% endif %}
 
 {% block navigation %}
     <nav class="navbar navbar-vertical navbar-expand-lg">
@@ -133,7 +139,7 @@
                                     <li class="collapsed-nav-item-title d-none">Project management
                                     </li>
                                     <li class="nav-item"><a class="nav-link"
-                                                            href="apps/project-management/create-new.html">
+                                                            href="{% url 'projects:project_create' %}">
                                         <div class="d-flex align-items-center"><span
                                                 class="nav-link-text">Create new</span>
                                         </div>
@@ -1510,6 +1516,4 @@
 <script src="{% static 'assets/js/dashboards/projectmanagement-dashboard.js' %}"></script>
 </body>
 
-</html>
-</body>
 </html>

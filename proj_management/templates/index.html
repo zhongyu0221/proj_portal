@@ -33,7 +33,12 @@
                                     class="fs-4 lh-1 uil uil-books text-primary-dark"></span>
                                 <div class="ms-2">
                                     <div class="d-flex align-items-end">
-                                        <h2 class="mb-0 me-2">32</h2><span
+                                        <h2 class="mb-0 me-2">
+                                            {% if projects_count %}
+                                                {{ projects_count }}
+                                            {% else %}
+                                                0
+                                            {% endif %}</h2><span
                                             class="fs-7 fw-semibold text-body">Projects</span>
                                     </div>
                                     <p class="text-body-secondary fs-9 mb-0">Awating processing</p>
@@ -45,7 +50,13 @@
                                     class="fs-4 lh-1 uil uil-users-alt text-success-dark"></span>
                                 <div class="ms-2">
                                     <div class="d-flex align-items-end">
-                                        <h2 class="mb-0 me-2">94</h2><span
+                                        <h2 class="mb-0 me-2">
+                                            {% if members_count %}
+                                                {{ members_count }}
+                                            {% else %}
+                                                0
+                                            {% endif %}
+                                        </h2><span
                                             class="fs-7 fw-semibold text-body">Members</span>
                                     </div>
                                     <p class="text-body-secondary fs-9 mb-0">Working hard</p>
@@ -3308,7 +3319,7 @@
                     </div>
                 </div>
             </div>
-           
+
         </div>
         <div class="modal fade" id="searchBoxModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="true"
              data-phoenix-modal="data-phoenix-modal" style="--phoenix-backdrop-opacity: 1;">

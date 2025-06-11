@@ -21,8 +21,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 CONFIG_FILE = "config.ini"
 CONFIG = configparser.ConfigParser()
-CONFIG.read(os.path.join(BASE_DIR, "config", CONFIG_FILE))
-
+CONFIG.read(os.path.join(os.path.dirname(BASE_DIR),
+                         "config", CONFIG_FILE))
+print(BASE_DIR)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -67,7 +68,7 @@ MIDDLEWARE = [
 #     INSTALLED_APPS = INSTALLED_APPS + ['debug_toolbar']
 #     INTERNAL_IPS = ['127.0.0.1']
 
-ROOT_URLCONF = "proj_management.urls"
+ROOT_URLCONF = "mysite.urls"
 
 TEMPLATES = [
     {
@@ -85,7 +86,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "proj_management.wsgi.application"
+WSGI_APPLICATION = "mysite.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -101,7 +102,7 @@ DATABASES = {
     }
 }
 
-print("DATABASES config:", DATABASES)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

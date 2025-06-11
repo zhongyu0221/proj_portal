@@ -1,9 +1,16 @@
-from django.views.generic import TemplateView, ListView
+import string
+import random
+from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView
 
-
+from .forms import UserProfileForm, UserForm
 from .models import UserProfile, User
-# from .forms import UserForm, UserProfileForm
 
+# from .forms import UserForm, UserProfileForm
+from django.contrib import messages
+
+from project.models import Project
 
 
 #
@@ -141,9 +148,66 @@ class HomeView(TemplateView):
     """
     template_name = 'index.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        members_count = UserProfile.objects.count()
+        projects_count = Project.objects.count()
+        context['members_count'] = members_count
+        return context
+
 
 class UserProfileListView(ListView):
     """List all user profiles
     """
     template_name = 'userprofiles/members_list.html'
     queryset = UserProfile.objects.all()
+
+# Create view: create User and UserProfile together
+class UserProfileCreateView(CreateView):
+    model = UserProfile
+    form_class = UserProfileForm
+    template_name = 'userprofiles/member_create.html'
+    success_url = reverse_lazy('userprofiles:userprofile_list')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user_form'] = UserForm(self.request.POST or None)
+        return context
+
+    def form_valid(self, form):
+        context = self.get_context_data()
+        user_form = context['user_form']
+        if user_form.is_valid():
+            user = user_form.save(commit=False)
+            # Generate a random temporary password
+            temp_password = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
+            user.set_password(temp_password)
+            user.save()
+            profile = form.save(commit=False)
+            profile.user = user
+            profile.save()
+            messages.success(self.request, f"Member created successfully! User name is {user.username}. ")
+            return HttpResponseRedirect(self.success_url)
+        return self.form_invalid(form)
+
+# Update view: pre-populate user fields
+class UserProfileUpdateView(UpdateView):
+    model = UserProfile
+    form_class = UserProfileForm
+    template_name = 'userprofiles/member_create.html'
+    success_url = reverse_lazy('userprofiles:userprofile_list')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.object.user
+        context['user_form'] = UserForm(self.request.POST or None, instance=user)
+        return context
+
+    def form_valid(self, form):
+        context = self.get_context_data()
+        user_form = context['user_form']
+        if user_form.is_valid():
+            user_form.save()
+            messages.success(self.request, "Member updated successfully!")
+            return super().form_valid(form)
+        return self.form_invalid(form)
