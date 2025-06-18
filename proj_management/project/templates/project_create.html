@@ -1,5 +1,6 @@
 {% extends 'common/base.html' %}
 {% load static %}
+{% load widget_tweaks %}
 
 <body>
 
@@ -15,60 +16,34 @@
 
         <div class="content">
             <h2 class="mb-4">Create a project</h2>
+{% if messages %}
+  <div>
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  </div>
+{% endif %}
             <div class="row">
                 <div class="col-xl-9">
-                    <form class="row g-3 mb-6">
+                    <form method="post" class="row g-3 mb-6">
+                        {% csrf_token %}
                         <div class="col-sm-6 col-md-8">
                             <div class="form-floating">
-                                <input class="form-control" id="floatingInputGrid" type="text"
-                                       placeholder="Project title"/>
-                                <label for="floatingInputGrid">Project title</label>
+                                <div class="form-floating">
+                                    {{ form.title|add_class:"form-control" }}
+                                    <label for="{{ form.title.id_for_label }}">Project title</label>
+                                    {{ form.title.errors }}
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4">
                             <div class="form-floating">
-                                <select class="form-select" id="floatingSelectTask">
-                                    <option selected="selected">Select task view</option>
-                                    <option value="1">technical</option>
-                                    <option value="2">external</option>
-                                    <option value="3">organizational</option>
-                                </select>
-                                <label for="floatingSelectTask">Defult task view</label>
+                                {{ form.project_category|add_class:"form-select" }}
+                                <label for="{{ form.project_category.id_for_label }}">Select Category</label>
+                                {{ form.project_category.errors }}
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="form-floating">
-                                <select class="form-select" id="floatingSelectPrivacy">
-                                    <option selected="selected">Select privacy</option>
-                                    <option value="1">Data Privacy One</option>
-                                    <option value="2">Data Privacy Two</option>
-                                    <option value="3">Data Privacy Three</option>
-                                </select>
-                                <label for="floatingSelectPrivacy">Project privacy</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="form-floating">
-                                <select class="form-select" id="floatingSelectTeam">
-                                    <option selected="selected">Select team</option>
-                                    <option value="1">Team One</option>
-                                    <option value="2">Team Two</option>
-                                    <option value="3">Team Three</option>
-                                </select>
-                                <label for="floatingSelectTeam">Team </label>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="form-floating">
-                                <select class="form-select" id="floatingSelectAssignees">
-                                    <option selected="selected">Select assignees</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <label for="floatingSelectAssignees">People </label>
-                            </div>
-                        </div>
+
                         <div class="col-sm-6 col-md-4">
                             <div class="form-floating">
                                 <select class="form-select" id="floatingSelectAdmin">
@@ -81,41 +56,25 @@
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4">
-                            <div class="flatpickr-input-container">
-                                <div class="form-floating">
-                                    <input class="form-control datetimepicker" id="floatingInputStartDate" type="text"
-                                           placeholder="end date" data-options='{"disableMobile":true}'/>
-                                    <label class="ps-6" for="floatingInputStartDate">Start date</label><span
-                                        class="uil uil-calendar-alt flatpickr-icon text-body-tertiary"></span>
-                                </div>
+                            <div class="form-floating">
+                                {{ form.created_at|add_class:"form-control datetimepicker" }}
+                                <label for="{{ form.created_at.id_for_label }}">Start Date</label>
+                                {{ form.created_at.errors }}
                             </div>
                         </div>
+
                         <div class="col-sm-6 col-md-4">
-                            <div class="flatpickr-input-container">
-                                <div class="form-floating">
-                                    <input class="form-control datetimepicker" id="floatingInputDeadline" type="text"
-                                           placeholder="deadline" data-options='{"disableMobile":true}'/>
-                                    <label class="ps-6" for="floatingInputDeadline">Deadline</label><span
-                                        class="uil uil-calendar-alt flatpickr-icon text-body-tertiary"></span>
-                                </div>
+                            <div class="form-floating">
+                                {{ form.deadline|add_class:"form-control datetimepicker" }}
+                                <label for="{{ form.deadline.id_for_label }}">Deadline</label>
+                                {{ form.deadline.errors }}
                             </div>
                         </div>
                         <div class="col-12 gy-6">
                             <div class="form-floating">
-                                <textarea class="form-control" id="floatingProjectOverview"
-                                          placeholder="Leave a comment here" style="height: 100px"></textarea>
-                                <label for="floatingProjectOverview">project overview</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6 gy-6">
-                            <div class="form-floating">
-                                <select class="form-select" id="floatingSelectClient">
-                                    <option selected="selected">Select client</option>
-                                    <option value="1">Client One</option>
-                                    <option value="2">Client Two</option>
-                                    <option value="3">Client Three</option>
-                                </select>
-                                <label for="floatingSelectClient">client</label>
+                                {{ form.description|add_class:"form-control" }}
+                                <label for="{{ form.description.id_for_label }}">Project description</label>
+                                {{ form.description.errors }}
                             </div>
                         </div>
                         <div class="col-md-6 gy-6">
@@ -145,7 +104,8 @@
                                     <button class="btn btn-phoenix-primary px-5">Cancel</button>
                                 </div>
                                 <div class="col-auto">
-                                    <button class="btn btn-primary px-5 px-sm-15">Create Project</button>
+                                    <button type=submit class="btn btn-primary px-5 px-sm-15">Create Project</button>
+
                                 </div>
                             </div>
                         </div>
@@ -154,26 +114,25 @@
             </div>
 
 
-
-        <h2 class="mb-4">Create a project</h2>
-    <div class="row">
-        <div class="col-xl-9">
-            <form method="post" class="row g-3 mb-6">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <div class="row g-3 justify-content-end">
-                    <div class="col-auto">
-                        <button type="button" class="btn btn-phoenix-primary px-5">Cancel</button>
-                    </div>
-                    <div class="col-auto">
-                        <button type="submit" class="btn btn-primary px-5 px-sm-15">Create Project</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
+{#            <h2 class="mb-4">Create a project</h2>#}
+{#            <div class="row">#}
+{#                <div class="col-xl-9">#}
+{#                    <form method="post" class="row g-3 mb-6">#}
+{#                        {% csrf_token %}#}
+{#                        {{ form.as_p }}#}
+{#                        <div class="row g-3 justify-content-end">#}
+{#                            <div class="col-auto">#}
+{#                                <button type="button" class="btn btn-phoenix-primary px-5">Cancel</button>#}
+{#                            </div>#}
+{#                            <div class="col-auto">#}
+{#                                <button type="submit" class="btn btn-primary px-5 px-sm-15">Create Project</button>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </form>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{##}
 
         </div>
 

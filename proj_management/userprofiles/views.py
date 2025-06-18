@@ -153,6 +153,7 @@ class HomeView(TemplateView):
         members_count = UserProfile.objects.count()
         projects_count = Project.objects.count()
         context['members_count'] = members_count
+        context['projects_count'] = projects_count
         return context
 
 

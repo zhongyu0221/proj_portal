@@ -5,13 +5,26 @@ from django.utils import timezone
 
 class Project(models.Model):
     title = models.CharField(max_length=100, unique=True)
+    PROJECT_CATEGORY_CHOICES = [
+        ('EXPLORING', 'Exploring'),
+        ('RESEARCH', 'Research'),
+        ('DEVELOPMENT', 'Development'),
+        ('TESTING', 'Testing'),
+        ('DEPLOYMENT', 'Deployment'),
+        ('MAINTENANCE', 'Maintenance'),
+        ('OTHER', 'Other'),
+    ]
+    project_category = models.CharField(max_length=50,  choices=PROJECT_CATEGORY_CHOICES,blank=True, null=True)
     description = models.TextField(blank=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(blank=True, null=True)
     deadline = models.DateTimeField(blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
+    client_name = models.CharField(max_length=100, blank=True, null=True)
+    budget = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+
 
     def __str__(self):
-        return self.name
+        return self.title
 
     class Meta:
         verbose_name = 'Project'
