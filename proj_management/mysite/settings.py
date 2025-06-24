@@ -38,6 +38,8 @@ WITH_DEBUG_TOOLBAR = CONFIG['deployment'].getboolean('with_debug_toolbar')
 ALLOWED_HOSTS = CONFIG.get('deployment', 'allowed_hosts').split(",")
 
 # Application definition
+APPEND_SLASH = False
+
 
 INSTALLED_APPS = [
     "django.contrib.admin",

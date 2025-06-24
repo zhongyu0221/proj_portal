@@ -3,7 +3,10 @@ import random
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, authenticate
 
+from django.views.generic import FormView
 from .forms import UserProfileForm, UserForm
 from .models import UserProfile, User
 
@@ -155,6 +158,22 @@ class HomeView(TemplateView):
         context['members_count'] = members_count
         context['projects_count'] = projects_count
         return context
+
+class UserLoginView(FormView):
+    template_name = 'userprofiles/sign_in.html'
+    form_class = AuthenticationForm
+    success_url = '/home/'
+
+    def form_valid(self, form):
+        user = form.get_user()
+        print('form valid', user)
+        login(self.request, user)
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print('form invalid', form.errors)
+        return super().form_invalid(form)
+
 
 
 class UserProfileListView(ListView):
