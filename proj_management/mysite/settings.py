@@ -40,6 +40,13 @@ ALLOWED_HOSTS = CONFIG.get('deployment', 'allowed_hosts').split(",")
 # Application definition
 APPEND_SLASH = False
 
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 25
+EMAIL_USE_TLS = False
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 
 INSTALLED_APPS = [
     "django.contrib.admin",

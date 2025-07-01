@@ -48,13 +48,28 @@ class ProjectCardView(ListView):
 class TaskCreateView(AjaxCreateView):
     model = Task
     form_class = TaskForm
-    template_name = 'project/task_form.html'
+    template_name = 'task_form.html'
     success_url = '/tasks/'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.POST:
+            context['assignment_formset'] = TaskAssignmentFormSet(self.request.POST)
+        else:
+            context['assignment_formset'] = TaskAssignmentFormSet()
+        return context
+
     def form_valid(self, form):
-        self.object = form.save()
-        return render(self.request, 'item_edit_success.html',
-                      {'item': self.object, 'action': 'created'})
+        context = self.get_context_data()
+        assignment_formset = context['assignment_formset']
+        if assignment_formset.is_valid():
+            self.object = form.save()
+            assignment_formset.instance = self.object
+            assignment_formset.save()
+            return render(self.request, 'item_edit_success.html',
+                          {'item': self.object, 'action': 'created'})
+        else:
+            return self.form_invalid(form)
 
 class TaskUpdateView(AjaxUpdateView):
     model = Task

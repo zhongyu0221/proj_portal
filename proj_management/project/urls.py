@@ -12,6 +12,9 @@ urlpatterns = [
     path('project/project_card/', ProjectCardView.as_view(), name='project_card'),
 
     path('task/create/', TaskCreateView.as_view(), name='task_create'),
+
+
+    path('task/create/', TaskCreateView.as_view(), name='task_create'),
     path('task/<int:pk>/update/', TaskUpdateView.as_view(), name='task_update'),
 
     ]

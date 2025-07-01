@@ -34,8 +34,9 @@ class Project(models.Model):
 
 class Task(models.Model):
     project = models.ForeignKey(Project, related_name='tasks', on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
+    short_description = models.CharField(max_length=200)
     description = models.TextField(blank=True, null=True)
+    files = models.FileField(upload_to='task_files/', blank=True, null=True)
     due_date = models.DateTimeField(blank=True, null=True)
     completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)

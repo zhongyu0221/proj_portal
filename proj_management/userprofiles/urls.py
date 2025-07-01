@@ -4,6 +4,8 @@ from django.urls import path
 app_name = 'userprofiles'
 urlpatterns = [
     path('usersignin/', UserLoginView.as_view(), name='userlogin'),
+    path('usersignup/', UserSignupView.as_view(), name='usersignup'),
+
 
 
     path('userprofile_list/', UserProfileListView.as_view(), name='userprofile_list'),

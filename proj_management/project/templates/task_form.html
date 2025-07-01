@@ -1,0 +1,104 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+<body>
+
+<!-- ===============================================-->
+<!--    Main Content-->
+<!-- ===============================================-->
+<main class="main" id="top">
+
+
+    {% block contents %}
+
+
+
+        <div class="content">
+            <h2 class="mb-4">Add a task</h2>
+            {% if messages %}
+                <div>
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="row">
+                <div class="col-xl-9">
+                    <form method="post" enctype="multipart/form-data" class="row g-3 mb-6">
+                        {% csrf_token %}
+                        <div class="col-sm-6 col-md-8">
+                            <div class="form-floating">
+                                {{ form.project|add_class:"form-select" }}
+                                <label for="{{ form.project.id_for_label }}">Project</label>
+                                {{ form.project.errors }}
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-8">
+                            <div class="form-floating">
+                                {{ form.short_description|add_class:"form-control" }}
+                                <label for="{{ form.short_description.id_for_label }}">Short Description</label>
+                                {{ form.short_description.errors }}
+                            </div>
+                        </div>
+                        <div class="col-12 gy-6">
+                            <div class="form-floating">
+                                {{ form.description|add_class:"form-control" }}
+                                <label for="{{ form.description.id_for_label }}">Description</label>
+                                {{ form.description.errors }}
+                            </div>
+                        </div>
+                        <div class="col-12 gy-6">
+                            <div class="form-floating">
+                                {{ form.files|add_class:"form-control" }}
+                                <label for="{{ form.files.id_for_label }}">Attach File</label>
+                                {{ form.files.errors }}
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-floating">
+                                {{ form.due_date|add_class:"form-control datetimepicker" }}
+                                <label for="{{ form.due_date.id_for_label }}">Due Date</label>
+                                {{ form.due_date.errors }}
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-check mt-4">
+                                {{ form.completed|add_class:"form-check-input" }}
+                                <label class="form-check-label"
+                                       for="{{ form.completed.id_for_label }}">Completed</label>
+                                {{ form.completed.errors }}
+                            </div>
+                        </div>
+
+
+                        <h4>Assign task to</h4>
+                        {{ assignment_formset.management_form }}
+                        {% for form in assignment_formset %}
+
+                            <div class="form-row">
+                                {{ form.as_p }}
+                            </div>
+                        {% endfor %}
+
+                        <div class="col-12 gy-6">
+                            <div class="row g-3 justify-content-end">
+                                <div class="col-auto">
+                                    <button class="btn btn-phoenix-primary px-5" type="button">Cancel</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-primary px-5 px-sm-15">Create Task</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        </main>
+
+    {% endblock contents %}

@@ -18,10 +18,13 @@ from xml.etree.ElementInclude import include
 
 # from django.contrib import admin
 from django.urls import path,include
+from django.contrib import admin
 from userprofiles.views import HomeView
 from django.views.generic import RedirectView
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
+path('accounts/', include('django.contrib.auth.urls')),
     #    path("admin/", admin.site.urls),
     path('', RedirectView.as_view(url='userprofiles/usersignin/', permanent=False)),
     path('home/', HomeView.as_view(), name='home'),
