@@ -15,7 +15,7 @@
 
 
         <div class="content">
-            <h2 class="mb-4">Add a task</h2>
+            <h2 class="mb-4">Add a task to project {{ project }}</h2>
             {% if messages %}
                 <div>
                     {% for message in messages %}
@@ -71,15 +71,25 @@
                             </div>
                         </div>
 
-
-                        <h4>Assign task to</h4>
-                        {{ assignment_formset.management_form }}
-                        {% for form in assignment_formset %}
-
-                            <div class="form-row">
-                                {{ form.as_p }}
-                            </div>
-                        {% endfor %}
+<h4>Assign task to project </h4>
+<div class="col-12 gy-6">
+    <div class="row">
+        {% for checkbox in form.assigned_users %}
+            <div class="col-md-3">
+                <div class="form-check">
+                    {{ checkbox.tag }}
+                    <label class="form-check-label" for="{{ checkbox.id_for_label }}">
+                        {{ checkbox.choice_label }}
+                    </label>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:4 %}
+                </div><div class="row">
+            {% endif %}
+        {% endfor %}
+    </div>
+    {{ form.assigned_users.errors }}
+</div>
 
                         <div class="col-12 gy-6">
                             <div class="row g-3 justify-content-end">

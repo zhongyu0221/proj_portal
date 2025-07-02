@@ -13,13 +13,13 @@ class ProjectForm(forms.ModelForm):
 
 
 class TaskForm(forms.ModelForm):
-
     assigned_users = forms.ModelMultipleChoiceField(
         queryset=UserProfile.objects.all(),
         widget=forms.CheckboxSelectMultiple,
         required=False,
         label="Assign Users"
     )
+
 
     class Meta:
         model = Task
@@ -31,17 +31,15 @@ class TaskForm(forms.ModelForm):
 
 
 class TaskAssignmentForm(forms.ModelForm):
+    users = forms.ModelMultipleChoiceField(
+        queryset=UserProfile.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False,
+        label="Assign Users"
+    )
+
     class Meta:
         model = TaskAssignment
         fields = "__all__"
 
 
-
-
-TaskAssignmentFormSet = inlineformset_factory(
-    Task,
-    TaskAssignment,
-    form=TaskAssignmentForm,
-    extra=1,  # Number of empty forms to display
-    can_delete=True
-)

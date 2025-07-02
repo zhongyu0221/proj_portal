@@ -1,12 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from common.views import AjaxCreateView, AjaxUpdateView
 from django.contrib import messages
 from django.urls import reverse_lazy
 from .models import *
 from .forms import *
+from django.db.models import Count
 
 from django.views.generic import CreateView, UpdateView, DeleteView,ListView
 
+
+# PROJECT
 class ProjectCreateView(CreateView):
     model = Project
     form_class = ProjectForm
@@ -18,8 +21,6 @@ class ProjectCreateView(CreateView):
         response = super().form_valid(form)
         messages.success(self.request, f'Project "{self.object}" created successfully.')
         return response
-
-
 
 class ProjectUpdateView(AjaxUpdateView):
     model = Project
@@ -33,7 +34,9 @@ class ProjectListView(ListView):
     context_object_name = 'projects'
 
     def get_queryset(self):
-        return Project.objects.all().order_by('-created_at')
+        return Project.objects.annotate(task_count=Count('tasks')).order_by('-created_at')
+
+
 
 class ProjectCardView(ListView):
     model = Project
@@ -41,9 +44,11 @@ class ProjectCardView(ListView):
     context_object_name = 'projects'
 
     def get_queryset(self):
-        return Project.objects.all().order_by('-created_at')
+        return Project.objects.annotate(task_count=Count('tasks')).order_by('-created_at')
 
 
+
+# TASK
 
 class TaskCreateView(AjaxCreateView):
     model = Task
@@ -51,25 +56,23 @@ class TaskCreateView(AjaxCreateView):
     template_name = 'task_form.html'
     success_url = '/tasks/'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        if self.request.POST:
-            context['assignment_formset'] = TaskAssignmentFormSet(self.request.POST)
-        else:
-            context['assignment_formset'] = TaskAssignmentFormSet()
-        return context
+    def dispatch(self, request, *args, **kwargs):
+        self.project = get_object_or_404(Project, pk=kwargs['project_id'])
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_initial(self):
+        initial = super().get_initial()
+        initial['project'] = self.project
+        return initial
 
     def form_valid(self, form):
-        context = self.get_context_data()
-        assignment_formset = context['assignment_formset']
-        if assignment_formset.is_valid():
-            self.object = form.save()
-            assignment_formset.instance = self.object
-            assignment_formset.save()
-            return render(self.request, 'item_edit_success.html',
+        response = super().form_valid(form)
+        users = form.cleaned_data.get('assigned_users')
+        for user in users:
+            TaskAssignment.objects.create(task=self.object, user=user, assigned_at=timezone.now())
+        return render(self.request, 'common/item_edit_form_success.html',
                           {'item': self.object, 'action': 'created'})
-        else:
-            return self.form_invalid(form)
+
 
 class TaskUpdateView(AjaxUpdateView):
     model = Task
