@@ -15,7 +15,7 @@
             <div class="row gy-3 mb-6 justify-content-between">
                 <div class="col-md-9 col-auto">
                     <h2 class="mb-2 text-body-emphasis">Projects Dashboard</h2>
-                    <h5 class="text-body-tertiary fw-semibold">Here’s what’s going on at your business right now</h5>
+                    <h5 class="text-body-tertiary fw-semibold">Here's what's going on at your business right now</h5>
                 </div>
                 <div class="col-md-3 col-auto">
                     <div class="flatpickr-input-container">
@@ -90,83 +90,181 @@
                     </div>
                 </div>
                 <div class="col-12 col-xl-6 col-xxl-5">
-                    <div class="mx-xxl-0">
-                        <h3>Project: zero Roadmap</h3>
-                        <p class="text-body-tertiary">Phase 2 is now ongoing</p>
-                        <div class="gantt-zero-roadmap">
-                            <div class="row g-2 flex-between-center mb-3">
-                                <div class="col-12 col-sm-auto">
-                                    <div class="d-flex">
-                                        <div class="d-flex align-items-end me-3">
-                                            <label class="form-check-label mb-0 me-2 lh-1 text-body" for="progress">Progress</label>
-                                            <div class="form-check form-switch min-h-auto mb-0">
-                                                <input class="form-check-input" id="progress" type="checkbox" checked=""
-                                                       data-gantt-progress="data-gantt-progress"/>
-                                            </div>
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h3 class="mb-0">Project Categories</h3>
+                            <p class="text-body-tertiary mb-0">Distribution by project type</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <h6 class="mb-0 text-body-secondary">Category</h6>
+                                        <h6 class="mb-0 text-body-secondary">Count</h6>
+                                    </div>
+                                    
+                                    <!-- Exploring Projects -->
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center justify-content-between mb-1">
+                                            <span class="fw-semibold text-body">Exploring</span>
+                                            <span class="fw-bold text-primary">{{ exploring_projects|default:0 }}</span>
                                         </div>
-                                        <div class="d-flex align-items-end flex-1">
-                                            <label class="form-check-label mb-0 me-2 lh-1 text-body"
-                                                   for="links">Links</label>
-                                            <div class="form-check form-switch min-h-auto flex-1 mb-0">
-                                                <input class="form-check-input" id="links" type="checkbox" checked=""
-                                                       data-gantt-links="data-gantt-links"/>
-                                            </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-primary" role="progressbar" 
+                                                 style="width: {% if projects_count %}{{ exploring_projects|default:0|floatformat:0 }}{% else %}0{% endif %}%"></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-12 col-sm-auto">
-                                    <div class="btn-group" role="group" data-gantt-scale="data-gantt-scale">
-                                        <input class="btn-check" id="weekView" type="radio" name="scaleView"
-                                               value="week" checked=""/>
-                                        <label class="btn btn-phoenix-secondary bg-body-highlight-hover fs-10 py-1 mb-0"
-                                               for="weekView">Week</label>
-                                        <input class="btn-check" id="monthView" type="radio" name="scaleView"
-                                               value="month"/>
-                                        <label class="btn btn-phoenix-secondary bg-body-highlight-hover fs-10 py-1 mb-0"
-                                               for="monthView">Month</label>
-                                        <input class="btn-check" id="yearView" type="radio" name="scaleView"
-                                               value="year"/>
-                                        <label class="btn btn-phoenix-secondary bg-body-highlight-hover fs-10 py-1 mb-0"
-                                               for="yearView">Year</label>
+                                    
+                                    <!-- Research Projects -->
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center justify-content-between mb-1">
+                                            <span class="fw-semibold text-body">Research</span>
+                                            <span class="fw-bold text-info">{{ research_projects|default:0 }}</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-info" role="progressbar" 
+                                                 style="width: {% if projects_count %}{{ research_projects|default:0|floatformat:0 }}{% else %}0{% endif %}%"></div>
+                                        </div>
                                     </div>
+                                    
+                                    <!-- Development Projects -->
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center justify-content-between mb-1">
+                                            <span class="fw-semibold text-body">Development</span>
+                                            <span class="fw-bold text-success">{{ development_projects|default:0 }}</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-success" role="progressbar" 
+                                                 style="width: {% if projects_count %}{{ development_projects|default:0|floatformat:0 }}{% else %}0{% endif %}%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Testing Projects -->
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center justify-content-between mb-1">
+                                            <span class="fw-semibold text-body">Testing</span>
+                                            <span class="fw-bold text-warning">{{ testing_projects|default:0 }}</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-warning" role="progressbar" 
+                                                 style="width: {% if projects_count %}{{ testing_projects|default:0|floatformat:0 }}{% else %}0{% endif %}%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Deployment Projects -->
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center justify-content-between mb-1">
+                                            <span class="fw-semibold text-body">Deployment</span>
+                                            <span class="fw-bold text-danger">{{ deployment_projects|default:0 }}</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-danger" role="progressbar" 
+                                                 style="width: {% if projects_count %}{{ deployment_projects|default:0|floatformat:0 }}{% else %}0{% endif %}%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Maintenance Projects -->
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center justify-content-between mb-1">
+                                            <span class="fw-semibold text-body">Maintenance</span>
+                                            <span class="fw-bold text-secondary">{{ maintenance_projects|default:0 }}</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-secondary" role="progressbar" 
+                                                 style="width: {% if projects_count %}{{ maintenance_projects|default:0|floatformat:0 }}{% else %}0{% endif %}%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Other Projects -->
+                                    {% if other_projects > 0 %}
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center justify-content-between mb-1">
+                                            <span class="fw-semibold text-body">Other</span>
+                                            <span class="fw-bold text-dark">{{ other_projects|default:0 }}</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-dark" role="progressbar" 
+                                                 style="width: {% if projects_count %}{{ other_projects|default:0|floatformat:0 }}{% else %}0{% endif %}%"></div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
                                 </div>
                             </div>
-                            <div class="gantt-zero-roadmap-chart"></div>
+                            
+                            <div class="mt-4">
+                                <a href="{% url 'projects:project_list' %}" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-chart-bar me-2"></i>View All Projects
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-xl-6 col-xxl-5">
                     <div class="card border h-100 w-100 overflow-hidden">
-                        <div class="bg-holder d-block bg-card"
-                             style="background-image:url(../assets/img/spot-illustrations/32.png);background-position: top right;">
-                        </div>
-                        <!--/.bg-holder-->
-
-                        <div class="d-dark-none">
-                            <div class="bg-holder d-none d-sm-block d-xl-none d-xxl-block bg-card"
-                                 style="background-image:url(../assets/img/spot-illustrations/21.png);background-position: bottom right; background-size: auto;">
-                            </div>
-                            <!--/.bg-holder-->
-
-                        </div>
-                        <div class="d-light-none">
-                            <div class="bg-holder d-none d-sm-block d-xl-none d-xxl-block bg-card"
-                                 style="background-image:url(../assets/img/spot-illustrations/dark_21.png);background-position: bottom right; background-size: auto;">
-                            </div>
-                            <!--/.bg-holder-->
-
+                        <div class="card-header">
+                            <h3 class="mb-0">Project Status Trend</h3>
+                            <p class="text-body-tertiary mb-0">Past year quarterly status change</p>
                         </div>
                         <div class="card-body px-5 position-relative">
-                            <div class="badge badge-phoenix fs-10 badge-phoenix-warning mb-4"><span class="fw-bold">Coming soon</span><span
-                                    class="fa-solid fa-award ms-1"></span></div>
-                            <h3 class="mb-5">Early bird gets the warm leads!</h3>
-                            <p class="text-body-tertiary fw-semibold">Phoenix CRM Dashboard is coming to <br
-                                    class="d-none d-sm-block"/>market soon for fulfilling your every <br
-                                    class="d-none d-sm-block"/>CRM related needs. </p>
-                        </div>
-                        <div class="card-footer border-0 py-0 px-5 z-1">
-                            <p class="text-body-tertiary fw-semibold">Follow <a href="https://themewagon.com/">ThemeWagon </a>at
-                                <br class="d-none d-xxl-block"/>Bootstrap Marketplace for updates.</p>
+                            <div id="project-status-line-chart" style="height:320px;width:100%"></div>
+                            <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+                            <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                var chartDom = document.getElementById('project-status-line-chart');
+                                var myChart = echarts.init(chartDom);
+                                var option = {
+                                    tooltip: {
+                                        trigger: 'axis',
+                                        axisPointer: { type: 'line' },
+                                        formatter: function(params) {
+                                            var quarter = params[0].axisValue;
+                                            var lines = [quarter];
+                                            params.forEach(function(item) {
+                                                lines.push(item.marker + ' ' + item.seriesName + ': ' + item.data);
+                                            });
+                                            return lines.join('<br>');
+                                        }
+                                    },
+                                    legend: { data: ['Active', 'Completed', 'Overdue'] },
+                                    xAxis: {
+                                        type: 'category',
+                                        data: {{ project_status_trend.dates|safe }},
+                                        axisLabel: {
+                                            rotate: 0,
+                                            interval: 0,
+                                            formatter: function (value, idx) {
+                                                return value; // Show all quarter labels
+                                            }
+                                        }
+                                    },
+                                    yAxis: { type: 'value', minInterval: 1 },
+                                    series: [
+                                        {
+                                            name: 'Active',
+                                            type: 'line',
+                                            data: {{ project_status_trend.active|safe }},
+                                            smooth: true,
+                                            lineStyle: { color: '#0d6efd' }
+                                        },
+                                        {
+                                            name: 'Completed',
+                                            type: 'line',
+                                            data: {{ project_status_trend.completed|safe }},
+                                            smooth: true,
+                                            lineStyle: { color: '#198754' }
+                                        },
+                                        {
+                                            name: 'Overdue',
+                                            type: 'line',
+                                            data: {{ project_status_trend.overdue|safe }},
+                                            smooth: true,
+                                            lineStyle: { color: '#dc3545' }
+                                        }
+                                    ]
+                                };
+                                myChart.setOption(option);
+                            });
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -176,40 +274,40 @@
                     <div class="col-12 col-xl-7 col-xxl-6">
                         <div class="row g-3 mb-3">
                             <div class="col-12 col-md-6">
-                                <h3 class="text-body-emphasis text-nowrap">Issues Discovered</h3>
-                                <p class="text-body-tertiary mb-md-7">Newly found and yet to be solved</p>
+                                <h3 class="text-body-emphasis text-nowrap">Task Status</h3>
+                                <p class="text-body-tertiary mb-md-7">Current task distribution by status</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <p class="mb-0 fw-bold">Issue type </p>
-                                    <p class="mb-0 fs-9">Total count <span class="fw-bold">257</span></p>
+                                    <p class="mb-0 fw-bold">Status</p>
+                                    <p class="mb-0 fs-9">Total count <span class="fw-bold">{{ total_tasks|default:0 }}</span></p>
                                 </div>
                                 <hr class="bg-body-secondary mb-2 mt-2"/>
                                 <div class="d-flex align-items-center mb-1"><span
-                                        class="d-inline-block bg-info-light bullet-item me-2"></span>
-                                    <p class="mb-0 fw-semibold text-body lh-sm flex-1">Product design</p>
-                                    <h5 class="mb-0 text-body">78</h5>
+                                        class="d-inline-block bg-secondary bullet-item me-2"></span>
+                                    <p class="mb-0 fw-semibold text-body lh-sm flex-1">To Do</p>
+                                    <h5 class="mb-0 text-body">{{ todo_tasks|default:0 }}</h5>
                                 </div>
                                 <div class="d-flex align-items-center mb-1"><span
-                                        class="d-inline-block bg-warning-light bullet-item me-2"></span>
-                                    <p class="mb-0 fw-semibold text-body lh-sm flex-1">Development</p>
-                                    <h5 class="mb-0 text-body">63</h5>
+                                        class="d-inline-block bg-info bullet-item me-2"></span>
+                                    <p class="mb-0 fw-semibold text-body lh-sm flex-1">In Progress</p>
+                                    <h5 class="mb-0 text-body">{{ in_progress_tasks|default:0 }}</h5>
                                 </div>
                                 <div class="d-flex align-items-center mb-1"><span
-                                        class="d-inline-block bg-danger-light bullet-item me-2"></span>
-                                    <p class="mb-0 fw-semibold text-body lh-sm flex-1">QA &amp; Testing</p>
-                                    <h5 class="mb-0 text-body">56</h5>
+                                        class="d-inline-block bg-warning bullet-item me-2"></span>
+                                    <p class="mb-0 fw-semibold text-body lh-sm flex-1">Review</p>
+                                    <h5 class="mb-0 text-body">{{ review_tasks|default:0 }}</h5>
                                 </div>
                                 <div class="d-flex align-items-center mb-1"><span
-                                        class="d-inline-block bg-success-light bullet-item me-2"></span>
-                                    <p class="mb-0 fw-semibold text-body lh-sm flex-1">Customer queries</p>
-                                    <h5 class="mb-0 text-body">36</h5>
+                                        class="d-inline-block bg-success bullet-item me-2"></span>
+                                    <p class="mb-0 fw-semibold text-body lh-sm flex-1">Completed</p>
+                                    <h5 class="mb-0 text-body">{{ completed_tasks|default:0 }}</h5>
                                 </div>
                                 <div class="d-flex align-items-center"><span
-                                        class="d-inline-block bg-primary bullet-item me-2"></span>
-                                    <p class="mb-0 fw-semibold text-body lh-sm flex-1">R &amp; D</p>
-                                    <h5 class="mb-0 text-body">24</h5>
+                                        class="d-inline-block bg-danger bullet-item me-2"></span>
+                                    <p class="mb-0 fw-semibold text-body lh-sm flex-1">Cancelled</p>
+                                    <h5 class="mb-0 text-body">{{ cancelled_tasks|default:0 }}</h5>
                                 </div>
-                                <button class="btn btn-outline-primary mt-5">See Details<span
-                                        class="fas fa-angle-right ms-2 fs-10 text-center"></span></button>
+                                <a href="{% url 'projects:task_list' %}" class="btn btn-outline-primary mt-5">View All Tasks<span
+                                        class="fas fa-angle-right ms-2 fs-10 text-center"></span></a>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="position-relative mb-sm-4 mb-xl-0">
@@ -718,12 +816,12 @@
                                                                         href="#!"><span class="fa-solid fa-pen"></span></a>
                                                                 </div>
                                                                 <p class="text-body-highlight mb-0">The female circus
-                                                                    horse-rider is a recurring subject in Chagall’s
+                                                                    horse-rider is a recurring subject in Chagall's
                                                                     work. In 1926 the art dealer Ambroise Vollard
                                                                     invited Chagall to make a project based on the
-                                                                    circus. They visited Paris’s historic Cirque d’Hiver
+                                                                    circus. They visited Paris's historic Cirque d'Hiver
                                                                     Bouglione together; Vollard lent Chagall his private
-                                                                    box seats. Chagall completed 19 gouaches Chagall’s
+                                                                    box seats. Chagall completed 19 gouaches Chagall's
                                                                     work. In 1926 the art dealer Ambroise Vollard
                                                                     invited Chagall to make a project based on the
                                                                     circus.</p>
@@ -1209,7 +1307,7 @@
                                     class="fa-solid fa-paper-plane text-primary fs-9 ms-3"></span>
                             </a><a class="mb-2 d-inline-flex align-items-center text-decoration-none text-body-emphasis bg-body-hover rounded-pill border border-primary py-2 ps-4 pe-3"
                                    href="#!">
-                                <p class="mb-0 fw-semibold fs-9">I can’t reorder a product I previously ordered</p><span
+                                <p class="mb-0 fw-semibold fs-9">I can't reorder a product I previously ordered</p><span
                                     class="fa-solid fa-paper-plane text-primary fs-9 ms-3"></span>
                             </a><a class="mb-2 d-inline-flex align-items-center text-decoration-none text-body-emphasis bg-body-hover rounded-pill border border-primary py-2 ps-4 pe-3"
                                    href="#!">
@@ -1226,7 +1324,7 @@
                                         class="rounded-circle border border-3 border-light-subtle"
                                         src="assets/img/team/30.webp" alt=""/></div>
                                 <h5 class="mt-2 mb-3">Eric</h5>
-                                <p class="text-center text-body-emphasis mb-0">Ask us anything – we’ll get back to you
+                                <p class="text-center text-body-emphasis mb-0">Ask us anything – we'll get back to you
                                     here
                                     or by email within 24 hours.</p>
                             </div>

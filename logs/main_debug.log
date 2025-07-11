@@ -2039,3 +2039,1071 @@ INFO:django.server:[2025-07-11 00:28:54] basehttp.py:187:"GET /userprofiles/user
 WARNING:django.server:[2025-07-11 00:28:56] basehttp.py:187:"GET /userprofiles/userprofile_list/apps/calendar.html HTTP/1.1" 404 3643
 INFO:django.server:[2025-07-11 00:29:04] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 42850
 INFO:django.server:[2025-07-11 00:29:05] basehttp.py:187:"GET /userprofiles/member/create/ HTTP/1.1" 200 46516
+INFO:django.server:[2025-07-11 00:30:15] basehttp.py:187:"GET /home/ HTTP/1.1" 200 145368
+WARNING:django.server:[2025-07-11 00:30:15] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 00:30:15] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 00:30:15] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 00:31:30] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 42892
+INFO:django.server:[2025-07-11 00:31:30] basehttp.py:187:"GET /home/ HTTP/1.1" 200 145368
+WARNING:django.server:[2025-07-11 00:31:30] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 00:31:30] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 00:31:30] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 00:31:33] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 42892
+INFO:django.server:[2025-07-11 00:31:34] basehttp.py:187:"GET /home/ HTTP/1.1" 200 145368
+WARNING:django.server:[2025-07-11 00:31:34] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 00:31:34] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 00:31:34] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 00:31:42] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 42892
+INFO:django.server:[2025-07-11 00:31:42] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 50922
+INFO:django.server:[2025-07-11 00:31:43] basehttp.py:187:"GET /projects/project/project_card/ HTTP/1.1" 200 148907
+WARNING:django.server:[2025-07-11 00:31:43] basehttp.py:187:"GET /projects/assets/img/generic/43.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 00:31:43] basehttp.py:187:"GET /projects/assets/img/team/60.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 00:31:43] basehttp.py:187:"GET /projects/assets/img/team/58.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 00:31:43] basehttp.py:187:"GET /projects/assets/img/generic/40.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 00:31:43] basehttp.py:187:"GET /projects/assets/img/team/59.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 00:31:43] basehttp.py:187:"GET /projects/assets/img//team/30.webp HTTP/1.1" 404 4810
+WARNING:django.server:[2025-07-11 00:31:43] basehttp.py:187:"GET /projects/assets/img/generic/42.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 00:31:43] basehttp.py:187:"GET /projects/assets/img/team/34.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 00:31:43] basehttp.py:187:"GET /projects/assets/img/products/60x60/3.png HTTP/1.1" 404 4831
+WARNING:django.server:[2025-07-11 00:31:43] basehttp.py:187:"GET /projects/assets/img/team/40x40/10.webp HTTP/1.1" 404 4825
+WARNING:django.server:[2025-07-11 00:31:43] basehttp.py:187:"GET /projects/assets/img/team/40x40/12.webp HTTP/1.1" 404 4825
+WARNING:django.server:[2025-07-11 00:31:43] basehttp.py:187:"GET /projects/assets/img/team/60.webp HTTP/1.1" 404 4807
+INFO:django.server:[2025-07-11 00:31:45] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 42850
+WARNING:django.server:[2025-07-11 00:31:46] basehttp.py:187:"GET /userprofiles/userprofile_list/pages/timeline.html HTTP/1.1" 404 3646
+INFO:django.server:[2025-07-11 00:31:52] basehttp.py:187:"GET /home/ HTTP/1.1" 200 145368
+WARNING:django.server:[2025-07-11 00:31:52] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 00:31:52] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 00:31:52] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 00:31:55] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 42892
+INFO:django.server:[2025-07-11 00:31:57] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 50922
+INFO:django.server:[2025-07-11 00:31:58] basehttp.py:187:"GET /projects/project/1/ HTTP/1.1" 200 48296
+INFO:django.server:[2025-07-11 00:32:03] basehttp.py:187:"GET /projects/project/project_card/ HTTP/1.1" 200 148907
+WARNING:django.server:[2025-07-11 00:32:03] basehttp.py:187:"GET /projects/assets/img/generic/43.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 00:32:03] basehttp.py:187:"GET /projects/assets/img/team/60.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 00:32:04] basehttp.py:187:"GET /projects/assets/img/team/59.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 00:32:04] basehttp.py:187:"GET /projects/assets/img/team/34.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 00:32:04] basehttp.py:187:"GET /projects/assets/img//team/30.webp HTTP/1.1" 404 4810
+WARNING:django.server:[2025-07-11 00:32:04] basehttp.py:187:"GET /projects/assets/img/generic/40.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 00:32:04] basehttp.py:187:"GET /projects/assets/img/generic/42.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 00:32:04] basehttp.py:187:"GET /projects/assets/img/team/40x40/12.webp HTTP/1.1" 404 4825
+WARNING:django.server:[2025-07-11 00:32:04] basehttp.py:187:"GET /projects/assets/img/team/58.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 00:32:04] basehttp.py:187:"GET /projects/assets/img/team/40x40/10.webp HTTP/1.1" 404 4825
+WARNING:django.server:[2025-07-11 00:32:04] basehttp.py:187:"GET /projects/assets/img/products/60x60/3.png HTTP/1.1" 404 4831
+WARNING:django.server:[2025-07-11 00:32:04] basehttp.py:187:"GET /projects/assets/img/team/60.webp HTTP/1.1" 404 4807
+INFO:django.server:[2025-07-11 00:32:05] basehttp.py:187:"GET /projects/project/1/ HTTP/1.1" 200 48296
+INFO:django.server:[2025-07-11 00:32:11] basehttp.py:187:"GET /projects/1/task/create/ HTTP/1.1" 200 45979
+INFO:django.server:[2025-07-11 00:32:14] basehttp.py:187:"GET /home/ HTTP/1.1" 200 145368
+WARNING:django.server:[2025-07-11 00:32:14] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 00:32:14] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 00:32:14] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 00:33:28] basehttp.py:187:"GET /home/ HTTP/1.1" 200 145368
+WARNING:django.server:[2025-07-11 00:33:28] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 00:33:28] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 00:33:28] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 00:33:29] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 42892
+INFO:django.server:[2025-07-11 00:33:32] basehttp.py:187:"GET /home/ HTTP/1.1" 200 145368
+WARNING:django.server:[2025-07-11 00:33:32] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 00:33:32] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 00:33:32] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 00:33:58] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 50922
+INFO:django.server:[2025-07-11 00:33:59] basehttp.py:187:"GET /projects/project/1/ HTTP/1.1" 200 48296
+INFO:django.server:[2025-07-11 00:34:19] basehttp.py:187:"GET /projects/1/task/create/ HTTP/1.1" 200 45979
+INFO:django.server:[2025-07-11 00:34:30] basehttp.py:187:"GET /projects/task/list/ HTTP/1.1" 200 45203
+INFO:django.server:[2025-07-11 00:34:32] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 50922
+INFO:django.server:[2025-07-11 00:34:38] basehttp.py:187:"GET /home/ HTTP/1.1" 200 145368
+WARNING:django.server:[2025-07-11 00:34:38] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 00:34:38] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 00:34:38] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 00:34:53] basehttp.py:187:"GET /home/ HTTP/1.1" 200 145368
+WARNING:django.server:[2025-07-11 00:34:53] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 00:34:53] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 00:34:53] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 00:34:55] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 42850
+INFO:django.server:[2025-07-11 00:34:56] basehttp.py:187:"GET /userprofiles/member/create/ HTTP/1.1" 200 46516
+INFO:django.server:[2025-07-11 00:35:31] basehttp.py:187:"GET /home/ HTTP/1.1" 200 145368
+WARNING:django.server:[2025-07-11 00:35:31] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 00:35:31] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 00:35:31] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 00:35:42] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 50922
+INFO:django.server:[2025-07-11 00:36:01] basehttp.py:187:"GET /projects/project/1/ HTTP/1.1" 200 48296
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /projects/project/1/ HTTP/1.1" 200 48296
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/assets/css/theme-rtl.min.css HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/assets/css/theme.min.css HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/simplebar/simplebar.min.css HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/assets/css/user-rtl.min.css HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/assets/css/user.min.css HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/choices/choices.min.css HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/flatpickr/flatpickr.min.css HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/leaflet.markercluster/MarkerCluster.css HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/leaflet.markercluster/MarkerCluster.Default.css HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/simplebar/simplebar.min.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/dhtmlx-gantt/dhtmlxgantt.css HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/leaflet/leaflet.css HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/assets/js/config.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/assets/img/team/40x40/10.webp HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/assets/img/logos/panda_logo.png HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/popper/popper.min.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/bootstrap/bootstrap.min.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/anchorjs/anchor.min.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/fontawesome/all.min.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/lodash/lodash.min.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/leaflet/leaflet.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/list.js/list.min.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/dayjs/dayjs.min.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/feather-icons/feather.min.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/choices/choices.min.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/assets/js/phoenix.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/is/is.min.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/flatpickr/flatpickr.min.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/dhtmlx-gantt/dhtmlxgantt.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/leaflet.tilelayer.colorfilter/leaflet-tilelayer-colorfilter.min.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/leaflet.markercluster/leaflet.markercluster.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/assets/js/dashboards/ecommerce-dashboard.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/vendors/echarts/echarts.min.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/assets/js/dashboards/projectmanagement-dashboard.js HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/assets/img/favicons/manifest.json HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:04] basehttp.py:187:"GET /static/assets/img/favicons/favicon.ico HTTP/1.1" 304 0
+INFO:django.server:[2025-07-11 17:27:05] basehttp.py:187:"GET /home/ HTTP/1.1" 200 154170
+WARNING:django.server:[2025-07-11 17:27:05] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 17:27:05] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 17:27:05] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 17:27:08] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 156543
+INFO:django.server:[2025-07-11 17:27:12] basehttp.py:187:"GET /projects/project/7/ HTTP/1.1" 200 50418
+INFO:django.server:[2025-07-11 17:27:19] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 156543
+INFO:django.server:[2025-07-11 17:27:21] basehttp.py:187:"GET /projects/project/4/ HTTP/1.1" 200 52388
+INFO:django.server:[2025-07-11 17:27:24] basehttp.py:187:"GET /projects/task/8/ HTTP/1.1" 200 47924
+INFO:django.server:[2025-07-11 17:27:34] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 67483
+INFO:django.server:[2025-07-11 17:27:44] basehttp.py:187:"GET /projects/task/list/ HTTP/1.1" 200 134405
+WARNING:django.server:[2025-07-11 17:28:07] basehttp.py:187:"GET /projects/task/create/ HTTP/1.1" 404 4953
+INFO:django.server:[2025-07-11 17:28:22] basehttp.py:187:"GET /home/ HTTP/1.1" 200 154170
+WARNING:django.server:[2025-07-11 17:28:22] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 17:28:22] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 17:28:22] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 17:28:49] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 156543
+INFO:django.server:[2025-07-11 17:29:43] basehttp.py:187:"GET /projects/project/5/ HTTP/1.1" 200 54614
+ERROR:django.request:[2025-07-11 17:29:46] log.py:241:Internal Server Error: /projects/project/5/update/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: project/project_create.html
+ERROR:django.server:[2025-07-11 17:29:46] basehttp.py:187:"GET /projects/project/5/update/ HTTP/1.1" 500 80831
+ERROR:django.request:[2025-07-11 17:29:50] log.py:241:Internal Server Error: /projects/5/task/create/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 742, in resolve
+    new_obj = func(obj, *arg_vals)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/widget_tweaks/templatetags/widget_tweaks.py", line 13, in wrapped
+    return fn(field, attr)
+           ^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/widget_tweaks/templatetags/widget_tweaks.py", line 78, in add_class
+    return append_attr(field, "class:" + css_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/widget_tweaks/templatetags/widget_tweaks.py", line 13, in wrapped
+    return fn(field, attr)
+           ^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/widget_tweaks/templatetags/widget_tweaks.py", line 72, in append_attr
+    return _process_field_attributes(field, attr, process)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/widget_tweaks/templatetags/widget_tweaks.py", line 28, in _process_field_attributes
+    old_as_widget = field.as_widget
+                    ^^^^^^^^^^^^^^^
+AttributeError: 'SafeString' object has no attribute 'as_widget'
+ERROR:django.server:[2025-07-11 17:29:50] basehttp.py:187:"GET /projects/5/task/create/ HTTP/1.1" 500 215293
+ERROR:django.request:[2025-07-11 17:55:51] log.py:241:Internal Server Error: /projects/project/5/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/defaulttags.py", line 1026, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'project_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/defaulttags.py", line 1088, in load
+    lib = find_library(parser, name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/defaulttags.py", line 1028, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'project_tags' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+i18n
+l10n
+log
+static
+tz
+widget_tweaks
+ERROR:django.server:[2025-07-11 17:55:51] basehttp.py:187:"GET /projects/project/5/ HTTP/1.1" 500 212289
+ERROR:django.request:[2025-07-11 17:55:53] log.py:241:Internal Server Error: /projects/project/5/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/defaulttags.py", line 1026, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'project_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/defaulttags.py", line 1088, in load
+    lib = find_library(parser, name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/defaulttags.py", line 1028, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'project_tags' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+i18n
+l10n
+log
+static
+tz
+widget_tweaks
+ERROR:django.server:[2025-07-11 17:55:53] basehttp.py:187:"GET /projects/project/5/ HTTP/1.1" 500 212289
+INFO:django.utils.autoreload:[2025-07-11 17:57:33] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-11 17:57:35] basehttp.py:187:"GET /projects/project/5/ HTTP/1.1" 200 54644
+INFO:django.server:[2025-07-11 17:58:52] basehttp.py:187:"GET /projects/task/34/ HTTP/1.1" 200 46845
+ERROR:django.request:[2025-07-11 18:01:32] log.py:241:Internal Server Error: /projects/project/5/update/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: project/project_create.html
+ERROR:django.server:[2025-07-11 18:01:32] basehttp.py:187:"GET /projects/project/5/update/ HTTP/1.1" 500 80831
+INFO:django.utils.autoreload:[2025-07-11 18:02:21] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:02:22] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-11 18:02:42] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:02:42] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-11 18:03:16] basehttp.py:187:"GET /projects/project/5/ HTTP/1.1" 200 54444
+INFO:django.server:[2025-07-11 18:03:17] basehttp.py:187:"GET /projects/project/5/ HTTP/1.1" 200 54444
+INFO:django.utils.autoreload:[2025-07-11 18:03:26] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-11 18:03:29] basehttp.py:187:"GET /projects/project/5/ HTTP/1.1" 200 54444
+INFO:django.server:[2025-07-11 18:03:29] basehttp.py:187:"GET /projects/project/5/ HTTP/1.1" 200 54444
+INFO:django.server:[2025-07-11 18:03:30] basehttp.py:187:"GET /projects/project/5/ HTTP/1.1" 200 54444
+INFO:django.server:[2025-07-11 18:03:30] basehttp.py:187:"GET /projects/project/5/ HTTP/1.1" 200 54444
+INFO:django.server:[2025-07-11 18:03:30] basehttp.py:187:"GET /projects/project/5/ HTTP/1.1" 200 54444
+INFO:django.server:[2025-07-11 18:03:30] basehttp.py:187:"GET /projects/project/5/ HTTP/1.1" 200 54444
+INFO:django.utils.autoreload:[2025-07-11 18:03:47] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-11 18:03:57] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-11 18:04:00] basehttp.py:187:"GET /projects/project/5/ HTTP/1.1" 200 54444
+INFO:django.server:[2025-07-11 18:04:01] basehttp.py:187:"GET /projects/project/5/ HTTP/1.1" 200 54444
+INFO:django.server:[2025-07-11 18:04:02] basehttp.py:187:"GET /projects/project/5/update/ HTTP/1.1" 200 43273
+INFO:django.server:[2025-07-11 18:04:35] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 43076
+INFO:django.server:[2025-07-11 18:04:36] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 43076
+INFO:django.server:[2025-07-11 18:04:37] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 43076
+INFO:django.server:[2025-07-11 18:04:37] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 43076
+INFO:django.server:[2025-07-11 18:04:39] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 159270
+INFO:django.server:[2025-07-11 18:04:41] basehttp.py:187:"GET /projects/project/4/ HTTP/1.1" 200 52221
+ERROR:django.request:[2025-07-11 18:04:42] log.py:241:Internal Server Error: /projects/4/task/create/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 742, in resolve
+    new_obj = func(obj, *arg_vals)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/widget_tweaks/templatetags/widget_tweaks.py", line 13, in wrapped
+    return fn(field, attr)
+           ^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/widget_tweaks/templatetags/widget_tweaks.py", line 78, in add_class
+    return append_attr(field, "class:" + css_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/widget_tweaks/templatetags/widget_tweaks.py", line 13, in wrapped
+    return fn(field, attr)
+           ^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/widget_tweaks/templatetags/widget_tweaks.py", line 72, in append_attr
+    return _process_field_attributes(field, attr, process)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/widget_tweaks/templatetags/widget_tweaks.py", line 28, in _process_field_attributes
+    old_as_widget = field.as_widget
+                    ^^^^^^^^^^^^^^^
+AttributeError: 'SafeString' object has no attribute 'as_widget'
+ERROR:django.server:[2025-07-11 18:04:42] basehttp.py:187:"GET /projects/4/task/create/ HTTP/1.1" 500 216112
+INFO:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/project/project_card/ HTTP/1.1" 200 281210
+WARNING:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/assets/img/generic/43.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/assets/img/team/60.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/assets/img/team/59.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/assets/img/team/58.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/assets/img//team/30.webp HTTP/1.1" 404 4810
+WARNING:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/assets/img/generic/42.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/assets/img/team/34.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/assets/img/generic/40.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/assets/img/products/60x60/3.png HTTP/1.1" 404 4831
+WARNING:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/assets/img/team/40x40/10.webp HTTP/1.1" 404 4825
+WARNING:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/assets/img/team/58.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/assets/img/team/40x40/12.webp HTTP/1.1" 404 4825
+WARNING:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/assets/img/team/60.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:04:45] basehttp.py:187:"GET /projects/assets/img/team/59.webp HTTP/1.1" 404 4807
+INFO:django.server:[2025-07-11 18:04:49] basehttp.py:187:"GET /projects/project/1/ HTTP/1.1" 200 48128
+INFO:django.server:[2025-07-11 18:04:52] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 43076
+INFO:django.server:[2025-07-11 18:05:15] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 43076
+INFO:django.server:[2025-07-11 18:05:16] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 159270
+INFO:django.server:[2025-07-11 18:05:18] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 43076
+INFO:django.server:[2025-07-11 18:05:21] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 67483
+INFO:django.server:[2025-07-11 18:05:22] basehttp.py:187:"GET /userprofiles/member/create/ HTTP/1.1" 200 46516
+INFO:django.server:[2025-07-11 18:05:24] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 159270
+INFO:django.server:[2025-07-11 18:05:25] basehttp.py:187:"GET /projects/task/list/ HTTP/1.1" 200 134405
+WARNING:django.server:[2025-07-11 18:05:26] basehttp.py:187:"GET /projects/task/create/ HTTP/1.1" 404 4953
+INFO:django.server:[2025-07-11 18:05:29] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 159270
+INFO:django.server:[2025-07-11 18:05:32] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 43076
+INFO:django.server:[2025-07-11 18:05:34] basehttp.py:187:"GET /projects/project/1/ HTTP/1.1" 200 48128
+INFO:django.server:[2025-07-11 18:05:35] basehttp.py:187:"GET /projects/1/task/create/ HTTP/1.1" 200 52312
+INFO:django.server:[2025-07-11 18:05:38] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 43076
+INFO:django.server:[2025-07-11 18:05:40] basehttp.py:187:"GET /home/ HTTP/1.1" 200 154170
+WARNING:django.server:[2025-07-11 18:05:40] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:05:40] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 18:05:40] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.utils.autoreload:[2025-07-11 18:06:12] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/forms.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:06:12] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-11 18:06:13] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 46184
+INFO:django.utils.autoreload:[2025-07-11 18:06:20] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/forms.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:06:21] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-11 18:06:34] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 46184
+INFO:django.server:[2025-07-11 18:06:35] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 46184
+INFO:django.server:[2025-07-11 18:06:47] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 159270
+INFO:django.server:[2025-07-11 18:06:48] basehttp.py:187:"GET /projects/project/1/ HTTP/1.1" 200 48128
+INFO:django.server:[2025-07-11 18:06:50] basehttp.py:187:"GET /projects/1/task/create/ HTTP/1.1" 200 52391
+INFO:django.server:[2025-07-11 18:06:58] basehttp.py:187:"GET /home/ HTTP/1.1" 200 154170
+WARNING:django.server:[2025-07-11 18:06:58] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:06:58] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 18:06:58] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+WARNING:django.server:[2025-07-11 18:06:58] basehttp.py:187:"GET /assets/img/spot-illustrations/21.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 18:08:07] basehttp.py:187:"GET /home/ HTTP/1.1" 200 154170
+WARNING:django.server:[2025-07-11 18:08:07] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 18:08:07] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:08:07] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.utils.autoreload:[2025-07-11 18:08:18] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:08:19] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-11 18:08:27] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:08:27] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-11 18:09:09] basehttp.py:187:"GET /home/ HTTP/1.1" 200 154131
+WARNING:django.server:[2025-07-11 18:09:09] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:09:09] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 18:09:09] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 18:09:30] basehttp.py:187:"GET /projects/task/list/ HTTP/1.1" 200 134405
+INFO:django.utils.autoreload:[2025-07-11 18:10:13] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:10:13] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-11 18:10:21] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:10:21] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-11 18:10:24] basehttp.py:187:"GET /projects/task/list/ HTTP/1.1" 200 134405
+INFO:django.server:[2025-07-11 18:12:25] basehttp.py:187:"GET /home/ HTTP/1.1" 200 156719
+WARNING:django.server:[2025-07-11 18:12:25] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:12:25] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 18:12:25] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.utils.autoreload:[2025-07-11 18:12:37] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:12:37] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-11 18:13:20] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:13:20] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-11 18:13:53] basehttp.py:187:"GET /home/ HTTP/1.1" 200 158009
+WARNING:django.server:[2025-07-11 18:13:53] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 18:13:53] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+WARNING:django.server:[2025-07-11 18:13:53] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+INFO:django.server:[2025-07-11 18:13:53] basehttp.py:187:"GET /home/ HTTP/1.1" 200 158009
+WARNING:django.server:[2025-07-11 18:13:53] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 18:13:53] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:13:53] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.server:[2025-07-11 18:14:06] basehttp.py:187:"GET /home/ HTTP/1.1" 200 158009
+WARNING:django.server:[2025-07-11 18:14:06] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:14:06] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 18:14:06] basehttp.py:187:"GET /assets/img/spot-illustrations/32.png HTTP/1.1" 404 2734
+INFO:django.utils.autoreload:[2025-07-11 18:15:53] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:15:53] autoreload.py:677:Watching for file changes with StatReloader
+ERROR:django.request:[2025-07-11 18:17:50] log.py:241:Internal Server Error: /home/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 225, in get
+    context = self.get_context_data(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py", line 59, in get_context_data
+    active = Project.objects.filter(deadline__date__gte=d, deadline__isnull=False).exclude(deadline__gt=today).filter(~models.Q(deadline__lt=d), ~models.Q(deadline__isnull=True)).count()
+                                                                                                                       ^^^^^^
+NameError: name 'models' is not defined
+ERROR:django.server:[2025-07-11 18:17:50] basehttp.py:187:"GET /home/ HTTP/1.1" 500 86384
+ERROR:django.request:[2025-07-11 18:17:51] log.py:241:Internal Server Error: /home/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 225, in get
+    context = self.get_context_data(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py", line 59, in get_context_data
+    active = Project.objects.filter(deadline__date__gte=d, deadline__isnull=False).exclude(deadline__gt=today).filter(~models.Q(deadline__lt=d), ~models.Q(deadline__isnull=True)).count()
+                                                                                                                       ^^^^^^
+NameError: name 'models' is not defined
+ERROR:django.server:[2025-07-11 18:17:51] basehttp.py:187:"GET /home/ HTTP/1.1" 500 86384
+INFO:django.utils.autoreload:[2025-07-11 18:19:01] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:19:02] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-11 18:19:05] basehttp.py:187:"GET /home/ HTTP/1.1" 200 159329
+WARNING:django.server:[2025-07-11 18:19:05] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:19:05] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:20:31] basehttp.py:187:"GET /home/ HTTP/1.1" 200 159837
+WARNING:django.server:[2025-07-11 18:20:31] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:20:31] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:20:33] basehttp.py:187:"GET /home/ HTTP/1.1" 200 160107
+WARNING:django.server:[2025-07-11 18:20:33] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:20:33] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:20:57] basehttp.py:187:"GET /home/ HTTP/1.1" 200 159799
+WARNING:django.server:[2025-07-11 18:20:57] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:20:57] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:20:59] basehttp.py:187:"GET /home/ HTTP/1.1" 200 159799
+WARNING:django.server:[2025-07-11 18:20:59] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:20:59] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:21:00] basehttp.py:187:"GET /home/ HTTP/1.1" 200 159799
+WARNING:django.server:[2025-07-11 18:21:00] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 18:21:00] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+INFO:django.server:[2025-07-11 18:21:01] basehttp.py:187:"GET /home/ HTTP/1.1" 200 159799
+WARNING:django.server:[2025-07-11 18:21:01] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:21:01] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:21:02] basehttp.py:187:"GET /home/ HTTP/1.1" 200 159799
+WARNING:django.server:[2025-07-11 18:21:02] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:21:02] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:21:11] basehttp.py:187:"GET /home/ HTTP/1.1" 200 160845
+WARNING:django.server:[2025-07-11 18:21:11] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:21:11] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:21:13] basehttp.py:187:"GET /home/ HTTP/1.1" 200 160845
+WARNING:django.server:[2025-07-11 18:21:13] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:21:13] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:21:54] basehttp.py:187:"GET /home/ HTTP/1.1" 200 160846
+WARNING:django.server:[2025-07-11 18:21:54] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:21:54] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:21:55] basehttp.py:187:"GET /home/ HTTP/1.1" 200 160846
+WARNING:django.server:[2025-07-11 18:21:55] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:21:55] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:26:48] basehttp.py:187:"GET /home/ HTTP/1.1" 200 160858
+WARNING:django.server:[2025-07-11 18:26:48] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:26:48] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:26:50] basehttp.py:187:"GET /home/ HTTP/1.1" 200 160858
+WARNING:django.server:[2025-07-11 18:26:50] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:26:50] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:33:09] basehttp.py:187:"GET /home/ HTTP/1.1" 200 160858
+WARNING:django.server:[2025-07-11 18:33:10] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:33:10] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.utils.autoreload:[2025-07-11 18:34:12] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:34:12] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-11 18:34:16] basehttp.py:187:"GET /home/ HTTP/1.1" 200 160248
+WARNING:django.server:[2025-07-11 18:34:16] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+WARNING:django.server:[2025-07-11 18:34:16] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+INFO:django.server:[2025-07-11 18:34:18] basehttp.py:187:"GET /home/ HTTP/1.1" 200 160248
+WARNING:django.server:[2025-07-11 18:34:18] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:34:18] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:34:39] basehttp.py:187:"GET /home/ HTTP/1.1" 200 159808
+WARNING:django.server:[2025-07-11 18:34:39] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-11 18:34:39] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-11 18:34:54] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 422014
+INFO:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/project/project_card/ HTTP/1.1" 200 611829
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/team/60.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/generic/43.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/team/58.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/team/59.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/team/34.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/products/60x60/3.png HTTP/1.1" 404 4831
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/generic/42.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/generic/40.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img//team/30.webp HTTP/1.1" 404 4810
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/team/40x40/10.webp HTTP/1.1" 404 4825
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/team/40x40/12.webp HTTP/1.1" 404 4825
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/team/34.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/team/59.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/team/58.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/team/60.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:35:29] basehttp.py:187:"GET /projects/assets/img/products/60x60/3.png HTTP/1.1" 404 4831
+INFO:django.server:[2025-07-11 18:35:42] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 422014
+INFO:django.utils.autoreload:[2025-07-11 18:35:42] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:35:42] autoreload.py:677:Watching for file changes with StatReloader
+ERROR:django.request:[2025-07-11 18:36:06] log.py:241:Internal Server Error: /projects/project/project_list/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 87, in get_context_data
+    ongoing_projects = projects.filter(deadline__gte=timezone.now()).count()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1433, in _filter_or_exclude
+    raise TypeError("Cannot filter a query once a slice has been taken.")
+TypeError: Cannot filter a query once a slice has been taken.
+ERROR:django.server:[2025-07-11 18:36:06] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 500 94367
+ERROR:django.request:[2025-07-11 18:36:08] log.py:241:Internal Server Error: /projects/project/project_list/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 87, in get_context_data
+    ongoing_projects = projects.filter(deadline__gte=timezone.now()).count()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1433, in _filter_or_exclude
+    raise TypeError("Cannot filter a query once a slice has been taken.")
+TypeError: Cannot filter a query once a slice has been taken.
+ERROR:django.server:[2025-07-11 18:36:08] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 500 94367
+ERROR:django.request:[2025-07-11 18:36:20] log.py:241:Internal Server Error: /projects/project/project_list/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 87, in get_context_data
+    ongoing_projects = projects.filter(deadline__gte=timezone.now()).count()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1433, in _filter_or_exclude
+    raise TypeError("Cannot filter a query once a slice has been taken.")
+TypeError: Cannot filter a query once a slice has been taken.
+ERROR:django.server:[2025-07-11 18:36:20] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 500 94369
+ERROR:django.request:[2025-07-11 18:36:21] log.py:241:Internal Server Error: /projects/project/project_list/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 87, in get_context_data
+    ongoing_projects = projects.filter(deadline__gte=timezone.now()).count()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1433, in _filter_or_exclude
+    raise TypeError("Cannot filter a query once a slice has been taken.")
+TypeError: Cannot filter a query once a slice has been taken.
+ERROR:django.server:[2025-07-11 18:36:21] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 500 94369
+ERROR:django.request:[2025-07-11 18:36:27] log.py:241:Internal Server Error: /projects/project/project_list/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 87, in get_context_data
+    ongoing_projects = projects.filter(deadline__gte=timezone.now()).count()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1433, in _filter_or_exclude
+    raise TypeError("Cannot filter a query once a slice has been taken.")
+TypeError: Cannot filter a query once a slice has been taken.
+ERROR:django.server:[2025-07-11 18:36:27] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 500 94369
+INFO:django.utils.autoreload:[2025-07-11 18:36:33] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/mysite/settings.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:36:33] autoreload.py:677:Watching for file changes with StatReloader
+ERROR:django.request:[2025-07-11 18:36:35] log.py:241:Internal Server Error: /projects/project/project_list/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 87, in get_context_data
+    ongoing_projects = projects.filter(deadline__gte=timezone.now()).count()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1433, in _filter_or_exclude
+    raise TypeError("Cannot filter a query once a slice has been taken.")
+TypeError: Cannot filter a query once a slice has been taken.
+ERROR:django.server:[2025-07-11 18:36:35] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 500 94457
+ERROR:django.request:[2025-07-11 18:36:36] log.py:241:Internal Server Error: /projects/project/project_list/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 87, in get_context_data
+    ongoing_projects = projects.filter(deadline__gte=timezone.now()).count()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1433, in _filter_or_exclude
+    raise TypeError("Cannot filter a query once a slice has been taken.")
+TypeError: Cannot filter a query once a slice has been taken.
+ERROR:django.server:[2025-07-11 18:36:36] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 500 94455
+ERROR:django.request:[2025-07-11 18:36:36] log.py:241:Internal Server Error: /projects/project/project_list/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 87, in get_context_data
+    ongoing_projects = projects.filter(deadline__gte=timezone.now()).count()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1433, in _filter_or_exclude
+    raise TypeError("Cannot filter a query once a slice has been taken.")
+TypeError: Cannot filter a query once a slice has been taken.
+ERROR:django.server:[2025-07-11 18:36:36] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 500 94457
+ERROR:django.request:[2025-07-11 18:36:48] log.py:241:Internal Server Error: /projects/project/project_list/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 87, in get_context_data
+    ongoing_projects = projects.filter(deadline__gte=timezone.now()).count()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1433, in _filter_or_exclude
+    raise TypeError("Cannot filter a query once a slice has been taken.")
+TypeError: Cannot filter a query once a slice has been taken.
+ERROR:django.server:[2025-07-11 18:36:48] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 500 94457
+ERROR:django.request:[2025-07-11 18:36:49] log.py:241:Internal Server Error: /projects/project/project_list/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 87, in get_context_data
+    ongoing_projects = projects.filter(deadline__gte=timezone.now()).count()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1433, in _filter_or_exclude
+    raise TypeError("Cannot filter a query once a slice has been taken.")
+TypeError: Cannot filter a query once a slice has been taken.
+ERROR:django.server:[2025-07-11 18:36:49] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 500 94453
+INFO:django.utils.autoreload:[2025-07-11 18:37:15] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:37:16] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-11 18:37:18] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 154369
+INFO:django.server:[2025-07-11 18:37:21] basehttp.py:187:"GET /projects/project/project_list/?&view_all=true HTTP/1.1" 200 421471
+INFO:django.server:[2025-07-11 18:37:31] basehttp.py:187:"GET /projects/project/project_list/?&view_all=true HTTP/1.1" 200 421471
+INFO:django.server:[2025-07-11 18:37:32] basehttp.py:187:"GET /projects/project/project_list/?&view_all=true HTTP/1.1" 200 421471
+INFO:django.server:[2025-07-11 18:37:33] basehttp.py:187:"GET /projects/project/project_list/?status=ongoing&view_all=true HTTP/1.1" 200 158863
+INFO:django.server:[2025-07-11 18:37:34] basehttp.py:187:"GET /projects/project/project_list/?status=ongoing&view_all=true HTTP/1.1" 200 158863
+INFO:django.server:[2025-07-11 18:37:34] basehttp.py:187:"GET /projects/project/project_list/?status=overdue&view_all=true HTTP/1.1" 200 311698
+INFO:django.server:[2025-07-11 18:37:35] basehttp.py:187:"GET /projects/project/project_list/?status=completed&view_all=true HTTP/1.1" 200 311702
+INFO:django.server:[2025-07-11 18:37:35] basehttp.py:187:"GET /projects/project/project_list/?status=ongoing&view_all=true HTTP/1.1" 200 158863
+INFO:django.server:[2025-07-11 18:37:38] basehttp.py:187:"GET /projects/project/project_card/ HTTP/1.1" 200 611829
+WARNING:django.server:[2025-07-11 18:37:38] basehttp.py:187:"GET /projects/assets/img/generic/43.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 18:37:38] basehttp.py:187:"GET /projects/assets/img/team/60.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:37:38] basehttp.py:187:"GET /projects/assets/img/team/34.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:37:38] basehttp.py:187:"GET /projects/assets/img/team/58.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:37:38] basehttp.py:187:"GET /projects/assets/img/generic/42.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 18:37:38] basehttp.py:187:"GET /projects/assets/img/team/59.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:37:38] basehttp.py:187:"GET /projects/assets/img/generic/40.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-11 18:37:38] basehttp.py:187:"GET /projects/assets/img//team/30.webp HTTP/1.1" 404 4810
+WARNING:django.server:[2025-07-11 18:37:38] basehttp.py:187:"GET /projects/assets/img/team/40x40/10.webp HTTP/1.1" 404 4825
+WARNING:django.server:[2025-07-11 18:37:38] basehttp.py:187:"GET /projects/assets/img/products/60x60/3.png HTTP/1.1" 404 4831
+WARNING:django.server:[2025-07-11 18:37:38] basehttp.py:187:"GET /projects/assets/img/team/60.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-11 18:37:38] basehttp.py:187:"GET /projects/assets/img/team/40x40/12.webp HTTP/1.1" 404 4825
+INFO:django.server:[2025-07-11 18:37:40] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 154369
+INFO:django.utils.autoreload:[2025-07-11 18:38:23] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:38:23] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-11 18:38:49] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 155344
+INFO:django.server:[2025-07-11 18:38:50] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 155344
+INFO:django.server:[2025-07-11 18:38:51] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 155344
+INFO:django.server:[2025-07-11 18:39:28] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 155344
+INFO:django.server:[2025-07-11 18:39:29] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 155344
+INFO:django.server:[2025-07-11 18:39:29] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 155344
+INFO:django.server:[2025-07-11 18:39:42] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 155344
+INFO:django.server:[2025-07-11 18:39:42] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 155344
+INFO:django.server:[2025-07-11 18:39:48] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 155344
+INFO:django.server:[2025-07-11 18:39:49] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 155344
+INFO:django.utils.autoreload:[2025-07-11 18:39:57] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-11 18:39:57] autoreload.py:677:Watching for file changes with StatReloader

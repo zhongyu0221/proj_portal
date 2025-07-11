@@ -2,142 +2,217 @@
 {% load static %}
 {% load widget_tweaks %}
 
-<body>
+{% block contents %}
+<div class="content">
+    <!-- Page Header -->
+    <div class="row mb-4">
+        <div class="col-auto">
+            <h2 class="mb-0">{% if object %}Edit Project{% else %}Create New Project{% endif %}</h2>
+            <p class="text-body-secondary mb-1">
+                {% if object %}
+                    Update project details and settings
+                {% else %}
+                    Create a new project with all necessary information
+                {% endif %}
+            </p>
+        </div>
+        <div class="col-auto ms-auto">
+            {% if object %}
+                <a href="{% url 'projects:project_detail' object.id %}" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Project
+                </a>
+            {% else %}
+                <a href="{% url 'projects:project_list' %}" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Projects
+                </a>
+            {% endif %}
+        </div>
+    </div>
 
-<!-- ===============================================-->
-<!--    Main Content-->
-<!-- ===============================================-->
-<main class="main" id="top">
+    <!-- Messages -->
+    {% if messages %}
+        <div class="mb-4">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
 
-
-    {% block contents %}
-
-
-
-        <div class="content">
-            <h2 class="mb-4">Create a project</h2>
-{% if messages %}
-  <div>
-    {% for message in messages %}
-      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-    {% endfor %}
-  </div>
-{% endif %}
-            <div class="row">
-                <div class="col-xl-9">
-                    <form method="post" class="row g-3 mb-6">
+    <!-- Form Layout -->
+    <div class="row g-4">
+        <!-- Main Form -->
+        <div class="col-xl-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Project Information</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post">
                         {% csrf_token %}
-                        <div class="col-sm-6 col-md-8">
-                            <div class="form-floating">
+                        
+                        <!-- Basic Information -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
                                 <div class="form-floating">
-                                    {{ form.title|add_class:"form-control" }}
-                                    <label for="{{ form.title.id_for_label }}">Short Description</label>
-                                    {{ form.title.errors }}
+                                    {{ form.title }}
+                                    <label for="{{ form.title.id_for_label }}">Project Title <span class="text-danger">*</span></label>
+                                    {% if form.title.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.title.errors }}
+                                        </div>
+                                    {% endif %}
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="form-floating">
-                                {{ form.project_category|add_class:"form-select" }}
-                                <label for="{{ form.project_category.id_for_label }}">Select Category</label>
-                                {{ form.project_category.errors }}
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4">
-                            <div class="form-floating">
-                                <select class="form-select" id="floatingSelectAdmin">
-                                    <option selected="selected">Select admin</option>
-                                    <option value="1">Data Privacy One</option>
-                                    <option value="2">Data Privacy Two</option>
-                                    <option value="3">Data Privacy Three</option>
-                                </select>
-                                <label for="floatingSelectAdmin">Project Lead</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="form-floating">
-                                {{ form.created_at|add_class:"form-control datetimepicker" }}
-                                <label for="{{ form.created_at.id_for_label }}">Start Date</label>
-                                {{ form.created_at.errors }}
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4">
-                            <div class="form-floating">
-                                {{ form.deadline|add_class:"form-control datetimepicker" }}
-                                <label for="{{ form.deadline.id_for_label }}">Deadline</label>
-                                {{ form.deadline.errors }}
-                            </div>
-                        </div>
-                        <div class="col-12 gy-6">
-                            <div class="form-floating">
-                                {{ form.description|add_class:"form-control" }}
-                                <label for="{{ form.description.id_for_label }}">Project description</label>
-                                {{ form.description.errors }}
-                            </div>
-                        </div>
-                        <div class="col-md-6 gy-6">
-                            <div class="form-floating">
-                                <input class="form-control" id="floatingInputBudget" type="text" placeholder="Budget"/>
-                                <label for="floatingInputBudget">Budget</label>
-                            </div>
-                        </div>
-                        <div class="col-12 gy-6">
-                            <div class="form-floating form-floating-advance-select">
-                                <label>Add tags</label>
-                                <select class="form-select" id="organizerMultiple" data-choices="data-choices"
-                                        multiple="multiple" data-options='{"removeItemButton":true,"placeholder":true}'>
-                                    <option selected="selected">Stupidity</option>
-                                    <option>Jerry</option>
-                                    <option>Not_the_mouse</option>
-                                    <option>Rick</option>
-                                    <option>Biology</option>
-                                    <option>Neurology</option>
-                                    <option>Brainlessness</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-12 gy-6">
-                            <div class="row g-3 justify-content-end">
-                                <div class="col-auto">
-                                    <button class="btn btn-phoenix-primary px-5">Cancel</button>
-                                </div>
-                                <div class="col-auto">
-                                    <button type=submit class="btn btn-primary px-5 px-sm-15">Create Project</button>
-
+                            
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    {{ form.description }}
+                                    <label for="{{ form.description.id_for_label }}">Project Description</label>
+                                    {% if form.description.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.description.errors }}
+                                        </div>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Project Category and Client -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ form.project_category }}
+                                    <label for="{{ form.project_category.id_for_label }}">Project Category</label>
+                                    {% if form.project_category.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.project_category.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ form.client_name }}
+                                    <label for="{{ form.client_name.id_for_label }}">Client Name</label>
+                                    {% if form.client_name.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.client_name.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dates -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ form.created_at }}
+                                    <label for="{{ form.created_at.id_for_label }}">Start Date</label>
+                                    {% if form.created_at.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.created_at.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ form.deadline }}
+                                    <label for="{{ form.deadline.id_for_label }}">Deadline</label>
+                                    {% if form.deadline.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.deadline.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Budget -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ form.budget }}
+                                    <label for="{{ form.budget.id_for_label }}">Budget (USD)</label>
+                                    {% if form.budget.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.budget.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="d-flex justify-content-end gap-2">
+                                    {% if object %}
+                                        <a href="{% url 'projects:project_detail' object.id %}" class="btn btn-outline-secondary px-4">
+                                            Cancel
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'projects:project_list' %}" class="btn btn-outline-secondary px-4">
+                                            Cancel
+                                        </a>
+                                    {% endif %}
+                                    <button type="submit" class="btn btn-primary px-4">
+                                        {% if object %}Update Project{% else %}Create Project{% endif %}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
-
-
-{#            <h2 class="mb-4">Create a project</h2>#}
-{#            <div class="row">#}
-{#                <div class="col-xl-9">#}
-{#                    <form method="post" class="row g-3 mb-6">#}
-{#                        {% csrf_token %}#}
-{#                        {{ form.as_p }}#}
-{#                        <div class="row g-3 justify-content-end">#}
-{#                            <div class="col-auto">#}
-{#                                <button type="button" class="btn btn-phoenix-primary px-5">Cancel</button>#}
-{#                            </div>#}
-{#                            <div class="col-auto">#}
-{#                                <button type="submit" class="btn btn-primary px-5 px-sm-15">Create Project</button>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </form>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{##}
-
         </div>
 
-
-        </main>
-
-    {% endblock contents %}
+        <!-- Sidebar -->
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Project Guidelines</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h6 class="text-body-secondary mb-2">Project Categories</h6>
+                        <div class="d-flex flex-column gap-1">
+                            <span class="badge badge-phoenix badge-phoenix-primary fs-10">Exploring - Research phase</span>
+                            <span class="badge badge-phoenix badge-phoenix-info fs-10">Research - Analysis</span>
+                            <span class="badge badge-phoenix badge-phoenix-success fs-10">Development - Active work</span>
+                            <span class="badge badge-phoenix badge-phoenix-warning fs-10">Testing - QA phase</span>
+                            <span class="badge badge-phoenix badge-phoenix-danger fs-10">Deployment - Production</span>
+                            <span class="badge badge-phoenix badge-phoenix-secondary fs-10">Maintenance - Ongoing</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <h6 class="text-body-secondary mb-2">Tips for Success</h6>
+                        <ul class="list-unstyled mb-0 fs-9">
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Use clear, descriptive titles</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Set realistic deadlines</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Provide detailed descriptions</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Include client information</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Set appropriate budget</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <h6 class="text-body-secondary mb-2">Required Fields</h6>
+                        <ul class="list-unstyled mb-0 fs-9">
+                            <li class="mb-1"><i class="fas fa-asterisk text-danger me-2"></i>Project Title</li>
+                            <li class="mb-1"><i class="fas fa-circle text-body-tertiary me-2"></i>All other fields are optional</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contents %}

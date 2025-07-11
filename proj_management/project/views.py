@@ -27,40 +27,105 @@ class ProjectCreateView(CreateView):
 class ProjectUpdateView(AjaxUpdateView):
     model = Project
     form_class = ProjectForm
-    template_name = 'project/project_create.html'
-    success_url = '/projects/'
+    template_name = 'project_create.html'
+    
+    def get_success_url(self):
+        return reverse_lazy('projects:project_detail', kwargs={'pk': self.object.id})
+    
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, f'Project "{self.object.title}" updated successfully.')
+        return response
 
 class ProjectListView(ListView):
     model = Project
     template_name = 'project_list.html'
     context_object_name = 'projects'
+    paginate_by = 20
 
     def get_queryset(self):
-        return Project.objects.annotate(
+        queryset = Project.objects.annotate(
             task_count=Count('tasks'),
             completed_tasks=Count('tasks', filter=Q(tasks__completed=True)),
             total_tasks=Count('tasks')
         ).order_by('-created_at')
+        
+        # Handle view all parameter
+        view_all = self.request.GET.get('view_all')
+        if view_all == 'true':
+            self.paginate_by = None  # Disable pagination for view all
+        
+        # Handle filtering
+        status_filter = self.request.GET.get('status')
+        if status_filter:
+            if status_filter == 'ongoing':
+                queryset = queryset.filter(deadline__gte=timezone.now())
+            elif status_filter == 'completed':
+                queryset = queryset.filter(deadline__lt=timezone.now())
+            elif status_filter == 'overdue':
+                queryset = queryset.filter(deadline__lt=timezone.now())
+        
+        # Handle search
+        search = self.request.GET.get('search')
+        if search:
+            queryset = queryset.filter(
+                Q(title__icontains=search) |
+                Q(description__icontains=search) |
+                Q(client_name__icontains=search)
+            )
+        
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         
-        # Calculate project statistics
-        projects = context['projects']
-        total_projects = projects.count()
+        # Create a separate queryset for statistics (without pagination)
+        stats_queryset = Project.objects.annotate(
+            task_count=Count('tasks'),
+            completed_tasks=Count('tasks', filter=Q(tasks__completed=True)),
+            total_tasks=Count('tasks')
+        ).order_by('-created_at')
         
-        # Count projects by status (you can customize these based on your project status field)
-        ongoing_projects = projects.filter(deadline__gte=timezone.now()).count()
-        completed_projects = projects.filter(deadline__lt=timezone.now()).count()
-        cancelled_projects = 0  # Add logic based on your project status
-        postponed_projects = 0  # Add logic based on your project status
+        # Apply the same filters to stats queryset
+        status_filter = self.request.GET.get('status')
+        if status_filter:
+            if status_filter == 'ongoing':
+                stats_queryset = stats_queryset.filter(deadline__gte=timezone.now())
+            elif status_filter == 'completed':
+                stats_queryset = stats_queryset.filter(deadline__lt=timezone.now())
+            elif status_filter == 'overdue':
+                stats_queryset = stats_queryset.filter(deadline__lt=timezone.now())
+        
+        search = self.request.GET.get('search')
+        if search:
+            stats_queryset = stats_queryset.filter(
+                Q(title__icontains=search) |
+                Q(description__icontains=search) |
+                Q(client_name__icontains=search)
+            )
+        
+        # Calculate project statistics using the stats queryset
+        total_projects = stats_queryset.count()
+        
+        # Count projects by status (using the full queryset, not the paginated one)
+        all_projects = Project.objects.all()
+        ongoing_projects = all_projects.filter(deadline__gte=timezone.now()).count()
+        completed_projects = all_projects.filter(deadline__lt=timezone.now()).count()
+        overdue_projects = all_projects.filter(deadline__lt=timezone.now()).count()
+        
+        # Get current filters
+        current_status = self.request.GET.get('status', 'all')
+        current_search = self.request.GET.get('search', '')
+        view_all = self.request.GET.get('view_all') == 'true'
         
         context.update({
             'total_projects': total_projects,
             'ongoing_projects': ongoing_projects,
             'completed_projects': completed_projects,
-            'cancelled_projects': cancelled_projects,
-            'postponed_projects': postponed_projects,
+            'overdue_projects': overdue_projects,
+            'current_status': current_status,
+            'current_search': current_search,
+            'view_all': view_all,
         })
         
         return context
@@ -97,6 +162,7 @@ class ProjectDetailView(DetailView):
         context['completed_tasks'] = completed_tasks
         context['open_tasks'] = open_tasks
         context['completion_percentage'] = completion_percentage
+        context['now'] = timezone.now()
         return context
 
 

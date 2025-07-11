@@ -1,5 +1,6 @@
 {% extends 'common/base.html' %}
 {% load static %}
+{% load project_tags %}
 
 {% block contents %}
 <div class="content">
@@ -126,15 +127,12 @@
             <!-- Project Description -->
             <div class="card mb-4">
                 <div class="card-header">
-                          <div class="d-flex align-items-center">
-                        <h5 class="mb-0 me-3">Description</h5>
-                        <button class="btn btn-link p-0"><i class="fas fa-pen"></i></button>
-                          </div>
+                    <h5 class="mb-0">Description</h5>
                         </div>
                 <div class="card-body">
                     <p class="text-body-highlight">{{ project.description|default:'No description available.' }}</p>
-                        </div>
-                      </div>
+                          </div>
+                            </div>
 
             <!-- Activity Timeline -->
             <div class="card mb-4">
@@ -203,21 +201,35 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <h6 class="text-body-secondary mb-2">Due date</h6>
-                        <div class="flatpickr-input-container flatpickr-input-sm w-100 mb-3">
-                            <input class="form-control form-control-sm ps-6 datetimepicker" 
-                                   type="text" value="{{ project.deadline|date:'M j, Y'|default:'Not set' }}" readonly/>
-                            <i class="fas fa-calendar-alt flatpickr-icon text-body-tertiary mt-1"></i>
+                        <p class="text-body-highlight mb-0">
+                            {% if project.deadline %}
+                                {{ project.deadline|date:'M j, Y' }}
+                            {% else %}
+                                <span class="text-body-tertiary">Not set</span>
+                            {% endif %}
+                        </p>
+                          </div>
+                    
+                    <div class="mb-3">
+                        <h6 class="text-body-secondary mb-2">Category</h6>
+                          <div class="d-flex align-items-center">
+                            {% get_project_category_badge project.project_category project.get_project_category_display %}
                           </div>
                           </div>
                     
                     <div class="mb-3">
-                        <h6 class="text-body-secondary mb-2">Labels</h6>
-                          <div class="d-flex align-items-center">
-                            <span class="badge badge-phoenix badge-phoenix-info fs-10 me-2">{{ project.get_project_category_display }}</span>
-                            <a class="text-body fw-bolder fs-9 lh-1 text-decoration-none" href="#!">
-                                <i class="fas fa-plus me-1"></i>Add another
-                            </a>
-                          </div>
+                        <h6 class="text-body-secondary mb-2">Status</h6>
+                        <p class="text-body-highlight mb-0">
+                            {% if project.deadline %}
+                                {% if project.deadline > now %}
+                                    <span class="badge badge-phoenix badge-phoenix-success">Active</span>
+                                {% else %}
+                                    <span class="badge badge-phoenix badge-phoenix-warning">Overdue</span>
+                                {% endif %}
+                            {% else %}
+                                <span class="badge badge-phoenix badge-phoenix-secondary">No deadline</span>
+                            {% endif %}
+                        </p>
                       </div>
                           </div>
                           </div>

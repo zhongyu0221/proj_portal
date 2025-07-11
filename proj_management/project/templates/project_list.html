@@ -1,6 +1,7 @@
 {% extends 'common/base.html' %}
 {% load static %}
 {% load widget_tweaks %}
+{% load project_tags %}
 
 {% block contents %}
 <div class="content">
@@ -23,28 +24,27 @@
                 <div class="col-12 col-sm-auto">
                     <ul class="nav nav-links mx-n2">
                         <li class="nav-item">
-                            <a class="nav-link px-2 py-1 active" aria-current="page" href="#">
+                            <a class="nav-link px-2 py-1 {% if current_status == 'all' %}active{% endif %}" 
+                               href="?status=all{% if current_search %}&search={{ current_search }}{% endif %}{% if view_all %}&view_all=true{% endif %}">
                                 <span>All</span><span class="text-body-tertiary fw-semibold">({{ total_projects }})</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-2 py-1" href="#">
+                            <a class="nav-link px-2 py-1 {% if current_status == 'ongoing' %}active{% endif %}" 
+                               href="?status=ongoing{% if current_search %}&search={{ current_search }}{% endif %}{% if view_all %}&view_all=true{% endif %}">
                                 <span>Ongoing</span><span class="text-body-tertiary fw-semibold">({{ ongoing_projects }})</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-2 py-1" href="#">
+                            <a class="nav-link px-2 py-1 {% if current_status == 'completed' %}active{% endif %}" 
+                               href="?status=completed{% if current_search %}&search={{ current_search }}{% endif %}{% if view_all %}&view_all=true{% endif %}">
                                 <span>Completed</span><span class="text-body-tertiary fw-semibold">({{ completed_projects }})</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-2 py-1" href="#">
-                                <span>Cancelled</span><span class="text-body-tertiary fw-semibold">({{ cancelled_projects }})</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-2 py-1" href="#">
-                                <span>Postponed</span><span class="text-body-tertiary fw-semibold">({{ postponed_projects }})</span>
+                            <a class="nav-link px-2 py-1 {% if current_status == 'overdue' %}active{% endif %}" 
+                               href="?status=overdue{% if current_search %}&search={{ current_search }}{% endif %}{% if view_all %}&view_all=true{% endif %}">
+                                <span>Overdue</span><span class="text-body-tertiary fw-semibold">({{ overdue_projects }})</span>
                             </a>
                         </li>
                     </ul>
@@ -52,9 +52,17 @@
                 <div class="col-12 col-sm-auto">
                     <div class="d-flex align-items-center">
                         <div class="search-box me-3">
-                            <form class="position-relative">
-                                <input class="form-control search-input search" type="search" placeholder="Search projects" aria-label="Search"/>
+                            <form class="position-relative" method="get">
+                                <input class="form-control search-input search" type="search" name="search" 
+                                       placeholder="Search projects" aria-label="Search" value="{{ current_search }}"/>
                                 <span class="fas fa-search search-box-icon"></span>
+                                <!-- Preserve other parameters -->
+                                {% if current_status != 'all' %}
+                                    <input type="hidden" name="status" value="{{ current_status }}">
+                                {% endif %}
+                                {% if view_all %}
+                                    <input type="hidden" name="view_all" value="true">
+                                {% endif %}
                             </form>
                         </div>
                         <a class="btn btn-phoenix-primary px-3 me-1 border-0 text-body" href="#" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="List view">
@@ -116,11 +124,9 @@
                                 {% endif %}
                             </td>
                             
-                            <!-- Category -->
+                            <!-- Category with Color Coding -->
                             <td class="align-middle white-space-nowrap category ps-3 py-4">
-                                <span class="badge badge-phoenix badge-phoenix-info fs-10">
-                                    {{ project.get_project_category_display }}
-                                </span>
+                                {% get_project_category_badge project.project_category project.get_project_category_display %}
                             </td>
                             
                             <!-- Start Date -->
@@ -219,15 +225,48 @@
             <!-- Pagination -->
             <div class="d-flex flex-wrap align-items-center justify-content-between py-3 pe-0 fs-9 border-bottom border-translucent">
                 <div class="d-flex">
-                    <p class="mb-0 d-none d-sm-block me-3 fw-semibold text-body" data-list-info="data-list-info"></p>
-                    <a class="fw-semibold" href="#!" data-list-view="*">View all<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
-                    <a class="fw-semibold d-none" href="#!" data-list-view="less">View Less<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
+                    <p class="mb-0 d-none d-sm-block me-3 fw-semibold text-body">
+                        Showing {{ page_obj.start_index|default:1 }}-{{ page_obj.end_index|default:projects|length }} of {{ total_projects }} projects
+                    </p>
+                    {% if not view_all %}
+                        <a class="fw-semibold" href="?{% if current_status != 'all' %}status={{ current_status }}{% endif %}{% if current_search %}&search={{ current_search }}{% endif %}&view_all=true">
+                            View all<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span>
+                        </a>
+                    {% else %}
+                        <a class="fw-semibold" href="?{% if current_status != 'all' %}status={{ current_status }}{% endif %}{% if current_search %}&search={{ current_search }}{% endif %}">
+                            View Less<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span>
+                        </a>
+                    {% endif %}
                 </div>
+                {% if not view_all and is_paginated %}
                 <div class="d-flex">
-                    <button class="page-link" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
-                    <ul class="mb-0 pagination"></ul>
-                    <button class="page-link pe-0" data-list-pagination="next"><span class="fas fa-chevron-right"></span></button>
+                    {% if page_obj.has_previous %}
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if current_status != 'all' %}&status={{ current_status }}{% endif %}{% if current_search %}&search={{ current_search }}{% endif %}">
+                            <span class="fas fa-chevron-left"></span>
+                        </a>
+                    {% endif %}
+                    
+                    <ul class="mb-0 pagination">
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                                <li class="page-item active">
+                                    <span class="page-link">{{ num }}</span>
+                                </li>
+                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ num }}{% if current_status != 'all' %}&status={{ current_status }}{% endif %}{% if current_search %}&search={{ current_search }}{% endif %}">{{ num }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    
+                    {% if page_obj.has_next %}
+                        <a class="page-link pe-0" href="?page={{ page_obj.next_page_number }}{% if current_status != 'all' %}&status={{ current_status }}{% endif %}{% if current_search %}&search={{ current_search }}{% endif %}">
+                            <span class="fas fa-chevron-right"></span>
+                        </a>
+                    {% endif %}
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -252,13 +291,29 @@
     </div>
 </div>
 
-<script>
-    document.querySelectorAll('[data-list-view="*"], [data-list-view="less"]').forEach(function (link) {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector('[data-list-view="*"]').classList.toggle('d-none');
-            document.querySelector('[data-list-view="less"]').classList.toggle('d-none');
-        });
-    });
-</script>
+<!-- Category Legend -->
+<div class="mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h6 class="mb-0">Project Categories</h6>
+        </div>
+        <div class="card-body">
+            <div class="row g-3">
+                {% get_all_project_categories as categories %}
+                {% for category in categories %}
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center">
+                        <span class="badge badge-phoenix {{ category.badge_class }} fs-10 me-2">
+                            <i class="{{ category.icon }} me-1"></i>{{ category.name }}
+                        </span>
+                        <small class="text-body-tertiary">{{ category.description }}</small>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
 {% endblock contents %}

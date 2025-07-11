@@ -1,0 +1,17 @@
+# 测试依赖包
+pytest>=7.0.0
+pytest-django>=4.5.0
+factory-boy>=3.2.0
+faker>=18.0.0
+coverage>=6.0.0
+pytest-cov>=4.0.0
+pytest-xdist>=3.0.0
+pytest-mock>=3.8.0
+pytest-html>=3.1.0
+pytest-sugar>=0.9.0
+
+# 开发工具
+black>=22.0.0
+flake8>=4.0.0
+isort>=5.10.0
+pre-commit>=2.20.0 

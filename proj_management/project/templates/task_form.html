@@ -50,7 +50,7 @@
                         <div class="row g-3 mb-4">
                             <div class="col-12">
                                 <div class="form-floating">
-                                    {{ form.title|add_class:"form-control" }}
+                                    {{ form.title }}
                                     <label for="{{ form.title.id_for_label }}">Task Title <span class="text-danger">*</span></label>
                                     {% if form.title.errors %}
                                         <div class="invalid-feedback d-block">
@@ -62,7 +62,7 @@
                             
                             <div class="col-12">
                                 <div class="form-floating">
-                                    {{ form.description|add_class:"form-control" }}
+                                    {{ form.description }}
                                     <label for="{{ form.description.id_for_label }}">Description</label>
                                     {% if form.description.errors %}
                                         <div class="invalid-feedback d-block">
@@ -78,7 +78,7 @@
                         <div class="row g-3 mb-4">
                             <div class="col-12">
                                 <div class="form-floating">
-                                    {{ form.project|add_class:"form-select" }}
+                                    {{ form.project }}
                                     <label for="{{ form.project.id_for_label }}">Project <span class="text-danger">*</span></label>
                                     {% if form.project.errors %}
                                         <div class="invalid-feedback d-block">
@@ -94,7 +94,7 @@
                         <div class="row g-3 mb-4">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    {{ form.priority|add_class:"form-select" }}
+                                    {{ form.priority }}
                                     <label for="{{ form.priority.id_for_label }}">Priority</label>
                                     {% if form.priority.errors %}
                                         <div class="invalid-feedback d-block">
@@ -106,7 +106,7 @@
                             
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    {{ form.status|add_class:"form-select" }}
+                                    {{ form.status }}
                                     <label for="{{ form.status.id_for_label }}">Status</label>
                                     {% if form.status.errors %}
                                         <div class="invalid-feedback d-block">
@@ -118,7 +118,7 @@
                             
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    {{ form.due_date|add_class:"form-control" }}
+                                    {{ form.due_date }}
                                     <label for="{{ form.due_date.id_for_label }}">Due Date</label>
                                     {% if form.due_date.errors %}
                                         <div class="invalid-feedback d-block">
@@ -130,7 +130,7 @@
                             
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    {{ form.files|add_class:"form-control" }}
+                                    {{ form.files }}
                                     <label for="{{ form.files.id_for_label }}">Attach Files</label>
                                     {% if form.files.errors %}
                                         <div class="invalid-feedback d-block">
@@ -145,7 +145,7 @@
                         <div class="row g-3 mb-4">
                             <div class="col-12">
                                 <div class="form-check">
-                                    {{ form.completed|add_class:"form-check-input" }}
+                                    {{ form.completed }}
                                     <label class="form-check-label" for="{{ form.completed.id_for_label }}">
                                         Mark as completed
                                     </label>
@@ -166,7 +166,7 @@
                                     {% for checkbox in form.assigned_users %}
                                         <div class="col-md-6 col-lg-4">
                                             <div class="form-check">
-                                                {{ checkbox.tag|add_class:"form-check-input" }}
+                                                {{ checkbox.tag }}
                                                 <label class="form-check-label" for="{{ checkbox.id_for_label }}">
                                                     {{ checkbox.choice_label }}
                                                 </label>
