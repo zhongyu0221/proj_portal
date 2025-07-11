@@ -1,47 +1,205 @@
 {% extends 'common/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
 {% block contents %}
 <div class="content">
-    <nav class="mb-3" aria-label="breadcrumb">
-        <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#!">Pages</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'userprofiles:userprofile_list' %}">Members</a></li>
-            <li class="breadcrumb-item active">Add Member</li>
-        </ol>
-    </nav>
-    <h2 class="text-bold text-body-emphasis mb-5">Add Member</h2>
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <form method="post" class="card p-4 shadow-sm">
-                {% csrf_token %}
-                {% for field in user_form %}
-                    <div class="mb-3">
-                        <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                        {{ field }}
-                        {% if field.help_text %}
-                            <div class="form-text">{{ field.help_text }}</div>
-                        {% endif %}
-                        {% for error in field.errors %}
-                            <div class="text-danger small">{{ error }}</div>
-                        {% endfor %}
-                    </div>
-                {% endfor %}
-                {% for field in form %}
-                    <div class="mb-3">
-                        <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                        {{ field }}
-                        {% if field.help_text %}
-                            <div class="form-text">{{ field.help_text }}</div>
-                        {% endif %}
-                        {% for error in field.errors %}
-                            <div class="text-danger small">{{ error }}</div>
-                        {% endfor %}
-                    </div>
-                {% endfor %}
-                <div class="d-flex justify-content-end">
-                    <a href="{% url 'userprofiles:userprofile_list' %}" class="btn btn-secondary me-2">Cancel</a>
-                    <button type="submit" class="btn btn-primary">Save Member</button>
+    <!-- Page Header -->
+    <div class="row mb-4">
+        <div class="col-auto">
+            <h2 class="mb-0">{% if object %}Edit Member{% else %}Add New Member{% endif %}</h2>
+            <p class="text-body-secondary mb-1">
+                {% if object %}
+                    Update member information for {{ object.user.get_full_name|default:object.user.username }}
+                {% else %}
+                    Create a new team member account
+                {% endif %}
+            </p>
+        </div>
+        <div class="col-auto ms-auto">
+            <a href="{% url 'userprofiles:userprofile_list' %}" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left me-2"></i>Back to Members
+            </a>
+        </div>
+    </div>
+
+    <!-- Messages -->
+    {% if messages %}
+        <div class="mb-4">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-            </form>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- Form Layout -->
+    <div class="row">
+        <div class="col-xl-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Member Information</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        <!-- User Account Information -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
+                                <h6 class="text-body-secondary mb-3">Account Information</h6>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ user_form.username|add_class:"form-control" }}
+                                    <label for="{{ user_form.username.id_for_label }}">Username <span class="text-danger">*</span></label>
+                                    {% if user_form.username.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ user_form.username.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ user_form.email|add_class:"form-control" }}
+                                    <label for="{{ user_form.email.id_for_label }}">Email <span class="text-danger">*</span></label>
+                                    {% if user_form.email.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ user_form.email.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ user_form.first_name|add_class:"form-control" }}
+                                    <label for="{{ user_form.first_name.id_for_label }}">First Name</label>
+                                    {% if user_form.first_name.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ user_form.first_name.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ user_form.last_name|add_class:"form-control" }}
+                                    <label for="{{ user_form.last_name.id_for_label }}">Last Name</label>
+                                    {% if user_form.last_name.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ user_form.last_name.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- User Profile Information -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
+                                <h6 class="text-body-secondary mb-3">Profile Information</h6>
+                            </div>
+                            
+                            {% for field in form %}
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        {{ field|add_class:"form-control" }}
+                                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                        {% if field.help_text %}
+                                            <div class="form-text">{{ field.help_text }}</div>
+                                        {% endif %}
+                                        {% if field.errors %}
+                                            <div class="invalid-feedback d-block">
+                                                {{ field.errors }}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Account Status -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
+                                <h6 class="text-body-secondary mb-3">Account Settings</h6>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="form-check">
+                                    {{ user_form.is_active|add_class:"form-check-input" }}
+                                    <label class="form-check-label" for="{{ user_form.is_active.id_for_label }}">
+                                        Active Account
+                                    </label>
+                                    {% if user_form.is_active.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ user_form.is_active.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="d-flex justify-content-end gap-2">
+                                    <a href="{% url 'userprofiles:userprofile_list' %}" class="btn btn-outline-secondary px-4">
+                                        Cancel
+                                    </a>
+                                    <button type="submit" class="btn btn-primary px-4">
+                                        {% if object %}Update Member{% else %}Create Member{% endif %}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Member Guidelines</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h6 class="text-body-secondary mb-2">Account Creation</h6>
+                        <ul class="list-unstyled mb-0 fs-9">
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Username must be unique</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Valid email required</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Password will be sent via email</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Member can set password via link</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <h6 class="text-body-secondary mb-2">Profile Information</h6>
+                        <ul class="list-unstyled mb-0 fs-9">
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Fill in all required fields</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Provide accurate contact info</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Set appropriate user level</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Assign to correct lab/team</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <h6 class="text-body-secondary mb-2">Security Notes</h6>
+                        <div class="alert alert-info fs-9 mb-0">
+                            <i class="fas fa-info-circle me-2"></i>
+                            A password reset email will be automatically sent to the new member's email address.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

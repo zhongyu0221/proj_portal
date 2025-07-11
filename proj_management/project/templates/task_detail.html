@@ -1,0 +1,248 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+<body>
+
+<!-- ===============================================-->
+<!--    Main Content-->
+<!-- ===============================================-->
+<main class="main" id="top">
+
+    {% block contents %}
+
+        <div class="content">
+            <div class="mb-9">
+                <div class="row g-3 mb-4">
+                    <div class="col-auto">
+                        <a href="{% url 'projects:task_list' %}" class="btn btn-phoenix-secondary">
+                            <i class="fas fa-arrow-left me-2"></i>Back to Tasks
+                        </a>
+                    </div>
+                    <div class="col-auto ms-auto">
+                        <a href="{% url 'projects:task_update' task.pk %}" class="btn btn-primary me-2">
+                            <i class="fas fa-edit me-2"></i>Edit Task
+                        </a>
+                        <a href="{% url 'projects:task_delete' task.pk %}" class="btn btn-danger">
+                            <i class="fas fa-trash me-2"></i>Delete
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Task Header -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h3 class="mb-2">{{ task.title }}</h3>
+                                <p class="text-body-secondary mb-0">Project: <a href="#" class="text-decoration-none">{{ task.project.title }}</a></p>
+                            </div>
+                            <div class="col-auto">
+                                {% if task.priority == 'URGENT' %}
+                                    <span class="badge badge-phoenix fs-10 badge-phoenix-danger">{{ task.get_priority_display }}</span>
+                                {% elif task.priority == 'HIGH' %}
+                                    <span class="badge badge-phoenix fs-10 badge-phoenix-warning">{{ task.get_priority_display }}</span>
+                                {% elif task.priority == 'MEDIUM' %}
+                                    <span class="badge badge-phoenix fs-10 badge-phoenix-info">{{ task.get_priority_display }}</span>
+                                {% else %}
+                                    <span class="badge badge-phoenix fs-10 badge-phoenix-secondary">{{ task.get_priority_display }}</span>
+                                {% endif %}
+                                
+                                {% if task.status == 'COMPLETED' %}
+                                    <span class="badge badge-phoenix fs-10 badge-phoenix-success ms-2">{{ task.get_status_display }}</span>
+                                {% elif task.status == 'IN_PROGRESS' %}
+                                    <span class="badge badge-phoenix fs-10 badge-phoenix-warning ms-2">{{ task.get_status_display }}</span>
+                                {% elif task.status == 'REVIEW' %}
+                                    <span class="badge badge-phoenix fs-10 badge-phoenix-info ms-2">{{ task.get_status_display }}</span>
+                                {% elif task.status == 'CANCELLED' %}
+                                    <span class="badge badge-phoenix fs-10 badge-phoenix-danger ms-2">{{ task.get_status_display }}</span>
+                                {% else %}
+                                    <span class="badge badge-phoenix fs-10 badge-phoenix-secondary ms-2">{{ task.get_status_display }}</span>
+                                {% endif %}
+                                
+                                {% if task.is_overdue %}
+                                    <span class="badge badge-phoenix fs-10 badge-phoenix-danger ms-2">Overdue</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Task Details -->
+                    <div class="col-lg-8">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="mb-0">Task Details</h5>
+                            </div>
+                            <div class="card-body">
+                                {% if task.description %}
+                                    <div class="mb-4">
+                                        <h6 class="fw-bold mb-2">Description</h6>
+                                        <p class="mb-0">{{ task.description|linebreaks }}</p>
+                                    </div>
+                                {% endif %}
+                                
+                                <div class="row g-3">
+                                    <div class="col-sm-6">
+                                        <h6 class="fw-bold mb-2">Due Date</h6>
+                                        <p class="mb-0">
+                                            {% if task.due_date %}
+                                                {{ task.due_date|date:"F d, Y H:i" }}
+                                            {% else %}
+                                                <span class="text-body-secondary">Not set</span>
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h6 class="fw-bold mb-2">Created</h6>
+                                        <p class="mb-0">{{ task.created_at|date:"F d, Y H:i" }}</p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h6 class="fw-bold mb-2">Last Updated</h6>
+                                        <p class="mb-0">{{ task.updated_at|date:"F d, Y H:i" }}</p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h6 class="fw-bold mb-2">Created By</h6>
+                                        <p class="mb-0">
+                                            {% if task.created_by %}
+                                                {{ task.created_by.user.username }}
+                                            {% else %}
+                                                <span class="text-body-secondary">Unknown</span>
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                {% if task.files %}
+                                    <div class="mt-4">
+                                        <h6 class="fw-bold mb-2">Attachments</h6>
+                                        <a href="{{ task.files.url }}" class="btn btn-sm btn-phoenix-primary" target="_blank">
+                                            <i class="fas fa-download me-2"></i>Download File
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Progress -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="mb-0">Progress</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="fw-bold">Task Progress</span>
+                                        <span class="text-body-secondary">{{ task.progress_percentage }}%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-success" style="width: {{ task.progress_percentage }}%" role="progressbar"
+                                             aria-valuenow="{{ task.progress_percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-3">
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-success bg-opacity-10 rounded-3 p-2 me-3">
+                                                <i class="fas fa-check text-success"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0">Completed</h6>
+                                                <p class="text-body-secondary mb-0">Task is finished</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-warning bg-opacity-10 rounded-3 p-2 me-3">
+                                                <i class="fas fa-clock text-warning"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0">In Progress</h6>
+                                                <p class="text-body-secondary mb-0">Work is ongoing</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        <!-- Assignees -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="mb-0">Assigned Users</h5>
+                            </div>
+                            <div class="card-body">
+                                {% if assignments %}
+                                    <div class="list-group list-group-flush">
+                                        {% for assignment in assignments %}
+                                            <div class="list-group-item px-0">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar avatar-xl me-3">
+                                                        <div class="avatar-name rounded-circle bg-primary">
+                                                            <span class="fs-0 text-white">{{ assignment.user.user.username|first|upper }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-1">
+                                                        <h6 class="mb-0">{{ assignment.user.user.username }}</h6>
+                                                        <p class="text-body-secondary mb-0">Assigned {{ assignment.assigned_at|timesince }} ago</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    <p class="text-body-secondary mb-0">No users assigned to this task.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Issues -->
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Issues</h5>
+                                <span class="badge badge-phoenix fs-10 badge-phoenix-secondary">{{ issues.count }}</span>
+                            </div>
+                            <div class="card-body">
+                                {% if issues %}
+                                    <div class="list-group list-group-flush">
+                                        {% for issue in issues %}
+                                            <div class="list-group-item px-0">
+                                                <div class="d-flex align-items-start">
+                                                    <div class="avatar avatar-sm me-3">
+                                                        <div class="avatar-name rounded-circle bg-warning">
+                                                            <span class="fs-0 text-white">{{ issue.found_by.user.username|first|upper }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-1">
+                                                        <h6 class="mb-1">{{ issue.get_category_display }}</h6>
+                                                        <p class="text-body-secondary mb-1">{{ issue.description|truncatewords:10 }}</p>
+                                                        <small class="text-body-secondary">Found {{ issue.found_at|timesince }} ago</small>
+                                                    </div>
+                                                    {% if issue.solved %}
+                                                        <span class="badge badge-phoenix fs-10 badge-phoenix-success">Solved</span>
+                                                    {% else %}
+                                                        <span class="badge badge-phoenix fs-10 badge-phoenix-warning">Open</span>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    <p class="text-body-secondary mb-0">No issues reported for this task.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock contents %}
+</main>
+</body> 

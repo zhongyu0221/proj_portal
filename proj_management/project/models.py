@@ -33,22 +33,58 @@ class Project(models.Model):
 
 
 class Task(models.Model):
+    PRIORITY_CHOICES = [
+        ('LOW', 'Low'),
+        ('MEDIUM', 'Medium'),
+        ('HIGH', 'High'),
+        ('URGENT', 'Urgent'),
+    ]
+    
+    STATUS_CHOICES = [
+        ('TODO', 'To Do'),
+        ('IN_PROGRESS', 'In Progress'),
+        ('REVIEW', 'Review'),
+        ('COMPLETED', 'Completed'),
+        ('CANCELLED', 'Cancelled'),
+    ]
+    
     project = models.ForeignKey(Project, related_name='tasks', on_delete=models.CASCADE)
-    short_description = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)
     description = models.TextField(blank=True, null=True)
+    priority = models.CharField(max_length=10, choices=PRIORITY_CHOICES, default='MEDIUM')
+    status = models.CharField(max_length=15, choices=STATUS_CHOICES, default='TODO')
     files = models.FileField(upload_to='task_files/', blank=True, null=True)
     due_date = models.DateTimeField(blank=True, null=True)
     completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    created_by = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='created_tasks')
+    
     def __str__(self):
-        return self.short_description
+        return f"{self.title} - {self.project.title}"
+    
+    @property
+    def is_overdue(self):
+        if self.due_date and not self.completed:
+            return timezone.now() > self.due_date
+        return False
+    
+    @property
+    def progress_percentage(self):
+        if self.status == 'COMPLETED':
+            return 100
+        elif self.status == 'REVIEW':
+            return 75
+        elif self.status == 'IN_PROGRESS':
+            return 50
+        elif self.status == 'TODO':
+            return 0
+        return 0
 
     class Meta:
         verbose_name = 'Task'
         verbose_name_plural = 'Tasks'
-        ordering = ['due_date']
+        ordering = ['-priority', 'due_date']
 
 
 class TaskAssignment(models.Model):

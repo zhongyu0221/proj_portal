@@ -101,9 +101,13 @@
                                 <div class="d-flex align-items-center">
                                     <h4 class="mb-2 line-clamp-1 lh-sm flex-1 me-5">{{ proj.title }}</h4>
                                     <div class="hover-actions top-0 end-0 mt-4 me-4">
-                                        <button class="btn btn-primary btn-icon flex-shrink-0" data-bs-toggle="modal"
-                                                data-bs-target="#projectsCardViewModal"><span
-                                                class="fa-solid fa-chevron-right"></span></button>
+                                        <a href="{% url 'projects:project_detail' proj.id %}" class="btn btn-primary btn-icon flex-shrink-0 me-1" title="View Details">
+                                            <span class="fa-solid fa-eye"></span>
+                                        </a>
+                                        <button class="btn btn-secondary btn-icon flex-shrink-0" data-bs-toggle="modal"
+                                                data-bs-target="#projectsCardViewModal" title="Quick View">
+                                            <span class="fa-solid fa-chevron-right"></span>
+                                        </button>
                                     </div>
                                 </div>
                                 <span class="badge badge-phoenix fs-10 mb-4 badge-phoenix-success">completed</span>

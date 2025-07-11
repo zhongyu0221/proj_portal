@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Django Debug",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/proj_management/manage.py",
+            "args": [
+                "runserver",
+                "127.0.0.1:8000"
+            ],
+            "django": true,
+            "cwd": "${workspaceFolder}/proj_management",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/proj_management"
+            },
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Django Shell",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/proj_management/manage.py",
+            "args": [
+                "shell"
+            ],
+            "django": true,
+            "cwd": "${workspaceFolder}/proj_management",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/proj_management"
+            },
+            "console": "integratedTerminal"
+        }
+    ]
+} 

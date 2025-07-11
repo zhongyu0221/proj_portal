@@ -1,0 +1,241 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+<body>
+
+<!-- ===============================================-->
+<!--    Main Content-->
+<!-- ===============================================-->
+<main class="main" id="top">
+
+    {% block contents %}
+
+        <div class="content">
+            <div class="mb-9">
+                <div id="taskSummary"
+                     data-list='{"valueNames":["taskName","project","priority","status","dueDate","assignees","progress","action"],"page":10,"pagination":true}'>
+                    <div class="row mb-4 gx-6 gy-3 align-items-center">
+                        <div class="col-auto">
+                            <h2 class="mb-0">Tasks List<span class="fw-normal text-body-tertiary ms-3">({{ tasks.count }})</span>
+                            </h2>
+                        </div>
+                        <div class="col-auto">
+                            <a class="btn btn-primary px-5" href="{% url 'projects:task_create_general' %}">
+                                <i class="fa-solid fa-plus me-2"></i>Add new task
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Filters -->
+                    <div class="row g-3 justify-content-between align-items-end mb-4">
+                        <div class="col-12 col-sm-auto">
+                            <form method="get" class="row g-2">
+                                <div class="col-auto">
+                                    <select name="project" class="form-select form-select-sm">
+                                        <option value="">All Projects</option>
+                                        {% for project in projects %}
+                                            <option value="{{ project.id }}" {% if request.GET.project == project.id|stringformat:"s" %}selected{% endif %}>
+                                                {{ project.title }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-auto">
+                                    <select name="status" class="form-select form-select-sm">
+                                        <option value="">All Status</option>
+                                        {% for value, label in status_choices %}
+                                            <option value="{{ value }}" {% if request.GET.status == value %}selected{% endif %}>
+                                                {{ label }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-auto">
+                                    <select name="priority" class="form-select form-select-sm">
+                                        <option value="">All Priorities</option>
+                                        {% for value, label in priority_choices %}
+                                            <option value="{{ value }}" {% if request.GET.priority == value %}selected{% endif %}>
+                                                {{ label }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-phoenix-primary btn-sm">Filter</button>
+                                    <a href="{% url 'projects:task_list' %}" class="btn btn-phoenix-secondary btn-sm">Clear</a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-12 col-sm-auto">
+                            <div class="d-flex align-items-center">
+                                <div class="search-box me-3">
+                                    <form class="position-relative">
+                                        <input class="form-control search-input search" type="search"
+                                               placeholder="Search tasks" aria-label="Search"/>
+                                        <span class="fas fa-search search-box-icon"></span>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="table-responsive scrollbar">
+                        <table class="table fs-9 mb-0 border-top border-translucent">
+                            <thead>
+                            <tr>
+                                <th class="sort white-space-nowrap align-middle ps-0" scope="col"
+                                    data-sort="taskName" style="width:25%;">TASK NAME
+                                </th>
+                                <th class="sort align-middle ps-3" scope="col" data-sort="project" style="width:15%;">
+                                    PROJECT
+                                </th>
+                                <th class="sort align-middle ps-3" scope="col" data-sort="priority" style="width:10%;">
+                                    PRIORITY
+                                </th>
+                                <th class="sort align-middle ps-3" scope="col" data-sort="status" style="width:12%;">
+                                    STATUS
+                                </th>
+                                <th class="sort align-middle ps-3" scope="col" data-sort="dueDate" style="width:12%;">
+                                    DUE DATE
+                                </th>
+                                <th class="sort align-middle ps-3" scope="col" data-sort="assignees" style="width:10%;">
+                                    ASSIGNEES
+                                </th>
+                                <th class="sort align-middle ps-3" scope="col" data-sort="progress" style="width:8%;">
+                                    PROGRESS
+                                </th>
+                                <th class="sort align-middle text-end" scope="col" style="width:8%;">ACTIONS
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody class="list" id="task-list-table-body">
+                            {% for task in tasks %}
+                                <tr class="position-static">
+                                    <td class="align-middle time white-space-nowrap ps-0 taskName py-4">
+                                        <a class="fw-bold fs-8" href="{% url 'projects:task_detail' task.pk %}">
+                                            {{ task.title }}
+                                        </a>
+                                        {% if task.is_overdue %}
+                                            <span class="badge badge-phoenix fs-10 badge-phoenix-danger ms-2">Overdue</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="align-middle white-space-nowrap project ps-3 py-4">
+                                        <p class="mb-0 fs-9 text-body">{{ task.project.title }}</p>
+                                    </td>
+                                    <td class="align-middle white-space-nowrap priority ps-3 py-4">
+                                        {% if task.priority == 'URGENT' %}
+                                            <span class="badge badge-phoenix fs-10 badge-phoenix-danger">{{ task.get_priority_display }}</span>
+                                        {% elif task.priority == 'HIGH' %}
+                                            <span class="badge badge-phoenix fs-10 badge-phoenix-warning">{{ task.get_priority_display }}</span>
+                                        {% elif task.priority == 'MEDIUM' %}
+                                            <span class="badge badge-phoenix fs-10 badge-phoenix-info">{{ task.get_priority_display }}</span>
+                                        {% else %}
+                                            <span class="badge badge-phoenix fs-10 badge-phoenix-secondary">{{ task.get_priority_display }}</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="align-middle white-space-nowrap status ps-3 py-4">
+                                        {% if task.status == 'COMPLETED' %}
+                                            <span class="badge badge-phoenix fs-10 badge-phoenix-success">{{ task.get_status_display }}</span>
+                                        {% elif task.status == 'IN_PROGRESS' %}
+                                            <span class="badge badge-phoenix fs-10 badge-phoenix-warning">{{ task.get_status_display }}</span>
+                                        {% elif task.status == 'REVIEW' %}
+                                            <span class="badge badge-phoenix fs-10 badge-phoenix-info">{{ task.get_status_display }}</span>
+                                        {% elif task.status == 'CANCELLED' %}
+                                            <span class="badge badge-phoenix fs-10 badge-phoenix-danger">{{ task.get_status_display }}</span>
+                                        {% else %}
+                                            <span class="badge badge-phoenix fs-10 badge-phoenix-secondary">{{ task.get_status_display }}</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="align-middle white-space-nowrap dueDate ps-3 py-4">
+                                        <p class="mb-0 fs-9 text-body">
+                                            {% if task.due_date %}
+                                                {{ task.due_date|date:"M d, Y" }}
+                                            {% else %}
+                                                -
+                                            {% endif %}
+                                        </p>
+                                    </td>
+                                    <td class="align-middle white-space-nowrap assignees ps-3 py-4">
+                                        <p class="mb-0 fs-9 text-body">
+                                            {% for assignment in task.taskassignment_set.all %}
+                                                {{ assignment.user.user.username }}{% if not forloop.last %}, {% endif %}
+                                            {% empty %}
+                                                -
+                                            {% endfor %}
+                                        </p>
+                                    </td>
+                                    <td class="align-middle white-space-nowrap ps-3 progress">
+                                        <div class="progress" style="height:3px;">
+                                            <div class="progress-bar bg-success" style="width: {{ task.progress_percentage }}%" role="progressbar"
+                                                 aria-valuenow="{{ task.progress_percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <p class="text-body-secondary fs-10 mb-0">{{ task.progress_percentage }}%</p>
+                                    </td>
+                                    <td class="align-middle white-space-nowrap text-end">
+                                        <div class="dropdown font-sans-serif position-static">
+                                            <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="fas fa-ellipsis-h fs-10"></span>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-end border py-2">
+                                                <a class="dropdown-item" href="{% url 'projects:task_detail' task.pk %}">View</a>
+                                                <a class="dropdown-item" href="{% url 'projects:task_update' task.pk %}">Edit</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item text-danger" href="{% url 'projects:task_delete' task.pk %}">Delete</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td colspan="8" class="text-center py-4">
+                                        <p class="text-body-secondary mb-0">No tasks found.</p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    {% if is_paginated %}
+                    <div class="d-flex flex-wrap align-items-center justify-content-between py-3 pe-0 fs-9 border-bottom border-translucent">
+                        <div class="d-flex">
+                            <p class="mb-0 d-none d-sm-block me-3 fw-semibold text-body">
+                                Showing {{ page_obj.start_index }} to {{ page_obj.end_index }} of {{ page_obj.paginator.count }} tasks
+                            </p>
+                        </div>
+                        <div class="d-flex">
+                            {% if page_obj.has_previous %}
+                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">
+                                    <span class="fas fa-chevron-left"></span>
+                                </a>
+                            {% endif %}
+                            
+                            <ul class="mb-0 pagination">
+                                {% for num in page_obj.paginator.page_range %}
+                                    {% if page_obj.number == num %}
+                                        <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ num }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">{{ num }}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            
+                            {% if page_obj.has_next %}
+                                <a class="page-link pe-0" href="?page={{ page_obj.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">
+                                    <span class="fas fa-chevron-right"></span>
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    {% endblock contents %}
+</main>
+</body> 

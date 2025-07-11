@@ -6,15 +6,18 @@ from project.views import *
 app_name = 'projects'
 
 urlpatterns = [
-   path('project/create/', ProjectCreateView.as_view(), name='project_create'),
+    # Project URLs
+    path('project/create/', ProjectCreateView.as_view(), name='project_create'),
+    path('project/<int:pk>/', ProjectDetailView.as_view(), name='project_detail'),
     path('project/<int:pk>/update/', ProjectUpdateView.as_view(), name='project_update'),
     path('project/project_list/', ProjectListView.as_view(), name='project_list'),
     path('project/project_card/', ProjectCardView.as_view(), name='project_card'),
 
-    path('<int:project_id>/task/create/', TaskCreateView.as_view(), name='task_create'),
-
-
-    path('task/create/', TaskCreateView.as_view(), name='task_create'),
+    # Task URLs
+    path('task/list/', TaskListView.as_view(), name='task_list'),
+    path('task/<int:pk>/', TaskDetailView.as_view(), name='task_detail'),
     path('task/<int:pk>/update/', TaskUpdateView.as_view(), name='task_update'),
-
-    ]
+    path('task/<int:pk>/delete/', TaskDeleteView.as_view(), name='task_delete'),
+    path('<int:project_id>/task/create/', TaskCreateView.as_view(), name='task_create'),
+    path('task/create/', TaskCreateView.as_view(), name='task_create_general'),
+]

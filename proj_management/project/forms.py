@@ -20,14 +20,20 @@ class TaskForm(forms.ModelForm):
         label="Assign Users"
     )
 
-
     class Meta:
         model = Task
-        fields = "__all__"
+        fields = ['project', 'title', 'description', 'priority', 'status', 'files', 'due_date', 'completed']
+        widgets = {
+            'due_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+        }
 
     def __init__(self, *args, **kwargs):
         super(TaskForm, self).__init__(*args, **kwargs)
-        self.fields['short_description'].required = True
+        self.fields['title'].required = True
+        # 设置默认值
+        if not self.instance.pk:  # 新建任务时
+            self.fields['status'].initial = 'TODO'
+            self.fields['priority'].initial = 'MEDIUM'
 
 
 class TaskAssignmentForm(forms.ModelForm):

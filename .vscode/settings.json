@@ -1,0 +1,17 @@
+{
+    "python.defaultInterpreterPath": "./proj/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": ["--line-length", "88"],
+    "files.associations": {
+        "*.html": "django-html"
+    },
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "python.analysis.extraPaths": [
+        "./proj_management"
+    ]
+} 

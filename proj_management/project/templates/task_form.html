@@ -2,113 +2,242 @@
 {% load static %}
 {% load widget_tweaks %}
 
-<body>
-
-<!-- ===============================================-->
-<!--    Main Content-->
-<!-- ===============================================-->
-<main class="main" id="top">
-
-
-    {% block contents %}
-
-
-
-        <div class="content">
-            <h2 class="mb-4">Add a task to project {{ project }}</h2>
-            {% if messages %}
-                <div>
-                    {% for message in messages %}
-                        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-            <div class="row">
-                <div class="col-xl-9">
-                    <form method="post" enctype="multipart/form-data" class="row g-3 mb-6">
-                        {% csrf_token %}
-                        <div class="col-sm-6 col-md-8">
-                            <div class="form-floating">
-                                {{ form.project|add_class:"form-select" }}
-                                <label for="{{ form.project.id_for_label }}">Project</label>
-                                {{ form.project.errors }}
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-8">
-                            <div class="form-floating">
-                                {{ form.short_description|add_class:"form-control" }}
-                                <label for="{{ form.short_description.id_for_label }}">Short Description</label>
-                                {{ form.short_description.errors }}
-                            </div>
-                        </div>
-                        <div class="col-12 gy-6">
-                            <div class="form-floating">
-                                {{ form.description|add_class:"form-control" }}
-                                <label for="{{ form.description.id_for_label }}">Description</label>
-                                {{ form.description.errors }}
-                            </div>
-                        </div>
-                        <div class="col-12 gy-6">
-                            <div class="form-floating">
-                                {{ form.files|add_class:"form-control" }}
-                                <label for="{{ form.files.id_for_label }}">Attach File</label>
-                                {{ form.files.errors }}
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="form-floating">
-                                {{ form.due_date|add_class:"form-control datetimepicker" }}
-                                <label for="{{ form.due_date.id_for_label }}">Due Date</label>
-                                {{ form.due_date.errors }}
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="form-check mt-4">
-                                {{ form.completed|add_class:"form-check-input" }}
-                                <label class="form-check-label"
-                                       for="{{ form.completed.id_for_label }}">Completed</label>
-                                {{ form.completed.errors }}
-                            </div>
-                        </div>
-
-<h4>Assign task to project </h4>
-<div class="col-12 gy-6">
-    <div class="row">
-        {% for checkbox in form.assigned_users %}
-            <div class="col-md-3">
-                <div class="form-check">
-                    {{ checkbox.tag }}
-                    <label class="form-check-label" for="{{ checkbox.id_for_label }}">
-                        {{ checkbox.choice_label }}
-                    </label>
-                </div>
-            </div>
-            {% if forloop.counter|divisibleby:4 %}
-                </div><div class="row">
-            {% endif %}
-        {% endfor %}
+{% block contents %}
+<div class="content">
+    <!-- Page Header -->
+    <div class="row mb-4">
+        <div class="col-auto">
+            <h2 class="mb-0">{% if object %}Edit Task{% else %}Create New Task{% endif %}</h2>
+            <p class="text-body-secondary mb-1">
+                {% if object %}
+                    Editing task for project: {{ object.project.title }}
+                {% else %}
+                    Adding task to project: {{ project.title }}
+                {% endif %}
+            </p>
+        </div>
+        <div class="col-auto ms-auto">
+            <a href="{% url 'projects:project_detail' project.id %}" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left me-2"></i>Back to Project
+            </a>
+        </div>
     </div>
-    {{ form.assigned_users.errors }}
-</div>
 
-                        <div class="col-12 gy-6">
-                            <div class="row g-3 justify-content-end">
-                                <div class="col-auto">
-                                    <button class="btn btn-phoenix-primary px-5" type="button">Cancel</button>
+    <!-- Messages -->
+    {% if messages %}
+        <div class="mb-4">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- Form Card -->
+    <div class="row">
+        <div class="col-xl-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Task Information</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        <!-- Basic Information -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    {{ form.title|add_class:"form-control" }}
+                                    <label for="{{ form.title.id_for_label }}">Task Title <span class="text-danger">*</span></label>
+                                    {% if form.title.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.title.errors }}
+                                        </div>
+                                    {% endif %}
                                 </div>
-                                <div class="col-auto">
-                                    <button type="submit" class="btn btn-primary px-5 px-sm-15">Create Task</button>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    {{ form.description|add_class:"form-control" }}
+                                    <label for="{{ form.description.id_for_label }}">Description</label>
+                                    {% if form.description.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.description.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Selection (Hidden if creating from project) -->
+                        {% if not project %}
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    {{ form.project|add_class:"form-select" }}
+                                    <label for="{{ form.project.id_for_label }}">Project <span class="text-danger">*</span></label>
+                                    {% if form.project.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.project.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Task Details -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ form.priority|add_class:"form-select" }}
+                                    <label for="{{ form.priority.id_for_label }}">Priority</label>
+                                    {% if form.priority.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.priority.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ form.status|add_class:"form-select" }}
+                                    <label for="{{ form.status.id_for_label }}">Status</label>
+                                    {% if form.status.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.status.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ form.due_date|add_class:"form-control" }}
+                                    <label for="{{ form.due_date.id_for_label }}">Due Date</label>
+                                    {% if form.due_date.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.due_date.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {{ form.files|add_class:"form-control" }}
+                                    <label for="{{ form.files.id_for_label }}">Attach Files</label>
+                                    {% if form.files.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.files.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Completion Status -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
+                                <div class="form-check">
+                                    {{ form.completed|add_class:"form-check-input" }}
+                                    <label class="form-check-label" for="{{ form.completed.id_for_label }}">
+                                        Mark as completed
+                                    </label>
+                                    {% if form.completed.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {{ form.completed.errors }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Assignees Section -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
+                                <h6 class="text-body-secondary mb-3">Assign Task to Team Members</h6>
+                                <div class="row g-3">
+                                    {% for checkbox in form.assigned_users %}
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="form-check">
+                                                {{ checkbox.tag|add_class:"form-check-input" }}
+                                                <label class="form-check-label" for="{{ checkbox.id_for_label }}">
+                                                    {{ checkbox.choice_label }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                {% if form.assigned_users.errors %}
+                                    <div class="invalid-feedback d-block mt-2">
+                                        {{ form.assigned_users.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="d-flex justify-content-end gap-2">
+                                    <a href="{% url 'projects:project_detail' project.id %}" class="btn btn-outline-secondary px-4">
+                                        Cancel
+                                    </a>
+                                    <button type="submit" class="btn btn-primary px-4">
+                                        {% if object %}Update Task{% else %}Create Task{% endif %}
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-
-
         </div>
 
-
-        </main>
-
-    {% endblock contents %}
+        <!-- Sidebar -->
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Task Guidelines</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h6 class="text-body-secondary mb-2">Priority Levels</h6>
+                        <div class="d-flex flex-column gap-1">
+                            <span class="badge badge-phoenix badge-phoenix-danger fs-10">High - Urgent tasks</span>
+                            <span class="badge badge-phoenix badge-phoenix-warning fs-10">Medium - Important tasks</span>
+                            <span class="badge badge-phoenix badge-phoenix-info fs-10">Low - Regular tasks</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <h6 class="text-body-secondary mb-2">Status Options</h6>
+                        <div class="d-flex flex-column gap-1">
+                            <span class="badge badge-phoenix badge-phoenix-secondary fs-10">Not Started</span>
+                            <span class="badge badge-phoenix badge-phoenix-info fs-10">In Progress</span>
+                            <span class="badge badge-phoenix badge-phoenix-warning fs-10">Review</span>
+                            <span class="badge badge-phoenix badge-phoenix-success fs-10">Completed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <h6 class="text-body-secondary mb-2">Tips</h6>
+                        <ul class="list-unstyled mb-0 fs-9">
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Use clear, descriptive titles</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Set realistic due dates</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Assign appropriate team members</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Provide detailed descriptions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contents %}
