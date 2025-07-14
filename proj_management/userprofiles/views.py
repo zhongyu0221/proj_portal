@@ -128,6 +128,47 @@ class HomeView(TemplateView):
         context['deployment_projects'] = deployment_projects
         context['maintenance_projects'] = maintenance_projects
         context['other_projects'] = other_projects
+        
+        # Generate task status trend data for the chart
+        # Get the last 30 days of task status changes
+        from datetime import timedelta
+        end_date = timezone.now().date()
+        start_date = end_date - timedelta(days=30)
+        
+        # Generate dates for x-axis (last 30 days)
+        task_status_dates = []
+        task_status_trend = {
+            'dates': [],
+            'todo': [],
+            'in_progress': [],
+            'review': [],
+            'completed': [],
+            'cancelled': []
+        }
+        
+        current_date = start_date
+        while current_date <= end_date:
+            task_status_dates.append(current_date.strftime('%Y-%m-%d'))
+            
+            # Count tasks by status for this date
+            # For now, we'll use current counts, but in a real app you'd track status changes over time
+            todo_count = Task.objects.filter(status='TODO').count()
+            in_progress_count = Task.objects.filter(status='IN_PROGRESS').count()
+            review_count = Task.objects.filter(status='REVIEW').count()
+            completed_count = Task.objects.filter(status='COMPLETED').count()
+            cancelled_count = Task.objects.filter(status='CANCELLED').count()
+            
+            task_status_trend['todo'].append(todo_count)
+            task_status_trend['in_progress'].append(in_progress_count)
+            task_status_trend['review'].append(review_count)
+            task_status_trend['completed'].append(completed_count)
+            task_status_trend['cancelled'].append(cancelled_count)
+            
+            current_date += timedelta(days=1)
+        
+        task_status_trend['dates'] = task_status_dates
+        context['task_status_trend'] = task_status_trend
+        
         return context
 
 class UserLoginView(FormView):

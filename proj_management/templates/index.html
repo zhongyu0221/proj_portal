@@ -200,71 +200,16 @@
                     </div>
                 </div>
                 <div class="col-12 col-xl-6 col-xxl-5">
-                    <div class="card border h-100 w-100 overflow-hidden">
-                        <div class="card-header">
-                            <h3 class="mb-0">Project Status Trend</h3>
-                            <p class="text-body-tertiary mb-0">Past year quarterly status change</p>
-                        </div>
-                        <div class="card-body px-5 position-relative">
-                            <div id="project-status-line-chart" style="height:320px;width:100%"></div>
-                            <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-                            <script>
-                            document.addEventListener('DOMContentLoaded', function() {
-                                var chartDom = document.getElementById('project-status-line-chart');
-                                var myChart = echarts.init(chartDom);
-                                var option = {
-                                    tooltip: {
-                                        trigger: 'axis',
-                                        axisPointer: { type: 'line' },
-                                        formatter: function(params) {
-                                            var quarter = params[0].axisValue;
-                                            var lines = [quarter];
-                                            params.forEach(function(item) {
-                                                lines.push(item.marker + ' ' + item.seriesName + ': ' + item.data);
-                                            });
-                                            return lines.join('<br>');
-                                        }
-                                    },
-                                    legend: { data: ['Active', 'Completed', 'Overdue'] },
-                                    xAxis: {
-                                        type: 'category',
-                                        data: {{ project_status_trend.dates|safe }},
-                                        axisLabel: {
-                                            rotate: 0,
-                                            interval: 0,
-                                            formatter: function (value, idx) {
-                                                return value; // Show all quarter labels
-                                            }
-                                        }
-                                    },
-                                    yAxis: { type: 'value', minInterval: 1 },
-                                    series: [
-                                        {
-                                            name: 'Active',
-                                            type: 'line',
-                                            data: {{ project_status_trend.active|safe }},
-                                            smooth: true,
-                                            lineStyle: { color: '#0d6efd' }
-                                        },
-                                        {
-                                            name: 'Completed',
-                                            type: 'line',
-                                            data: {{ project_status_trend.completed|safe }},
-                                            smooth: true,
-                                            lineStyle: { color: '#198754' }
-                                        },
-                                        {
-                                            name: 'Overdue',
-                                            type: 'line',
-                                            data: {{ project_status_trend.overdue|safe }},
-                                            smooth: true,
-                                            lineStyle: { color: '#dc3545' }
-                                        }
-                                    ]
-                                };
-                                myChart.setOption(option);
-                            });
-                            </script>
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h3 class="card-title mb-3">Special Announcement</h3>
+                            <p class="text-body mb-2">Welcome to the Project Management Portal! 🚀</p>
+                            <p class="text-body-tertiary mb-2">Here you can manage your projects, tasks, and team members efficiently. Stay tuned for upcoming features and important updates.</p>
+                            <ul class="mb-0 text-body-secondary">
+                                <li>✨ New dashboard features coming soon</li>
+                                <li>🔔 Remember to check your tasks regularly</li>
+                                <li>💡 Contact the admin for support or feedback</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -311,15 +256,32 @@
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="position-relative mb-sm-4 mb-xl-0">
-                                    <div class="echart-issue-chart" style="min-height:390px;width:100%"></div>
+                                    <div class="echart-issue-chart" 
+                                         style="min-height:390px;width:100%"
+                                         data-task-status='{
+                                           "todo": {{ todo_tasks|default:0 }},
+                                           "in_progress": {{ in_progress_tasks|default:0 }},
+                                           "review": {{ review_tasks|default:0 }},
+                                           "completed": {{ completed_tasks|default:0 }},
+                                           "cancelled": {{ cancelled_tasks|default:0 }}
+                                         }'></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-xl-5 col-xxl-6">
-                        <h3>Project: eleven Progress</h3>
-                        <p class="text-body-tertiary mb-0 mb-xl-3">Deadline &amp; progress</p>
-                        <div class="echart-zero-burnout-chart" style="min-height:320px;width:100%"></div>
+                        <h3>Task Status Trend</h3>
+                        <p class="text-body-tertiary mb-0 mb-xl-3">Task status over time (last 30 days)</p>
+                        <div class="echart-zero-burnout-chart" 
+                             style="min-height:320px;width:100%"
+                             data-task-status-trend='{
+                               "dates": {{ task_status_trend.dates|safe }},
+                               "todo": {{ task_status_trend.todo|safe }},
+                               "in_progress": {{ task_status_trend.in_progress|safe }},
+                               "review": {{ task_status_trend.review|safe }},
+                               "completed": {{ task_status_trend.completed|safe }},
+                               "cancelled": {{ task_status_trend.cancelled|safe }}
+                             }'></div>
                     </div>
                 </div>
             </div>
