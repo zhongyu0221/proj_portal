@@ -35,7 +35,7 @@
                 <li class="breadcrumb-item active">Members</li>
             </ol>
         </nav>
-        <h2 class="text-bold text-body-emphasis mb-5">Members</h2>
+        <h2 class="text-bold text-body-emphasis mb-5">Members<span class="fw-normal text-body-tertiary ms-3">({{ total_members }})</span></h2>
         <div id="members"
              data-list='{"valueNames":["customer","email","mobile_number","city","last_active","joined"],"page":10,"pagination":true}'>
             <div class="row align-items-center justify-content-between g-3 mb-4">
@@ -126,19 +126,54 @@
                 </div>
                 <div class="row align-items-center justify-content-between py-2 pe-0 fs-9">
                     <div class="col-auto d-flex">
-                        <p class="mb-0 d-none d-sm-block me-3 fw-semibold text-body"
-                           data-list-info="data-list-info"></p><a class="fw-semibold" href="#!" data-list-view="*">View
-                        all<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a
-                            class="fw-semibold d-none" href="#!" data-list-view="less">View Less<span
-                            class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
+                        {% if view_all %}
+                            <p class="mb-0 d-none d-sm-block me-3 fw-semibold text-body">
+                                Showing {{ page_obj.start_index|default:1 }}-{{ page_obj.end_index|default:object_list|length }} of {{ total_members }} members
+                            </p>
+                        {% else %}
+                            <p class="mb-0 d-none d-sm-block me-3 fw-semibold text-body">
+                                Showing {{ object_list|length }} of {{ total_members }} members
+                            </p>
+                        {% endif %}
+                        {% if not view_all %}
+                            <a class="fw-semibold" href="?view_all=true">
+                                View all<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span>
+                            </a>
+                        {% else %}
+                            <a class="fw-semibold" href="?">
+                                View Less<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span>
+                            </a>
+                        {% endif %}
                     </div>
+                    {% if view_all and is_paginated %}
                     <div class="col-auto d-flex">
-                        <button class="page-link" data-list-pagination="prev"><span class="fas fa-chevron-left"></span>
-                        </button>
-                        <ul class="mb-0 pagination"></ul>
-                        <button class="page-link pe-0" data-list-pagination="next"><span
-                                class="fas fa-chevron-right"></span></button>
+                        {% if page_obj.has_previous %}
+                            <a class="page-link" href="?view_all=true&page={{ page_obj.previous_page_number }}">
+                                <span class="fas fa-chevron-left"></span>
+                            </a>
+                        {% endif %}
+                        
+                        <ul class="mb-0 pagination">
+                            {% for num in page_obj.paginator.page_range %}
+                                {% if page_obj.number == num %}
+                                    <li class="page-item active">
+                                        <span class="page-link">{{ num }}</span>
+                                    </li>
+                                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?view_all=true&page={{ num }}">{{ num }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                        
+                        {% if page_obj.has_next %}
+                            <a class="page-link pe-0" href="?view_all=true&page={{ page_obj.next_page_number }}">
+                                <span class="fas fa-chevron-right"></span>
+                            </a>
+                        {% endif %}
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

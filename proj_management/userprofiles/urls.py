@@ -5,8 +5,8 @@ app_name = 'userprofiles'
 urlpatterns = [
     path('usersignin/', UserLoginView.as_view(), name='userlogin'),
     path('usersignup/', UserSignupView.as_view(), name='usersignup'),
-
-
+    path('forgot-password/', CustomPasswordResetView.as_view(), name='forgot_password'),
+    path('reset/<uidb64>/<token>/', CustomPasswordResetConfirmView.as_view(), name='password_reset_confirm'),
 
     path('userprofile_list/', UserProfileListView.as_view(), name='userprofile_list'),
     path('member/create/', UserProfileCreateView.as_view(), name='member_create'),

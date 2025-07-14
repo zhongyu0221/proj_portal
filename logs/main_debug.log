@@ -3107,3 +3107,195 @@ INFO:django.server:[2025-07-11 18:39:48] basehttp.py:187:"GET /projects/project/
 INFO:django.server:[2025-07-11 18:39:49] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 155344
 INFO:django.utils.autoreload:[2025-07-11 18:39:57] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
 INFO:django.utils.autoreload:[2025-07-11 18:39:57] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 17:18:30] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-14 17:18:31] basehttp.py:187:"GET /home/ HTTP/1.1" 200 159808
+WARNING:django.server:[2025-07-14 17:18:31] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-14 17:18:31] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:18:32] basehttp.py:187:"GET /home/ HTTP/1.1" 200 159808
+WARNING:django.server:[2025-07-14 17:18:32] basehttp.py:187:"GET /assets/img/generic/40.png HTTP/1.1" 404 2701
+WARNING:django.server:[2025-07-14 17:18:32] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.utils.autoreload:[2025-07-14 17:19:17] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-14 17:19:18] basehttp.py:187:"GET /home/ HTTP/1.1" 200 80158
+WARNING:django.server:[2025-07-14 17:19:18] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.utils.autoreload:[2025-07-14 17:20:49] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 17:20:56] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-14 17:20:58] basehttp.py:187:"GET /home/ HTTP/1.1" 200 80158
+WARNING:django.server:[2025-07-14 17:20:58] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:21:40] basehttp.py:187:"GET /home/ HTTP/1.1" 200 80158
+WARNING:django.server:[2025-07-14 17:21:40] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:21:40] basehttp.py:187:"GET /home/ HTTP/1.1" 200 80158
+WARNING:django.server:[2025-07-14 17:21:40] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:21:41] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79578
+WARNING:django.server:[2025-07-14 17:21:41] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:21:41] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79578
+WARNING:django.server:[2025-07-14 17:21:41] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:21:42] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79578
+WARNING:django.server:[2025-07-14 17:21:42] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:21:43] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79578
+WARNING:django.server:[2025-07-14 17:21:43] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:23:34] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 17:23:34] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:23:35] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 17:23:35] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:23:36] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 17:23:36] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:23:54] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 17:23:54] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:23:55] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 17:23:55] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:23:56] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 17:23:56] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:23:56] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 17:23:56] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:23:58] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 17:23:58] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:55:33] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 17:55:33] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:55:34] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 17:55:34] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 17:55:39] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 67483
+INFO:django.server:[2025-07-14 17:55:40] basehttp.py:187:"GET /userprofiles/member/create/ HTTP/1.1" 200 46516
+INFO:django.server:[2025-07-14 17:56:46] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 46094
+INFO:django.server:[2025-07-14 17:56:48] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 17:56:48] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.utils.autoreload:[2025-07-14 17:57:35] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 17:57:35] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 17:57:46] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/forms.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 17:57:46] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 17:57:54] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/forms.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 17:57:54] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 17:59:18] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/mysite/settings.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 17:59:19] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-14 18:00:31] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 18:00:31] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 18:00:32] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 18:00:32] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 18:00:34] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 46094
+INFO:django.server:[2025-07-14 18:00:35] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 154369
+INFO:django.server:[2025-07-14 18:00:37] basehttp.py:187:"GET /projects/project/project_card/ HTTP/1.1" 200 611829
+WARNING:django.server:[2025-07-14 18:00:37] basehttp.py:187:"GET /projects/assets/img/generic/43.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-14 18:00:37] basehttp.py:187:"GET /projects/assets/img/team/60.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-14 18:00:37] basehttp.py:187:"GET /projects/assets/img/team/59.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-14 18:00:37] basehttp.py:187:"GET /projects/assets/img/team/34.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-14 18:00:37] basehttp.py:187:"GET /projects/assets/img/generic/42.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-14 18:00:37] basehttp.py:187:"GET /projects/assets/img/team/58.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-14 18:00:37] basehttp.py:187:"GET /projects/assets/img/generic/40.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-14 18:00:37] basehttp.py:187:"GET /projects/assets/img//team/30.webp HTTP/1.1" 404 4810
+WARNING:django.server:[2025-07-14 18:00:37] basehttp.py:187:"GET /projects/assets/img/products/60x60/3.png HTTP/1.1" 404 4831
+WARNING:django.server:[2025-07-14 18:00:37] basehttp.py:187:"GET /projects/assets/img/team/40x40/10.webp HTTP/1.1" 404 4825
+WARNING:django.server:[2025-07-14 18:00:37] basehttp.py:187:"GET /projects/assets/img/team/40x40/12.webp HTTP/1.1" 404 4825
+WARNING:django.server:[2025-07-14 18:00:37] basehttp.py:187:"GET /projects/assets/img/team/60.webp HTTP/1.1" 404 4807
+INFO:django.server:[2025-07-14 18:00:39] basehttp.py:187:"GET /projects/task/list/ HTTP/1.1" 200 148338
+INFO:django.server:[2025-07-14 18:00:40] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 67483
+INFO:django.server:[2025-07-14 18:00:41] basehttp.py:187:"GET /userprofiles/member/create/ HTTP/1.1" 200 48633
+INFO:django.server:[2025-07-14 18:00:53] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 18:00:53] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 18:01:07] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 67483
+INFO:django.server:[2025-07-14 18:01:08] basehttp.py:187:"GET /userprofiles/member/create/ HTTP/1.1" 200 48633
+INFO:django.server:[2025-07-14 18:01:28] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 18:01:28] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 18:01:46] basehttp.py:187:"GET / HTTP/1.1" 302 0
+INFO:django.server:[2025-07-14 18:01:46] basehttp.py:187:"GET /userprofiles/usersignin/ HTTP/1.1" 200 7393
+WARNING:django.server:[2025-07-14 18:01:49] basehttp.py:187:"GET /pages/authentication/simple/sign-up.html HTTP/1.1" 404 2746
+WARNING:django.server:[2025-07-14 18:02:29] basehttp.py:187:"GET /pages/authentication/simple/forgot-password.html HTTP/1.1" 404 2770
+INFO:django.utils.autoreload:[2025-07-14 18:03:29] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/forms.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 18:03:29] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 18:03:41] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 18:03:42] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 18:03:57] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 18:03:57] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 18:04:02] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 18:04:03] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 18:04:38] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/urls.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 18:04:39] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 18:04:43] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/urls.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 18:04:43] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 18:04:49] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 18:04:49] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 18:04:56] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 18:04:57] autoreload.py:677:Watching for file changes with StatReloader
+WARNING:django.server:[2025-07-14 18:06:19] basehttp.py:187:"GET /pages/authentication/simple/forgot-password.html HTTP/1.1" 404 2770
+INFO:django.server:[2025-07-14 18:06:21] basehttp.py:187:"GET /userprofiles/usersignin/ HTTP/1.1" 200 7151
+INFO:django.server:[2025-07-14 18:06:23] basehttp.py:187:"GET /userprofiles/forgot-password/ HTTP/1.1" 200 8785
+INFO:django.server:[2025-07-14 18:06:29] basehttp.py:187:"GET /userprofiles/usersignin/ HTTP/1.1" 200 7151
+INFO:django.server:[2025-07-14 18:06:31] basehttp.py:187:"GET /userprofiles/forgot-password/ HTTP/1.1" 200 8785
+INFO:django.server:[2025-07-14 18:06:48] basehttp.py:187:"GET /userprofiles/usersignin/ HTTP/1.1" 200 7151
+INFO:django.server:[2025-07-14 18:06:50] basehttp.py:187:"GET /userprofiles/usersignin/ HTTP/1.1" 200 7151
+INFO:django.server:[2025-07-14 18:06:56] basehttp.py:187:"GET /userprofiles/forgot-password/ HTTP/1.1" 200 8785
+INFO:django.server:[2025-07-14 18:07:02] basehttp.py:187:"GET /userprofiles/usersignin/ HTTP/1.1" 200 7151
+INFO:django.server:[2025-07-14 18:07:08] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 67483
+INFO:django.server:[2025-07-14 18:07:17] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 67483
+INFO:django.utils.autoreload:[2025-07-14 18:08:10] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 18:08:10] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 18:08:43] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 18:08:43] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 18:08:55] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 18:08:56] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-14 18:10:18] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 18:10:18] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-14 18:10:23] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 85336
+INFO:django.server:[2025-07-14 18:10:24] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 85336
+INFO:django.utils.autoreload:[2025-07-14 18:10:35] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 18:10:35] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-14 18:10:38] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 67483
+INFO:django.server:[2025-07-14 18:10:40] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 154369
+INFO:django.server:[2025-07-14 18:10:42] basehttp.py:187:"GET /projects/project/project_list/?&view_all=true HTTP/1.1" 200 421471
+INFO:django.server:[2025-07-14 18:10:46] basehttp.py:187:"GET /projects/task/list/ HTTP/1.1" 200 148338
+INFO:django.server:[2025-07-14 18:10:51] basehttp.py:187:"GET /projects/task/list/?page=2 HTTP/1.1" 200 148634
+INFO:django.server:[2025-07-14 18:10:53] basehttp.py:187:"GET /projects/task/list/?page=3 HTTP/1.1" 200 148538
+INFO:django.server:[2025-07-14 18:10:55] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 154369
+INFO:django.server:[2025-07-14 18:11:22] basehttp.py:187:"GET /projects/project/project_list/?&view_all=true HTTP/1.1" 200 421471
+INFO:django.server:[2025-07-14 18:11:28] basehttp.py:187:"GET /projects/project/project_list/?&view_all=true HTTP/1.1" 200 421471
+INFO:django.utils.autoreload:[2025-07-14 18:11:41] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-14 18:11:42] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-14 18:12:00] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 18:12:00] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 18:12:01] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 154369
+INFO:django.server:[2025-07-14 18:12:12] basehttp.py:187:"GET /projects/project/create/ HTTP/1.1" 200 46094
+INFO:django.server:[2025-07-14 18:12:19] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 67095
+INFO:django.server:[2025-07-14 18:12:21] basehttp.py:187:"GET /userprofiles/userprofile_list/?view_all=true HTTP/1.1" 200 67084
+INFO:django.server:[2025-07-14 18:12:22] basehttp.py:187:"GET /userprofiles/userprofile_list/? HTTP/1.1" 200 67095
+INFO:django.server:[2025-07-14 18:12:23] basehttp.py:187:"GET /userprofiles/userprofile_list/?view_all=true HTTP/1.1" 200 67084
+INFO:django.server:[2025-07-14 18:12:28] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 18:12:28] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-14 18:12:31] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 67095
+INFO:django.server:[2025-07-14 18:12:32] basehttp.py:187:"GET /userprofiles/member/create/ HTTP/1.1" 200 48633
+INFO:django.server:[2025-07-14 18:12:58] basehttp.py:187:"POST /userprofiles/member/create/ HTTP/1.1" 200 49350
+INFO:django.server:[2025-07-14 18:13:05] basehttp.py:187:"POST /userprofiles/member/create/ HTTP/1.1" 200 49346
+INFO:django.server:[2025-07-14 18:13:06] basehttp.py:187:"POST /userprofiles/member/create/ HTTP/1.1" 200 49346
+INFO:django.server:[2025-07-14 18:13:10] basehttp.py:187:"POST /userprofiles/member/create/ HTTP/1.1" 302 0
+INFO:django.server:[2025-07-14 18:13:10] basehttp.py:187:"GET /userprofiles/userprofile_list/ HTTP/1.1" 200 67091
+INFO:django.server:[2025-07-14 18:13:36] basehttp.py:187:"GET /userprofiles/userprofile_list/?view_all=true HTTP/1.1" 200 68175
+INFO:django.server:[2025-07-14 18:13:37] basehttp.py:187:"GET /userprofiles/userprofile_list/? HTTP/1.1" 200 67091
+INFO:django.server:[2025-07-14 18:13:38] basehttp.py:187:"GET /userprofiles/userprofile_list/?view_all=true HTTP/1.1" 200 68175
+INFO:django.server:[2025-07-14 18:13:39] basehttp.py:187:"GET /userprofiles/userprofile_list/? HTTP/1.1" 200 67091
+INFO:django.server:[2025-07-14 18:13:40] basehttp.py:187:"GET /userprofiles/userprofile_list/?view_all=true HTTP/1.1" 200 68175
+INFO:django.server:[2025-07-14 18:13:40] basehttp.py:187:"GET /userprofiles/userprofile_list/? HTTP/1.1" 200 67091
+INFO:django.server:[2025-07-14 18:13:42] basehttp.py:187:"GET /userprofiles/userprofile_list/? HTTP/1.1" 200 67091
+INFO:django.server:[2025-07-14 18:13:43] basehttp.py:187:"GET /userprofiles/userprofile_list/? HTTP/1.1" 200 67091
+INFO:django.server:[2025-07-14 18:13:44] basehttp.py:187:"GET /userprofiles/userprofile_list/? HTTP/1.1" 200 67091
+INFO:django.server:[2025-07-14 18:13:46] basehttp.py:187:"GET /userprofiles/userprofile_list/?view_all=true HTTP/1.1" 200 68175
+INFO:django.server:[2025-07-14 18:13:47] basehttp.py:187:"GET /userprofiles/userprofile_list/? HTTP/1.1" 200 67091
+INFO:django.server:[2025-07-14 18:13:47] basehttp.py:187:"GET /userprofiles/userprofile_list/?view_all=true HTTP/1.1" 200 68175
+INFO:django.server:[2025-07-14 18:13:48] basehttp.py:187:"GET /userprofiles/userprofile_list/? HTTP/1.1" 200 67091
+INFO:django.server:[2025-07-14 18:13:50] basehttp.py:187:"GET /userprofiles/userprofile_list/?view_all=true HTTP/1.1" 200 68175
+INFO:django.server:[2025-07-14 18:13:53] basehttp.py:187:"GET /userprofiles/userprofile_list/?view_all=true&page=2 HTTP/1.1" 200 46002
+INFO:django.server:[2025-07-14 18:13:55] basehttp.py:187:"GET /userprofiles/userprofile_list/?view_all=true&page=1 HTTP/1.1" 200 68175
+INFO:django.server:[2025-07-14 18:13:57] basehttp.py:187:"GET /projects/project/project_card/ HTTP/1.1" 200 611829
+WARNING:django.server:[2025-07-14 18:13:57] basehttp.py:187:"GET /projects/assets/img/team/60.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-14 18:13:57] basehttp.py:187:"GET /projects/assets/img/generic/43.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-14 18:13:57] basehttp.py:187:"GET /projects/assets/img/team/59.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-14 18:13:57] basehttp.py:187:"GET /projects/assets/img/team/34.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-14 18:13:57] basehttp.py:187:"GET /projects/assets/img/team/58.webp HTTP/1.1" 404 4807
+WARNING:django.server:[2025-07-14 18:13:57] basehttp.py:187:"GET /projects/assets/img/generic/42.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-14 18:13:57] basehttp.py:187:"GET /projects/assets/img//team/30.webp HTTP/1.1" 404 4810
+WARNING:django.server:[2025-07-14 18:13:57] basehttp.py:187:"GET /projects/assets/img/products/60x60/3.png HTTP/1.1" 404 4831
+WARNING:django.server:[2025-07-14 18:13:57] basehttp.py:187:"GET /projects/assets/img/generic/40.png HTTP/1.1" 404 4813
+WARNING:django.server:[2025-07-14 18:13:57] basehttp.py:187:"GET /projects/assets/img/team/40x40/12.webp HTTP/1.1" 404 4825
+WARNING:django.server:[2025-07-14 18:13:57] basehttp.py:187:"GET /projects/assets/img/team/40x40/10.webp HTTP/1.1" 404 4825
+WARNING:django.server:[2025-07-14 18:13:57] basehttp.py:187:"GET /projects/assets/img/team/60.webp HTTP/1.1" 404 4807
+INFO:django.server:[2025-07-14 18:13:58] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 154369
+INFO:django.server:[2025-07-14 18:14:00] basehttp.py:187:"GET /projects/project/project_list/?&view_all=true HTTP/1.1" 200 421471
+INFO:django.server:[2025-07-14 18:14:05] basehttp.py:187:"GET /projects/project/project_list/?&view_all=true HTTP/1.1" 200 421471
+INFO:django.server:[2025-07-14 18:14:06] basehttp.py:187:"GET /home/ HTTP/1.1" 200 79583
+WARNING:django.server:[2025-07-14 18:14:06] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710

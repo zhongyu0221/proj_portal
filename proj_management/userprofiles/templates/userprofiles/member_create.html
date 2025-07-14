@@ -56,6 +56,9 @@
                                 <div class="form-floating">
                                     {{ user_form.username|add_class:"form-control" }}
                                     <label for="{{ user_form.username.id_for_label }}">Username <span class="text-danger">*</span></label>
+                                    {% if user_form.username.help_text %}
+                                        <div class="form-text">{{ user_form.username.help_text }}</div>
+                                    {% endif %}
                                     {% if user_form.username.errors %}
                                         <div class="invalid-feedback d-block">
                                             {{ user_form.username.errors }}
@@ -68,6 +71,9 @@
                                 <div class="form-floating">
                                     {{ user_form.email|add_class:"form-control" }}
                                     <label for="{{ user_form.email.id_for_label }}">Email <span class="text-danger">*</span></label>
+                                    {% if user_form.email.help_text %}
+                                        <div class="form-text">{{ user_form.email.help_text }}</div>
+                                    {% endif %}
                                     {% if user_form.email.errors %}
                                         <div class="invalid-feedback d-block">
                                             {{ user_form.email.errors }}
@@ -80,6 +86,9 @@
                                 <div class="form-floating">
                                     {{ user_form.first_name|add_class:"form-control" }}
                                     <label for="{{ user_form.first_name.id_for_label }}">First Name</label>
+                                    {% if user_form.first_name.help_text %}
+                                        <div class="form-text">{{ user_form.first_name.help_text }}</div>
+                                    {% endif %}
                                     {% if user_form.first_name.errors %}
                                         <div class="invalid-feedback d-block">
                                             {{ user_form.first_name.errors }}
@@ -92,6 +101,9 @@
                                 <div class="form-floating">
                                     {{ user_form.last_name|add_class:"form-control" }}
                                     <label for="{{ user_form.last_name.id_for_label }}">Last Name</label>
+                                    {% if user_form.last_name.help_text %}
+                                        <div class="form-text">{{ user_form.last_name.help_text }}</div>
+                                    {% endif %}
                                     {% if user_form.last_name.errors %}
                                         <div class="invalid-feedback d-block">
                                             {{ user_form.last_name.errors }}
@@ -176,8 +188,8 @@
                         <ul class="list-unstyled mb-0 fs-9">
                             <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Username must be unique</li>
                             <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Valid email required</li>
-                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Password will be sent via email</li>
-                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Member can set password via link</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>No password needed initially</li>
+                            <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Member sets password via email link</li>
                         </ul>
                     </div>
                     
@@ -195,8 +207,18 @@
                         <h6 class="text-body-secondary mb-2">Security Notes</h6>
                         <div class="alert alert-info fs-9 mb-0">
                             <i class="fas fa-info-circle me-2"></i>
-                            A password reset email will be automatically sent to the new member's email address.
+                            A welcome email with password setup link will be sent automatically. The link expires in 24 hours.
                         </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <h6 class="text-body-secondary mb-2">Workflow</h6>
+                        <ol class="list-unstyled mb-0 fs-9">
+                            <li class="mb-1"><span class="badge bg-primary me-2">1</span>Admin creates member account</li>
+                            <li class="mb-1"><span class="badge bg-primary me-2">2</span>Member receives welcome email</li>
+                            <li class="mb-1"><span class="badge bg-primary me-2">3</span>Member clicks link to set password</li>
+                            <li class="mb-1"><span class="badge bg-primary me-2">4</span>Member can now log in</li>
+                        </ol>
                     </div>
                 </div>
             </div>
