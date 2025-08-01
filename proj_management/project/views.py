@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import Http404
+from django.http import Http404, JsonResponse
 from common.views import AjaxCreateView, AjaxUpdateView
 from django.contrib import messages
 from django.urls import reverse_lazy
@@ -7,6 +7,9 @@ from django.utils import timezone
 from .models import *
 from .forms import *
 from django.db.models import Count, Q
+from django.views.decorators.http import require_POST
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
 
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView, DetailView
 
@@ -30,11 +33,41 @@ class ProjectUpdateView(AjaxUpdateView):
     template_name = 'project_create.html'
     
     def get_success_url(self):
-        return reverse_lazy('projects:project_detail', kwargs={'pk': self.object.id})
+        # Check if changes were made and add them to URL parameters
+        changes_made = []
+        for field in ['title', 'description', 'project_category', 'client_name', 'deadline', 'budget', 'files']:
+            if field in self.form.changed_data:
+                changes_made.append(field)
+        
+        if changes_made:
+            return reverse_lazy('projects:project_detail', kwargs={'pk': self.object.id}) + f'?updated=true&changes={",".join(changes_made)}'
+        else:
+            return reverse_lazy('projects:project_detail', kwargs={'pk': self.object.id}) + '?updated=true'
     
     def form_valid(self, form):
+        # Store old values for comparison
+        old_title = self.object.title if self.object.pk else None
+        old_description = self.object.description if self.object.pk else None
+        
         response = super().form_valid(form)
-        messages.success(self.request, f'Project "{self.object.title}" updated successfully.')
+        
+        # Check if significant changes were made
+        changes_made = []
+        if old_title and old_title != self.object.title:
+            changes_made.append('title')
+        if old_description and old_description != self.object.description:
+            changes_made.append('description')
+        
+        # Add other field changes
+        for field in ['project_category', 'client_name', 'deadline', 'budget', 'files']:
+            if field in form.changed_data:
+                changes_made.append(field)
+        
+        if changes_made:
+            messages.success(self.request, f'Project "{self.object.title}" updated successfully. Changes made: {", ".join(changes_made)}.')
+        else:
+            messages.info(self.request, f'Project "{self.object.title}" saved (no changes detected).')
+        
         return response
 
 class ProjectListView(ListView):
@@ -109,9 +142,9 @@ class ProjectListView(ListView):
         
         # Count projects by status (using the full queryset, not the paginated one)
         all_projects = Project.objects.all()
-        ongoing_projects = all_projects.filter(deadline__gte=timezone.now()).count()
-        completed_projects = all_projects.filter(deadline__lt=timezone.now()).count()
-        overdue_projects = all_projects.filter(deadline__lt=timezone.now()).count()
+        ongoing_projects = all_projects.filter(completed=False, deadline__gte=timezone.now()).count()
+        completed_projects = all_projects.filter(completed=True).count()
+        overdue_projects = all_projects.filter(completed=False, deadline__lt=timezone.now()).count()
         
         # Get current filters
         current_status = self.request.GET.get('status', 'all')
@@ -163,6 +196,9 @@ class ProjectDetailView(DetailView):
         context['open_tasks'] = open_tasks
         context['completion_percentage'] = completion_percentage
         context['now'] = timezone.now()
+        context['project_completed'] = project.completed
+        context['pending_tasks_count'] = project.pending_tasks_count
+        context['has_pending_tasks'] = project.has_pending_tasks
         return context
 
 
@@ -280,3 +316,81 @@ class TaskDeleteView(DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.success(request, f'Task "{self.get_object()}" deleted successfully.')
         return super().delete(request, *args, **kwargs)
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class TaskCompleteView(UpdateView):
+    model = Task
+    http_method_names = ['post']
+    
+    def post(self, request, *args, **kwargs):
+        task = self.get_object()
+        project = task.project
+        
+        # Toggle completion status
+        task.completed = not task.completed
+        if task.completed:
+            task.status = 'COMPLETED'
+        else:
+            task.status = 'TODO'
+        task.save()
+        
+        # Recalculate project progress
+        total_tasks = project.tasks.count()
+        completed_tasks = project.tasks.filter(completed=True).count()
+        open_tasks = project.tasks.filter(completed=False).count()
+        
+        completion_percentage = 0
+        if total_tasks > 0:
+            completion_percentage = (completed_tasks / total_tasks) * 100
+        
+        return JsonResponse({
+            'success': True,
+            'task_completed': task.completed,
+            'task_status': task.get_status_display(),
+            'task_title': task.title,
+            'task_id': task.id,
+            'activity_timestamp': timezone.now().strftime('%b %d, %Y'),
+            'project_stats': {
+                'total_tasks': total_tasks,
+                'completed_tasks': completed_tasks,
+                'open_tasks': open_tasks,
+                'completion_percentage': round(completion_percentage, 1)
+            }
+        })
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class ProjectCompleteView(UpdateView):
+    model = Project
+    http_method_names = ['post']
+    
+    def post(self, request, *args, **kwargs):
+        project = self.get_object()
+        
+        # Toggle completion status
+        project.completed = not project.completed
+        if project.completed:
+            project.completed_at = timezone.now()
+        else:
+            project.completed_at = None
+        project.save()
+        
+        # Get project stats
+        total_tasks = project.tasks.count()
+        completed_tasks = project.tasks.filter(completed=True).count()
+        pending_tasks = project.tasks.filter(completed=False).count()
+        
+        return JsonResponse({
+            'success': True,
+            'project_completed': project.completed,
+            'project_status': project.completion_status,
+            'project_title': project.title,
+            'activity_timestamp': timezone.now().strftime('%b %d, %Y'),
+            'project_stats': {
+                'total_tasks': total_tasks,
+                'completed_tasks': completed_tasks,
+                'pending_tasks': pending_tasks,
+                'has_pending_tasks': project.has_pending_tasks
+            }
+        })

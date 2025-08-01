@@ -29,14 +29,15 @@
                           </div>
                 <div class="card-body">
                     <div class="d-flex align-items-center mb-4">
-                        <p class="text-body-highlight fw-700 mb-0 me-2">
+                        <p class="text-body-highlight fw-700 mb-0 me-2" id="completion-percentage">
                             {{ completion_percentage|floatformat:0 }}%
                         </p>
                         <div class="progress flex-1">
                             <div class="progress-bar rounded-3" role="progressbar" 
+                                 id="progress-bar"
                                  style="width: {{ completion_percentage|floatformat:0 }}%"></div>
+                        </div>
                     </div>
-                          </div>
                     
                     <dl class="row mb-0">
                         <dt class="col-sm-3">Description</dt>
@@ -49,7 +50,76 @@
                         <dd class="col-sm-9">{{ project.client_name|default:'-' }}</dd>
                         <dt class="col-sm-3">Budget</dt>
                         <dd class="col-sm-9">{{ project.budget|default:'-' }}</dd>
+                        <dt class="col-sm-3">Status</dt>
+                        <dd class="col-sm-9">
+                            <span class="badge badge-phoenix badge-phoenix-{% if project.completed %}success{% elif project.deadline and project.deadline < now %}warning{% else %}info{% endif %}">
+                                {% if project.completed %}
+                                    Completed
+                                    {% if project.completed_at %}
+                                        ({{ project.completed_at|date:'Y-m-d H:i' }})
+                                    {% endif %}
+                                {% elif project.deadline and project.deadline < now %}
+                                    Overdue
+                                {% else %}
+                                    Active
+                                {% endif %}
+                            </span>
+                        </dd>
                     </dl>
+                    
+                    <!-- Project Status Management Button -->
+                    <div class="mt-4 text-center">
+                        {% if project.completed %}
+                            <!-- Project is completed - show reopen option -->
+                            <div class="mb-3">
+                                <span class="badge badge-phoenix badge-phoenix-success fs-6">
+                                    <i class="fas fa-check-circle me-1"></i>Project Completed
+                                    {% if project.completed_at %}
+                                        on {{ project.completed_at|date:'M j, Y' }}
+                                    {% endif %}
+                                </span>
+                            </div>
+                            <button type="button" class="btn btn-outline-warning btn-lg complete-project-btn" 
+                                    data-project-id="{{ project.id }}"
+                                    data-project-title="{{ project.title }}"
+                                    data-pending-tasks="{{ project.pending_tasks_count }}"
+                                    title="Reopen project to continue working on it">
+                                <i class="fas fa-undo me-2"></i>
+                                Reopen Project
+                            </button>
+                            <div class="mt-2">
+                                <small class="text-body-secondary">
+                                    <i class="fas fa-info-circle me-1"></i>
+                                    Reopening will set the project back to active status
+                                </small>
+                            </div>
+                        {% else %}
+                            <!-- Project is active - show completion option -->
+                            <button type="button" class="btn btn-success btn-lg complete-project-btn" 
+                                    data-project-id="{{ project.id }}"
+                                    data-project-title="{{ project.title }}"
+                                    data-pending-tasks="{{ project.pending_tasks_count }}"
+                                    title="Mark project as complete">
+                                <i class="fas fa-check-double me-2"></i>
+                                Complete Project
+                            </button>
+                            {% if project.pending_tasks_count > 0 %}
+                                <div class="mt-2">
+                                    <small class="text-warning">
+                                        <i class="fas fa-exclamation-triangle me-1"></i>
+                                        Warning: {{ project.pending_tasks_count }} task{{ project.pending_tasks_count|pluralize }} still pending
+                                    </small>
+                                </div>
+                            {% else %}
+                                <div class="mt-2">
+                                    <small class="text-success">
+                                        <i class="fas fa-check-circle me-1"></i>
+                                        All tasks completed - ready to finish project
+                                    </small>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    </div>
                 </div>
               </div>
           </div>
@@ -59,16 +129,17 @@
                     <h5 class="mb-0">Project Stats</h5>
             </div>
                 <div class="card-body">
-                    <p class="mb-2">Total Tasks: <strong>{{ total_tasks }}</strong></p>
-                    <p class="mb-2">Completed Tasks: <strong>{{ completed_tasks }}</strong></p>
-                    <p class="mb-2">Open Tasks: <strong>{{ open_tasks }}</strong></p>
-                      </div>
+                    <p class="mb-2">Total Tasks: <strong id="total-tasks">{{ total_tasks }}</strong></p>
+                    <p class="mb-2">Completed Tasks: <strong id="completed-tasks">{{ completed_tasks }}</strong></p>
+                    <p class="mb-2">Open Tasks: <strong id="open-tasks">{{ open_tasks }}</strong></p>
+                </div>
                       </div>
                   </div>
                       </div>
 
-    <!-- Main Content Area -->
+        <!-- Main Content Area -->
     <div class="row g-4">
+        <!-- Left Column - Main Content -->
         <div class="col-lg-8">
             <!-- Task List Section -->
             <div class="card mb-4">
@@ -91,34 +162,44 @@
                                     <th></th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="tasks-tbody">
                                 {% for task in project.tasks.all %}
-                                <tr>
+                                <tr data-task-id="{{ task.id }}">
                                     <td><a href="{% url 'projects:task_detail' task.id %}">{{ task.title }}</a></td>
                                     <td>
-                                        <span class="badge badge-phoenix badge-phoenix-{{ task.status|lower }}">
+                                        <span class="badge badge-phoenix badge-phoenix-{% if task.status == 'COMPLETED' %}success{% elif task.status == 'IN_PROGRESS' %}info{% elif task.status == 'REVIEW' %}warning{% elif task.status == 'CANCELLED' %}danger{% else %}secondary{% endif %}">
                                             {{ task.get_status_display }}
                                         </span>
-                              </td>
+                                    </td>
                                     <td>
-                                        <span class="badge badge-phoenix badge-phoenix-{{ task.priority|lower }}">
+                                        <span class="badge badge-phoenix badge-phoenix-{% if task.priority == 'URGENT' %}danger{% elif task.priority == 'HIGH' %}warning{% elif task.priority == 'MEDIUM' %}info{% else %}secondary{% endif %}">
                                             {{ task.get_priority_display }}
                                         </span>
-                              </td>
-                                    <td>{{ task.due_date|date:'Y-m-d' }}</td>
+                                    </td>
+                                    <td>{{ task.due_date|date:'Y-m-d'|default:'-' }}</td>
                                     <td>
                                         {% for assignment in task.taskassignment_set.all %}
                                             {{ assignment.user.user.username }}{% if not forloop.last %}, {% endif %}
                                         {% empty %}-{% endfor %}
                                     </td>
                                     <td>
-                                        <a href="{% url 'projects:task_update' task.id %}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-sm {% if task.completed %}btn-success{% else %}btn-outline-success{% endif %} complete-task-btn" 
+                                                    data-task-id="{{ task.id }}" 
+                                                    data-task-title="{{ task.title }}"
+                                                    title="{% if task.completed %}Mark as incomplete{% else %}Mark as complete{% endif %}">
+                                                <i class="fas {% if task.completed %}fa-check-circle{% else %}fa-circle{% endif %}"></i>
+                                            </button>
+                                            <a href="{% url 'projects:task_update' task.id %}" class="btn btn-sm btn-outline-secondary">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </div>
                                     </td>
-                            </tr>
+                                </tr>
                                 {% empty %}
                                 <tr><td colspan="6" class="text-center">No tasks for this project.</td></tr>
                                 {% endfor %}
-                          </tbody>
+                            </tbody>
                         </table>
                       </div>
                       </div>
@@ -140,100 +221,104 @@
                     <h5 class="mb-0">Recent Activity</h5>
                         </div>
                 <div class="card-body">
-                    <div class="bg-body-highlight rounded-2 p-4 mb-3">
+                    <div class="bg-body-highlight rounded-2 p-4 mb-3" id="recent-activity">
                         <div class="row justify-content-between border-bottom border-translucent g-0 gy-2 pb-3">
                             <div class="col-12 col-sm">
                                 <p class="fs-9 text-body-secondary mb-2">
                                     <a class="fw-semibold" href="#!">Project Manager</a> created this project
                                 </p>
-                          </div>
+                            </div>
                             <div class="col-12 col-sm-auto">
                                 <p class="text-body-secondary fw-semibold fs-10 mb-0">{{ project.created_at|date:'M j, Y' }}</p>
                             </div>
-                              </div>
+                        </div>
                         {% for task in project.tasks.all|slice:":3" %}
-                        <div class="row justify-content-between border-bottom border-translucent g-0 gy-1 py-3 align-items-center">
+                        <div class="row justify-content-between border-bottom border-translucent g-0 gy-1 py-3 align-items-center" data-task-id="{{ task.id }}">
                             <div class="col-12 col-sm">
                                 <p class="fs-9 text-body-secondary mb-0">
-                                    <span class="text-body-highlight fw-semibold me-1">Task</span> "{{ task.title }}" was created
+                                    <span class="text-body-highlight fw-semibold me-1">Task</span> "{{ task.title }}" 
+                                    <span class="activity-status">was created</span>
                                 </p>
                             </div>
                             <div class="col-12 col-sm-auto">
                                 <p class="text-body-secondary fw-semibold fs-10 mb-0">{{ task.created_at|date:'M j, Y' }}</p>
-                          </div>
+                            </div>
                         </div>
                         {% endfor %}
-                              </div>
+                        
+                        <!-- Project Update Activity (if project was recently updated) -->
+                        {% if project.updated_at and project.updated_at != project.created_at %}
+                        <div class="row justify-content-between border-bottom border-translucent g-0 gy-1 py-3 align-items-center" data-project-update="true">
+                            <div class="col-12 col-sm">
+                                <p class="fs-9 text-body-secondary mb-0">
+                                    <span class="text-body-highlight fw-semibold me-1">Project</span> "{{ project.title }}" 
+                                    <span class="activity-status"><span class="text-info">was updated</span></span>
+                                </p>
                             </div>
-                          </div>
+                            <div class="col-12 col-sm-auto">
+                                <p class="text-body-secondary fw-semibold fs-10 mb-0">{{ project.updated_at|date:'M j, Y' }}</p>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
 
             <!-- Files Section -->
             <div class="card">
-                <div class="card-header">
-                    <h5 class="mb-0">Files</h5>
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Project Files</h5>
+                    <a href="{% url 'projects:project_update' project.id %}" class="btn btn-sm btn-outline-primary">
+                        <i class="fas fa-plus me-1"></i>Add Files
+                    </a>
+                </div>
+                <div class="card-body">
+                    {% if project.files %}
+                        <div class="border-top pt-3 pb-4">
+                            <div class="me-n3">
+                                <div class="d-flex flex-between-center">
+                                    <div class="d-flex mb-1">
+                                        <i class="fas fa-file me-2 text-body-tertiary fs-9"></i>
+                                        <p class="text-body-highlight mb-0 lh-1">
+                                            <a href="{{ project.files.url }}" target="_blank" class="text-decoration-none">
+                                                {{ project.file_name }}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="{{ project.files.url }}" target="_blank" class="btn btn-sm btn-outline-secondary">
+                                            <i class="fas fa-download me-1"></i>Download
+                                        </a>
+                                        <a href="{{ project.files.url }}" target="_blank" class="btn btn-sm btn-outline-info">
+                                            <i class="fas fa-eye me-1"></i>View
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                <div class="card-body">
-                    <div class="border-top pt-3 pb-4">
-                <div class="me-n3">
-                  <div class="d-flex flex-between-center">
-                                <div class="d-flex mb-1">
-                                    <i class="fas fa-file me-2 text-body-tertiary fs-9"></i>
-                                    <p class="text-body-highlight mb-0 lh-1">No files uploaded yet</p>
-                    </div>
-                    </div>
-                  </div>
+                    {% else %}
+                        <div class="border-top pt-3 pb-4">
+                            <div class="me-n3">
+                                <div class="d-flex flex-between-center">
+                                    <div class="d-flex mb-1">
+                                        <i class="fas fa-file me-2 text-body-tertiary fs-9"></i>
+                                        <p class="text-body-highlight mb-0 lh-1">No files uploaded yet</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <a href="{% url 'projects:project_update' project.id %}" class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-plus me-1"></i>Upload Files
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
-                    <label class="btn btn-link p-0" for="customFile">
-                        <i class="fas fa-plus me-1"></i>Add file(s)
-                    </label>
-                    <input class="d-none" id="customFile" type="file"/>
-              </div>
-                      </div>
-                    </div>
+            </div>
+        </div>
 
-        <!-- Sidebar -->
+        <!-- Right Column - Actions -->
         <div class="col-lg-4">
-            <!-- Project Info Card -->
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h5 class="mb-0">Project Info</h5>
-                </div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <h6 class="text-body-secondary mb-2">Due date</h6>
-                        <p class="text-body-highlight mb-0">
-                            {% if project.deadline %}
-                                {{ project.deadline|date:'M j, Y' }}
-                            {% else %}
-                                <span class="text-body-tertiary">Not set</span>
-                            {% endif %}
-                        </p>
-                          </div>
-                    
-                    <div class="mb-3">
-                        <h6 class="text-body-secondary mb-2">Category</h6>
-                          <div class="d-flex align-items-center">
-                            {% get_project_category_badge project.project_category project.get_project_category_display %}
-                          </div>
-                          </div>
-                    
-                    <div class="mb-3">
-                        <h6 class="text-body-secondary mb-2">Status</h6>
-                        <p class="text-body-highlight mb-0">
-                            {% if project.deadline %}
-                                {% if project.deadline > now %}
-                                    <span class="badge badge-phoenix badge-phoenix-success">Active</span>
-                                {% else %}
-                                    <span class="badge badge-phoenix badge-phoenix-warning">Overdue</span>
-                                {% endif %}
-                            {% else %}
-                                <span class="badge badge-phoenix badge-phoenix-secondary">No deadline</span>
-                            {% endif %}
-                        </p>
-                      </div>
-                          </div>
-                          </div>
-
             <!-- Quick Actions -->
             <div class="card mb-4">
                 <div class="card-header">
@@ -278,7 +363,501 @@
                     </button>
                           </div>
                       </div>
-                          </div>
-                          </div>
-                      </div>
+        </div>
+    </div>
+
+<!-- JavaScript for dynamic task completion -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if user just returned from editing the project
+    const urlParams = new URLSearchParams(window.location.search);
+    const justUpdated = urlParams.get('updated');
+    const changes = urlParams.get('changes');
+    
+    if (justUpdated === 'true') {
+        const projectTitle = '{{ project.title }}';
+        const changesList = changes ? changes.split(',') : [];
+        addProjectUpdateActivity(projectTitle, changesList);
+        
+        // Clean up URL parameters
+        const newUrl = window.location.pathname;
+        window.history.replaceState({}, document.title, newUrl);
+    }
+    
+    // Function to attach project completion listener
+    function attachProjectCompletionListener(button) {
+        button.addEventListener('click', function() {
+            const projectId = this.getAttribute('data-project-id');
+            const projectTitle = this.getAttribute('data-project-title');
+            const pendingTasks = parseInt(this.getAttribute('data-pending-tasks'));
+            const isCompleted = this.classList.contains('btn-outline-warning');
+            const button = this;
+            
+            // Show confirmation dialog if there are pending tasks and project is not completed
+            if (!isCompleted && pendingTasks > 0) {
+                const confirmed = confirm(`Warning: This project has ${pendingTasks} pending task${pendingTasks > 1 ? 's' : ''}. Are you sure you want to mark it as complete?`);
+                if (!confirmed) {
+                    return;
+                }
+            }
+            
+            // Show loading state
+            button.disabled = true;
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
+            
+            // Send AJAX request
+            fetch(`/projects/project/${projectId}/complete/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken'),
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Update project status badge in main content
+                    const statusBadge = document.querySelector('dd:nth-child(12) span');
+                    if (statusBadge) {
+                        if (data.project_completed) {
+                            statusBadge.className = 'badge badge-phoenix badge-phoenix-success';
+                            statusBadge.textContent = 'Completed';
+                        } else {
+                            statusBadge.className = 'badge badge-phoenix badge-phoenix-info';
+                            statusBadge.textContent = 'Active';
+                        }
+                    }
+                    
+                    // Update sidebar status badge
+                    const sidebarStatusBadge = document.querySelector('.card-body .mb-3:last-child .badge');
+                    if (sidebarStatusBadge) {
+                        if (data.project_completed) {
+                            sidebarStatusBadge.className = 'badge badge-phoenix badge-phoenix-success';
+                            sidebarStatusBadge.textContent = 'Completed';
+                        } else {
+                            sidebarStatusBadge.className = 'badge badge-phoenix badge-phoenix-info';
+                            sidebarStatusBadge.textContent = 'Active';
+                        }
+                    }
+                    
+                    // Update the entire project completion section
+                    const projectCompletionSection = button.closest('.mt-4');
+                    if (data.project_completed) {
+                        // Project is now completed
+                        projectCompletionSection.innerHTML = `
+                            <div class="mb-3">
+                                <span class="badge badge-phoenix badge-phoenix-success fs-6">
+                                    <i class="fas fa-check-circle me-1"></i>Project Completed
+                                    on ${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                                </span>
+                            </div>
+                            <button type="button" class="btn btn-outline-warning btn-lg complete-project-btn" 
+                                    data-project-id="${projectId}"
+                                    data-project-title="${projectTitle}"
+                                    data-pending-tasks="${data.project_stats.pending_tasks}"
+                                    title="Reopen project to continue working on it">
+                                <i class="fas fa-undo me-2"></i>
+                                Reopen Project
+                            </button>
+                            <div class="mt-2">
+                                <small class="text-body-secondary">
+                                    <i class="fas fa-info-circle me-1"></i>
+                                    Reopening will set the project back to active status
+                                </small>
+                            </div>
+                        `;
+                    } else {
+                        // Project is now active
+                        let warningHtml = '';
+                        if (data.project_stats.pending_tasks > 0) {
+                            warningHtml = `
+                                <div class="mt-2">
+                                    <small class="text-warning">
+                                        <i class="fas fa-exclamation-triangle me-1"></i>
+                                        Warning: ${data.project_stats.pending_tasks} task${data.project_stats.pending_tasks > 1 ? 's' : ''} still pending
+                                    </small>
+                                </div>
+                            `;
+                        } else {
+                            warningHtml = `
+                                <div class="mt-2">
+                                    <small class="text-success">
+                                        <i class="fas fa-check-circle me-1"></i>
+                                        All tasks completed - ready to finish project
+                                    </small>
+                                </div>
+                            `;
+                        }
+                        
+                        projectCompletionSection.innerHTML = `
+                            <button type="button" class="btn btn-success btn-lg complete-project-btn" 
+                                    data-project-id="${projectId}"
+                                    data-project-title="${projectTitle}"
+                                    data-pending-tasks="${data.project_stats.pending_tasks}"
+                                    title="Mark project as complete">
+                                <i class="fas fa-check-double me-2"></i>
+                                Complete Project
+                            </button>
+                            ${warningHtml}
+                        `;
+                    }
+                    
+                    // Re-attach event listener to the new button
+                    const newButton = projectCompletionSection.querySelector('.complete-project-btn');
+                    if (newButton) {
+                        attachProjectCompletionListener(newButton);
+                    }
+                    
+                    // Update data attributes
+                    button.setAttribute('data-pending-tasks', data.project_stats.pending_tasks);
+                    
+                    // Update recent activity for project completion
+                    updateProjectActivity(data);
+                    
+                    // Show success message
+                    showNotification(`Project "${projectTitle}" ${data.project_completed ? 'completed' : 'reopened'}`, 'success');
+                } else {
+                    showNotification('Error updating project status', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('Error updating project status', 'error');
+            })
+            .finally(() => {
+                button.disabled = false;
+                button.innerHTML = originalText;
+                         });
+         });
+     }
+    
+    // Attach listener to initial project completion button
+    const projectCompleteBtn = document.querySelector('.complete-project-btn');
+    if (projectCompleteBtn) {
+        attachProjectCompletionListener(projectCompleteBtn);
+    }
+    
+    // Handle task completion buttons
+    document.querySelectorAll('.complete-task-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const taskId = this.getAttribute('data-task-id');
+            const taskTitle = this.getAttribute('data-task-title');
+            const button = this;
+            
+            // Show loading state
+            button.disabled = true;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            
+            // Send AJAX request
+            fetch(`/projects/task/${taskId}/complete/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken'),
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Update task status badge
+                    const taskRow = button.closest('tr');
+                    const statusCell = taskRow.querySelector('td:nth-child(2) span');
+                    
+                    // Update status badge
+                    statusCell.textContent = data.task_status;
+                    statusCell.className = `badge badge-phoenix badge-phoenix-${data.task_completed ? 'success' : 'secondary'}`;
+                    
+                    // Update complete button
+                    if (data.task_completed) {
+                        button.className = 'btn btn-sm btn-success complete-task-btn';
+                        button.innerHTML = '<i class="fas fa-check-circle"></i>';
+                        button.title = 'Mark as incomplete';
+                    } else {
+                        button.className = 'btn btn-sm btn-outline-success complete-task-btn';
+                        button.innerHTML = '<i class="fas fa-circle"></i>';
+                        button.title = 'Mark as complete';
+                    }
+                    
+                    // Update project progress
+                    updateProjectProgress(data.project_stats);
+                    
+                    // Update project completion button data attributes
+                    updateProjectCompletionButton(data.project_stats);
+                    
+                    // Update recent activity
+                    updateRecentActivity(data);
+                    
+                    // Show success message
+                    showNotification(`${taskTitle} ${data.task_completed ? 'completed' : 'marked as incomplete'}`, 'success');
+                } else {
+                    showNotification('Error updating task status', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('Error updating task status', 'error');
+            })
+            .finally(() => {
+                button.disabled = false;
+            });
+        });
+    });
+    
+    // Function to update project progress
+    function updateProjectProgress(stats) {
+        // Update progress bar
+        const progressBar = document.getElementById('progress-bar');
+        const completionPercentage = document.getElementById('completion-percentage');
+        
+        progressBar.style.width = `${stats.completion_percentage}%`;
+        completionPercentage.textContent = `${stats.completion_percentage}%`;
+        
+        // Update project stats
+        document.getElementById('total-tasks').textContent = stats.total_tasks;
+        document.getElementById('completed-tasks').textContent = stats.completed_tasks;
+        document.getElementById('open-tasks').textContent = stats.open_tasks;
+    }
+    
+    // Function to update project completion button
+    function updateProjectCompletionButton(stats) {
+        const projectCompleteBtn = document.querySelector('.complete-project-btn');
+        if (projectCompleteBtn) {
+            // Update pending tasks count
+            projectCompleteBtn.setAttribute('data-pending-tasks', stats.open_tasks);
+            
+            // Update warning/success message based on pending tasks
+            const projectCompletionSection = projectCompleteBtn.closest('.mt-4');
+            const messageDiv = projectCompletionSection.querySelector('.mt-2');
+            
+            if (stats.open_tasks > 0) {
+                if (messageDiv) {
+                    messageDiv.innerHTML = `<small class="text-warning">
+                        <i class="fas fa-exclamation-triangle me-1"></i>
+                        Warning: ${stats.open_tasks} task${stats.open_tasks > 1 ? 's' : ''} still pending
+                    </small>`;
+                } else {
+                    // Create warning div if it doesn't exist
+                    const newMessageDiv = document.createElement('div');
+                    newMessageDiv.className = 'mt-2';
+                    newMessageDiv.innerHTML = `<small class="text-warning">
+                        <i class="fas fa-exclamation-triangle me-1"></i>
+                        Warning: ${stats.open_tasks} task${stats.open_tasks > 1 ? 's' : ''} still pending
+                    </small>`;
+                    projectCompleteBtn.parentNode.appendChild(newMessageDiv);
+                }
+            } else {
+                if (messageDiv) {
+                    messageDiv.innerHTML = `<small class="text-success">
+                        <i class="fas fa-check-circle me-1"></i>
+                        All tasks completed - ready to finish project
+                    </small>`;
+                } else {
+                    // Create success div if it doesn't exist
+                    const newMessageDiv = document.createElement('div');
+                    newMessageDiv.className = 'mt-2';
+                    newMessageDiv.innerHTML = `<small class="text-success">
+                        <i class="fas fa-check-circle me-1"></i>
+                        All tasks completed - ready to finish project
+                    </small>`;
+                    projectCompleteBtn.parentNode.appendChild(newMessageDiv);
+                }
+            }
+        }
+    }
+    
+    // Function to update recent activity for tasks
+    function updateRecentActivity(data) {
+        const recentActivity = document.getElementById('recent-activity');
+        if (!recentActivity) return;
+        
+        // Find the activity row for this task
+        const taskActivityRow = recentActivity.querySelector(`[data-task-id="${data.task_id}"]`);
+        
+        if (taskActivityRow) {
+            // Update existing activity row
+            const activityStatus = taskActivityRow.querySelector('.activity-status');
+            if (activityStatus) {
+                if (data.task_completed) {
+                    activityStatus.innerHTML = `<span class="text-success">was completed</span>`;
+                } else {
+                    activityStatus.innerHTML = `<span class="text-warning">was reopened</span>`;
+                }
+            }
+            
+            // Update timestamp to current time
+            const timestampElement = taskActivityRow.querySelector('.text-body-secondary.fw-semibold.fs-10');
+            if (timestampElement) {
+                timestampElement.textContent = data.activity_timestamp;
+            }
+            
+            // Move this activity to the top (after project creation)
+            const projectCreationRow = recentActivity.querySelector('.row:first-child');
+            if (projectCreationRow && taskActivityRow !== projectCreationRow) {
+                recentActivity.insertBefore(taskActivityRow, projectCreationRow.nextSibling);
+            }
+        } else {
+            // Create new activity row if task is not in the list
+            const newActivityRow = document.createElement('div');
+            newActivityRow.className = 'row justify-content-between border-bottom border-translucent g-0 gy-1 py-3 align-items-center';
+            newActivityRow.setAttribute('data-task-id', data.task_id);
+            
+            const statusText = data.task_completed ? 'was completed' : 'was reopened';
+            const statusClass = data.task_completed ? 'text-success' : 'text-warning';
+            
+            newActivityRow.innerHTML = `
+                <div class="col-12 col-sm">
+                    <p class="fs-9 text-body-secondary mb-0">
+                        <span class="text-body-highlight fw-semibold me-1">Task</span> "${data.task_title}" 
+                        <span class="activity-status"><span class="${statusClass}">${statusText}</span></span>
+                    </p>
+                </div>
+                <div class="col-12 col-sm-auto">
+                    <p class="text-body-secondary fw-semibold fs-10 mb-0">${data.activity_timestamp}</p>
+                </div>
+            `;
+            
+            // Insert after project creation row
+            const projectCreationRow = recentActivity.querySelector('.row:first-child');
+            if (projectCreationRow) {
+                recentActivity.insertBefore(newActivityRow, projectCreationRow.nextSibling);
+            } else {
+                recentActivity.appendChild(newActivityRow);
+            }
+            
+            // Remove oldest activity if we have more than 4 items (project creation + 3 tasks)
+            const allActivities = recentActivity.querySelectorAll('.row');
+            if (allActivities.length > 4) {
+                const oldestActivity = allActivities[allActivities.length - 1];
+                if (oldestActivity !== projectCreationRow) {
+                    oldestActivity.remove();
+                }
+            }
+        }
+    }
+    
+    // Function to update recent activity for projects
+    function updateProjectActivity(data) {
+        const recentActivity = document.getElementById('recent-activity');
+        if (!recentActivity) return;
+        
+        // Create new activity row for project completion/reopening
+        const newActivityRow = document.createElement('div');
+        newActivityRow.className = 'row justify-content-between border-bottom border-translucent g-0 gy-1 py-3 align-items-center';
+        newActivityRow.setAttribute('data-project-activity', 'true');
+        
+        const statusText = data.project_completed ? 'was completed' : 'was reopened';
+        const statusClass = data.project_completed ? 'text-success' : 'text-warning';
+        
+        newActivityRow.innerHTML = `
+            <div class="col-12 col-sm">
+                <p class="fs-9 text-body-secondary mb-0">
+                    <span class="text-body-highlight fw-semibold me-1">Project</span> "${data.project_title}" 
+                    <span class="activity-status"><span class="${statusClass}">${statusText}</span></span>
+                </p>
+            </div>
+            <div class="col-12 col-sm-auto">
+                <p class="text-body-secondary fw-semibold fs-10 mb-0">${data.activity_timestamp}</p>
+            </div>
+        `;
+        
+        // Insert after project creation row
+        const projectCreationRow = recentActivity.querySelector('.row:first-child');
+        if (projectCreationRow) {
+            recentActivity.insertBefore(newActivityRow, projectCreationRow.nextSibling);
+        } else {
+            recentActivity.appendChild(newActivityRow);
+        }
+        
+        // Remove oldest activity if we have more than 4 items
+        const allActivities = recentActivity.querySelectorAll('.row');
+        if (allActivities.length > 4) {
+            const oldestActivity = allActivities[allActivities.length - 1];
+            if (oldestActivity !== projectCreationRow) {
+                oldestActivity.remove();
+            }
+        }
+    }
+    
+    // Function to add project update activity
+    function addProjectUpdateActivity(projectTitle, changes) {
+        const recentActivity = document.getElementById('recent-activity');
+        if (!recentActivity) return;
+        
+        // Create new activity row for project update
+        const newActivityRow = document.createElement('div');
+        newActivityRow.className = 'row justify-content-between border-bottom border-translucent g-0 gy-1 py-3 align-items-center';
+        newActivityRow.setAttribute('data-project-update', 'true');
+        
+        const changesText = changes.length > 0 ? ` (${changes.join(', ')})` : '';
+        
+        newActivityRow.innerHTML = `
+            <div class="col-12 col-sm">
+                <p class="fs-9 text-body-secondary mb-0">
+                    <span class="text-body-highlight fw-semibold me-1">Project</span> "${projectTitle}" 
+                    <span class="activity-status"><span class="text-info">was updated${changesText}</span></span>
+                </p>
+            </div>
+            <div class="col-12 col-sm-auto">
+                <p class="text-body-secondary fw-semibold fs-10 mb-0">${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+            </div>
+        `;
+        
+        // Insert after project creation row
+        const projectCreationRow = recentActivity.querySelector('.row:first-child');
+        if (projectCreationRow) {
+            recentActivity.insertBefore(newActivityRow, projectCreationRow.nextSibling);
+        } else {
+            recentActivity.appendChild(newActivityRow);
+        }
+        
+        // Remove oldest activity if we have more than 4 items
+        const allActivities = recentActivity.querySelectorAll('.row');
+        if (allActivities.length > 4) {
+            const oldestActivity = allActivities[allActivities.length - 1];
+            if (oldestActivity !== projectCreationRow) {
+                oldestActivity.remove();
+            }
+        }
+    }
+    
+    // Function to get CSRF token
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    
+    // Function to show notifications
+    function showNotification(message, type) {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show position-fixed`;
+        notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+        notification.innerHTML = `
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+        
+        // Add to page
+        document.body.appendChild(notification);
+        
+        // Auto remove after 3 seconds
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.remove();
+            }
+        }, 3000);
+    }
+});
+</script>
 {% endblock contents %}

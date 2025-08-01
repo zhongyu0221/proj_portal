@@ -9,12 +9,13 @@ class ProjectForm(forms.ModelForm):
         fields = "__all__"
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter project title'}),
-            'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 4, 'placeholder': 'Describe your project'}),
+            'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 8, 'placeholder': 'Provide a detailed description of your project, including objectives, scope, requirements, and any other relevant information...'}),
             'project_category': forms.Select(attrs={'class': 'form-select'}),
             'created_at': forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local'}),
             'deadline': forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local'}),
             'client_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter client name'}),
             'budget': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': '0.00', 'step': '0.01', 'min': '0'}),
+            'files': forms.FileInput(attrs={'class': 'form-control', 'accept': '.pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.gif,.zip,.rar'}),
         }
 
     def __init__(self, *args, **kwargs):

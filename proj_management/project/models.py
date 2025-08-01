@@ -21,10 +21,43 @@ class Project(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     client_name = models.CharField(max_length=100, blank=True, null=True)
     budget = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
-
+    files = models.FileField(upload_to='project_files/', blank=True, null=True)
+    completed = models.BooleanField(default=False)
+    completed_at = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
         return self.title
+    
+    @property
+    def is_completed(self):
+        return self.completed
+    
+    @property
+    def has_pending_tasks(self):
+        """Check if project has any incomplete tasks"""
+        return self.tasks.filter(completed=False).exists()
+    
+    @property
+    def pending_tasks_count(self):
+        """Get count of incomplete tasks"""
+        return self.tasks.filter(completed=False).count()
+    
+    @property
+    def completion_status(self):
+        """Get project completion status"""
+        if self.completed:
+            return 'COMPLETED'
+        elif self.deadline and timezone.now() > self.deadline:
+            return 'OVERDUE'
+        else:
+            return 'ACTIVE'
+    
+    @property
+    def file_name(self):
+        """Get the file name for display"""
+        if self.files:
+            return self.files.name.split('/')[-1]
+        return None
 
     class Meta:
         verbose_name = 'Project'
