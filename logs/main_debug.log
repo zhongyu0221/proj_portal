@@ -3618,3 +3618,1057 @@ INFO:django.server:[2025-07-31 18:57:50] basehttp.py:187:"GET /projects/project/
 INFO:django.server:[2025-07-31 18:57:52] basehttp.py:187:"POST /projects/project/53/complete/ HTTP/1.1" 200 270
 INFO:django.server:[2025-07-31 18:59:50] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 84248
 INFO:django.server:[2025-07-31 18:59:51] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 84248
+INFO:django.server:[2025-07-31 19:02:00] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 84180
+INFO:django.server:[2025-07-31 19:02:01] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 84180
+INFO:django.server:[2025-07-31 19:02:01] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 84180
+INFO:django.server:[2025-07-31 19:02:13] basehttp.py:187:"GET /projects/project/53/update/ HTTP/1.1" 200 50537
+INFO:django.server:[2025-07-31 19:02:17] basehttp.py:187:"GET /projects/project/53/update/ HTTP/1.1" 200 50537
+INFO:django.server:[2025-07-31 19:02:41] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 83937
+INFO:django.server:[2025-07-31 19:02:42] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 83937
+INFO:django.server:[2025-07-31 19:02:43] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 83937
+INFO:django.utils.autoreload:[2025-07-31 19:03:47] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 19:03:48] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 19:03:55] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/urls.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 19:03:55] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-31 19:04:45] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 90033
+INFO:django.server:[2025-07-31 19:04:46] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 90033
+INFO:django.server:[2025-07-31 19:05:21] basehttp.py:187:"GET /projects/53/task/create/ HTTP/1.1" 200 53025
+INFO:django.server:[2025-07-31 19:05:31] basehttp.py:187:"GET /projects/53/task/create/ HTTP/1.1" 200 53025
+INFO:django.server:[2025-07-31 19:05:38] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 91899
+INFO:django.server:[2025-07-31 19:05:39] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 91899
+INFO:django.utils.autoreload:[2025-07-31 19:06:28] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 19:06:29] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 19:06:36] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/urls.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 19:06:36] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-31 19:06:39] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 95955
+INFO:django.server:[2025-07-31 19:06:40] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 95955
+INFO:django.server:[2025-07-31 19:06:41] basehttp.py:187:"GET /projects/53/task/create/ HTTP/1.1" 200 53025
+INFO:django.utils.autoreload:[2025-07-31 19:06:42] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 19:06:42] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-31 19:07:41] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 107379
+INFO:django.server:[2025-07-31 19:07:42] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 107379
+INFO:django.server:[2025-07-31 19:07:43] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 107379
+INFO:django.server:[2025-07-31 19:07:47] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 107379
+INFO:django.server:[2025-07-31 19:07:47] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 107379
+INFO:django.server:[2025-07-31 19:07:48] basehttp.py:187:"GET /projects/53/task/create/ HTTP/1.1" 200 53025
+INFO:django.server:[2025-07-31 19:08:43] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 107232
+INFO:django.server:[2025-07-31 19:08:43] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 107232
+INFO:django.server:[2025-07-31 19:09:18] basehttp.py:187:"POST /projects/project/53/upload-file/ HTTP/1.1" 200 148
+INFO:django.server:[2025-07-31 19:09:25] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108132
+WARNING:django.server:[2025-07-31 19:09:27] basehttp.py:187:"GET /media/project_files/signin.png HTTP/1.1" 404 2716
+INFO:django.server:[2025-07-31 19:09:45] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108132
+INFO:django.server:[2025-07-31 19:21:33] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108132
+INFO:django.server:[2025-07-31 19:21:34] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108132
+INFO:django.server:[2025-07-31 23:29:17] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108132
+INFO:django.server:[2025-07-31 23:29:18] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108132
+INFO:django.server:[2025-07-31 23:29:39] basehttp.py:187:"POST /projects/project/53/upload-file/ HTTP/1.1" 200 232
+INFO:django.server:[2025-07-31 23:29:47] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108244
+INFO:django.server:[2025-07-31 23:30:58] basehttp.py:187:"GET /home/ HTTP/1.1" 200 78298
+WARNING:django.server:[2025-07-31 23:30:58] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2710
+INFO:django.server:[2025-07-31 23:31:08] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 154377
+INFO:django.server:[2025-07-31 23:31:09] basehttp.py:187:"GET /projects/project/1/ HTTP/1.1" 200 96901
+INFO:django.server:[2025-07-31 23:31:14] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108244
+INFO:django.utils.autoreload:[2025-07-31 23:32:16] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/models.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:32:16] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:32:29] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/admin.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:32:29] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-31 23:33:40] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108244
+INFO:django.server:[2025-07-31 23:33:41] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108244
+INFO:django.utils.autoreload:[2025-07-31 23:34:05] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:34:06] autoreload.py:677:Watching for file changes with StatReloader
+ERROR:django.request:[2025-07-31 23:34:40] log.py:241:Internal Server Error: /projects/project/53/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+          ^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'proj.project_projectactivity' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1867, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1398, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+          ^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'proj.project_projectactivity' doesn't exist")
+ERROR:django.server:[2025-07-31 23:34:40] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 500 261532
+ERROR:django.request:[2025-07-31 23:34:42] log.py:241:Internal Server Error: /projects/project/53/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+          ^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'proj.project_projectactivity' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1867, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1398, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+          ^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'proj.project_projectactivity' doesn't exist")
+ERROR:django.server:[2025-07-31 23:34:42] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 500 261311
+ERROR:django.request:[2025-07-31 23:35:06] log.py:241:Internal Server Error: /projects/project/53/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+          ^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'proj.project_projectactivity' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1867, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1398, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+          ^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'proj.project_projectactivity' doesn't exist")
+ERROR:django.server:[2025-07-31 23:35:06] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 500 261311
+ERROR:django.request:[2025-07-31 23:35:06] log.py:241:Internal Server Error: /projects/project/53/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+          ^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'proj.project_projectactivity' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1867, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1398, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+          ^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'proj.project_projectactivity' doesn't exist")
+ERROR:django.server:[2025-07-31 23:35:06] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 500 261311
+ERROR:django.request:[2025-07-31 23:35:15] log.py:241:Internal Server Error: /projects/project/53/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+          ^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'proj.project_projectactivity' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1867, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1398, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+          ^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'proj.project_projectactivity' doesn't exist")
+ERROR:django.server:[2025-07-31 23:35:15] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 500 261311
+ERROR:django.request:[2025-07-31 23:35:16] log.py:241:Internal Server Error: /projects/project/53/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+          ^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'proj.project_projectactivity' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 1867, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1398, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+          ^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'proj.project_projectactivity' doesn't exist")
+ERROR:django.server:[2025-07-31 23:35:16] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 500 261311
+INFO:django.server:[2025-07-31 23:35:29] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108087
+ERROR:django.request:[2025-07-31 23:35:38] log.py:241:Internal Server Error: /projects/project/53/upload-file/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 420, in post
+    with transaction.atomic():
+         ^^^^^^^^^^^
+NameError: name 'transaction' is not defined
+ERROR:django.server:[2025-07-31 23:35:38] basehttp.py:187:"POST /projects/project/53/upload-file/ HTTP/1.1" 500 84212
+ERROR:django.request:[2025-07-31 23:35:44] log.py:241:Internal Server Error: /projects/project/53/upload-file/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 420, in post
+    with transaction.atomic():
+         ^^^^^^^^^^^
+NameError: name 'transaction' is not defined
+ERROR:django.server:[2025-07-31 23:35:44] basehttp.py:187:"POST /projects/project/53/upload-file/ HTTP/1.1" 500 84213
+INFO:django.utils.autoreload:[2025-07-31 23:35:45] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:35:46] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-31 23:35:50] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108087
+INFO:django.server:[2025-07-31 23:35:50] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108087
+INFO:django.server:[2025-07-31 23:35:51] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108087
+INFO:django.server:[2025-07-31 23:35:51] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108087
+INFO:django.server:[2025-07-31 23:35:52] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108087
+INFO:django.server:[2025-07-31 23:36:00] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108087
+INFO:django.server:[2025-07-31 23:36:09] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108087
+ERROR:django.request:[2025-07-31 23:36:16] log.py:241:Internal Server Error: /projects/project/53/upload-file/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 437, in post
+    with transaction.atomic():
+         ^^^^^^^^^^^
+NameError: name 'transaction' is not defined
+ERROR:django.server:[2025-07-31 23:36:16] basehttp.py:187:"POST /projects/project/53/upload-file/ HTTP/1.1" 500 84212
+ERROR:django.request:[2025-07-31 23:36:17] log.py:241:Internal Server Error: /projects/project/53/upload-file/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 437, in post
+    with transaction.atomic():
+         ^^^^^^^^^^^
+NameError: name 'transaction' is not defined
+ERROR:django.server:[2025-07-31 23:36:17] basehttp.py:187:"POST /projects/project/53/upload-file/ HTTP/1.1" 500 84212
+ERROR:django.request:[2025-07-31 23:36:35] log.py:241:Internal Server Error: /projects/project/53/upload-file/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 437, in post
+    with transaction.atomic():
+         ^^^^^^^^^^^
+NameError: name 'transaction' is not defined
+ERROR:django.server:[2025-07-31 23:36:35] basehttp.py:187:"POST /projects/project/53/upload-file/ HTTP/1.1" 500 84161
+ERROR:django.request:[2025-07-31 23:36:35] log.py:241:Internal Server Error: /projects/project/53/upload-file/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 437, in post
+    with transaction.atomic():
+         ^^^^^^^^^^^
+NameError: name 'transaction' is not defined
+ERROR:django.server:[2025-07-31 23:36:35] basehttp.py:187:"POST /projects/project/53/upload-file/ HTTP/1.1" 500 84161
+INFO:django.utils.autoreload:[2025-07-31 23:37:05] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:37:05] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:37:30] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:37:30] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-31 23:37:39] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108553
+INFO:django.server:[2025-07-31 23:37:39] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 108553
+INFO:django.server:[2025-07-31 23:37:47] basehttp.py:187:"POST /projects/project/53/upload-file/ HTTP/1.1" 200 190
+INFO:django.server:[2025-07-31 23:37:57] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 106328
+INFO:django.server:[2025-07-31 23:37:58] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 106328
+INFO:django.server:[2025-07-31 23:37:58] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 106328
+INFO:django.server:[2025-07-31 23:38:00] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 106328
+INFO:django.utils.autoreload:[2025-07-31 23:38:27] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/mysite/urls.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:38:27] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:38:40] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:38:40] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:39:11] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:39:12] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:39:19] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:39:19] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-31 23:39:29] basehttp.py:187:"GET /projects/project/1/ HTTP/1.1" 200 98485
+WARNING:django.server:[2025-07-31 23:39:39] basehttp.py:187:"POST /projects/project/1/upload-file/ HTTP/1.1" 400 56
+INFO:django.server:[2025-07-31 23:39:39] basehttp.py:187:code 400, message Bad request syntax ('d1')
+WARNING:django.server:[2025-07-31 23:39:39] basehttp.py:187:"d1" 400 -
+INFO:django.server:[2025-07-31 23:39:48] basehttp.py:187:"POST /projects/project/1/upload-file/ HTTP/1.1" 200 188
+INFO:django.server:[2025-07-31 23:40:01] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 107825
+INFO:django.server:[2025-07-31 23:40:02] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 107825
+INFO:django.server:[2025-07-31 23:40:08] basehttp.py:187:"POST /projects/project/53/upload-file/ HTTP/1.1" 200 186
+INFO:django.server:[2025-07-31 23:40:12] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 110622
+INFO:django.server:[2025-07-31 23:40:13] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 110622
+INFO:django.server:[2025-07-31 23:40:17] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 110622
+INFO:django.server:[2025-07-31 23:40:17] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 110622
+INFO:django.server:[2025-07-31 23:41:23] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 118677
+INFO:django.utils.autoreload:[2025-07-31 23:41:30] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/models.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:41:31] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:41:57] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:41:57] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-31 23:42:04] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 118837
+INFO:django.server:[2025-07-31 23:42:05] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 118837
+INFO:django.utils.autoreload:[2025-07-31 23:42:08] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:42:08] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:42:16] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:42:16] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-31 23:45:09] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 118837
+INFO:django.server:[2025-07-31 23:45:10] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 118837
+INFO:django.utils.autoreload:[2025-07-31 23:45:28] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:45:29] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-31 23:45:34] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 118837
+INFO:django.server:[2025-07-31 23:45:35] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 118837
+INFO:django.server:[2025-07-31 23:47:12] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 121916
+INFO:django.server:[2025-07-31 23:47:14] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 121916
+INFO:django.server:[2025-07-31 23:47:18] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 121916
+INFO:django.server:[2025-07-31 23:47:19] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 121916
+INFO:django.server:[2025-07-31 23:47:21] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 121916
+INFO:django.server:[2025-07-31 23:47:22] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 121916
+INFO:django.server:[2025-07-31 23:47:23] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 121916
+INFO:django.server:[2025-07-31 23:47:33] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117658
+INFO:django.server:[2025-07-31 23:47:34] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117658
+INFO:django.server:[2025-07-31 23:47:34] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117658
+INFO:django.server:[2025-07-31 23:47:35] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117658
+INFO:django.server:[2025-07-31 23:47:37] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117658
+INFO:django.server:[2025-07-31 23:47:38] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117658
+INFO:django.server:[2025-07-31 23:49:09] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117247
+INFO:django.server:[2025-07-31 23:49:10] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117247
+INFO:django.server:[2025-07-31 23:49:11] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117247
+INFO:django.server:[2025-07-31 23:49:11] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117247
+INFO:django.server:[2025-07-31 23:49:20] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117232
+INFO:django.server:[2025-07-31 23:49:21] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117232
+INFO:django.server:[2025-07-31 23:49:41] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 118624
+INFO:django.server:[2025-07-31 23:50:03] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 118624
+INFO:django.server:[2025-07-31 23:50:04] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 118624
+INFO:django.server:[2025-07-31 23:50:04] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 118635
+INFO:django.server:[2025-07-31 23:50:15] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117232
+INFO:django.server:[2025-07-31 23:50:15] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117232
+INFO:django.server:[2025-07-31 23:50:32] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117244
+INFO:django.server:[2025-07-31 23:50:33] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117244
+INFO:django.server:[2025-07-31 23:50:33] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117244
+INFO:django.server:[2025-07-31 23:50:39] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 117244
+INFO:django.server:[2025-07-31 23:51:17] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 116832
+INFO:django.server:[2025-07-31 23:51:18] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 116832
+WARNING:django.server:[2025-07-31 23:51:34] basehttp.py:187:"POST /projects/53/task/create-ajax/ HTTP/1.1" 400 107
+WARNING:django.server:[2025-07-31 23:51:39] basehttp.py:187:"POST /projects/53/task/create-ajax/ HTTP/1.1" 400 107
+WARNING:django.server:[2025-07-31 23:51:40] basehttp.py:187:"POST /projects/53/task/create-ajax/ HTTP/1.1" 400 107
+WARNING:django.server:[2025-07-31 23:51:43] basehttp.py:187:"POST /projects/53/task/create-ajax/ HTTP/1.1" 400 107
+WARNING:django.server:[2025-07-31 23:51:47] basehttp.py:187:"POST /projects/53/task/create-ajax/ HTTP/1.1" 400 107
+INFO:django.server:[2025-07-31 23:51:51] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 116832
+WARNING:django.server:[2025-07-31 23:51:58] basehttp.py:187:"POST /projects/53/task/create-ajax/ HTTP/1.1" 400 107
+INFO:django.utils.autoreload:[2025-07-31 23:53:23] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/models.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:53:24] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:53:33] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:53:33] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:53:45] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/urls.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:53:46] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:53:56] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/models.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:53:56] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-31 23:54:26] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 118149
+INFO:django.server:[2025-07-31 23:54:26] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 118149
+INFO:django.server:[2025-07-31 23:56:07] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 123077
+INFO:django.server:[2025-07-31 23:56:08] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 123077
+INFO:django.utils.autoreload:[2025-07-31 23:57:13] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:57:13] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:57:28] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:57:28] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:57:36] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:57:37] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:57:47] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:57:47] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:58:00] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:58:00] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:58:13] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:58:13] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:58:23] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:58:23] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:58:31] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:58:31] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:58:41] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:58:42] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.utils.autoreload:[2025-07-31 23:59:05] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/models.py changed, reloading.
+INFO:django.utils.autoreload:[2025-07-31 23:59:05] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-07-31 23:59:15] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 123291
+INFO:django.server:[2025-07-31 23:59:16] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 123291
+INFO:django.server:[2025-07-31 23:59:16] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 123291
+WARNING:django.server:[2025-07-31 23:59:23] basehttp.py:187:"POST /projects/53/task/create-ajax/ HTTP/1.1" 400 207
+WARNING:django.server:[2025-07-31 23:59:28] basehttp.py:187:"POST /projects/53/task/create-ajax/ HTTP/1.1" 400 207
+WARNING:django.server:[2025-07-31 23:59:59] basehttp.py:187:"POST /projects/53/task/create-ajax/ HTTP/1.1" 400 207
+WARNING:django.server:[2025-08-01 00:00:04] basehttp.py:187:"POST /projects/53/task/create-ajax/ HTTP/1.1" 400 207
+INFO:django.server:[2025-08-01 00:00:06] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 123291
+WARNING:django.server:[2025-08-01 00:00:11] basehttp.py:187:"POST /projects/53/task/create-ajax/ HTTP/1.1" 400 207
+WARNING:django.server:[2025-08-01 00:00:16] basehttp.py:187:"POST /projects/53/task/create-ajax/ HTTP/1.1" 400 207

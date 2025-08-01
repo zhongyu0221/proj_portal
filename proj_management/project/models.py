@@ -1,6 +1,7 @@
 from django.db import models
 from userprofiles.models import UserProfile
 from django.utils import timezone
+import os
 # Create your models here.
 
 class Project(models.Model):
@@ -21,7 +22,7 @@ class Project(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     client_name = models.CharField(max_length=100, blank=True, null=True)
     budget = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
-    files = models.FileField(upload_to='project_files/', blank=True, null=True)
+    files = models.FileField(upload_to='project_files/', blank=True, null=True)  # Keep for backward compatibility
     completed = models.BooleanField(default=False)
     completed_at = models.DateTimeField(blank=True, null=True)
 
@@ -63,6 +64,73 @@ class Project(models.Model):
         verbose_name = 'Project'
         verbose_name_plural = 'Projects'
         ordering = ['created_at']
+
+
+class ProjectFile(models.Model):
+    """Model to store multiple files for a project"""
+    project = models.ForeignKey(Project, related_name='project_files', on_delete=models.CASCADE)
+    file = models.FileField(upload_to='project_files/')
+    original_filename = models.CharField(max_length=255)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    uploaded_by = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
+    
+    def __str__(self):
+        return f"{self.original_filename} - {self.project.title}"
+    
+    @property
+    def file_name(self):
+        """Get the file name for display"""
+        return self.original_filename
+    
+    @property
+    def file_url(self):
+        """Get the file URL"""
+        return self.file.url if self.file else None
+    
+    def delete(self, *args, **kwargs):
+        # Delete the actual file from storage
+        if self.file:
+            if os.path.isfile(self.file.path):
+                os.remove(self.file.path)
+        super().delete(*args, **kwargs)
+    
+    class Meta:
+        verbose_name = 'Project File'
+        verbose_name_plural = 'Project Files'
+        ordering = ['-uploaded_at']
+
+
+class ProjectActivity(models.Model):
+    """Model to track project activities including file uploads"""
+    ACTIVITY_TYPES = [
+        ('PROJECT_CREATED', 'Project Created'),
+        ('FILE_UPLOAD', 'File Upload'),
+        ('FILE_DELETED', 'File Deleted'),
+        ('TASK_CREATED', 'Task Created'),
+        ('TASK_COMPLETED', 'Task Completed'),
+        ('TASK_REOPENED', 'Task Reopened'),
+        ('PROJECT_COMPLETED', 'Project Completed'),
+        ('PROJECT_REOPENED', 'Project Reopened'),
+        ('PROJECT_UPDATED', 'Project Updated'),
+    ]
+    
+    project = models.ForeignKey(Project, related_name='activities', on_delete=models.CASCADE)
+    activity_type = models.CharField(max_length=20, choices=ACTIVITY_TYPES)
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    created_by = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
+    
+    # Optional fields for specific activity types
+    related_file = models.ForeignKey(ProjectFile, on_delete=models.SET_NULL, null=True, blank=True)
+    related_task = models.ForeignKey('Task', on_delete=models.SET_NULL, null=True, blank=True)
+    
+    def __str__(self):
+        return f"{self.get_activity_type_display()} - {self.project.title}"
+    
+    class Meta:
+        verbose_name = 'Project Activity'
+        verbose_name_plural = 'Project Activities'
+        ordering = ['-created_at']
 
 
 class Task(models.Model):

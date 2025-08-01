@@ -11,9 +11,6 @@
             <p class="text-body-secondary mb-1">Category: {{ project.get_project_category_display }}</p>
                     </div>
         <div class="col-auto ms-auto">
-            <a href="{% url 'projects:task_create' project_id=project.id %}" class="btn btn-primary">
-                <i class="fas fa-plus me-2"></i>Add Task
-            </a>
             <a href="{% url 'projects:project_update' project.id %}" class="btn btn-outline-secondary ms-2">
                 <i class="fas fa-edit me-2"></i>Edit Project
             </a>
@@ -145,9 +142,9 @@
             <div class="card mb-4">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="mb-0">Tasks <span class="text-body-tertiary fw-normal fs-6">({{ total_tasks }})</span></h5>
-                    <a href="{% url 'projects:task_create' project_id=project.id %}" class="btn btn-sm btn-primary">
+                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addTaskModal">
                         <i class="fas fa-plus me-1"></i>Add Task
-                    </a>
+                    </button>
                   </div>
                   <div class="card-body p-0">
                     <div class="table-responsive">
@@ -205,15 +202,8 @@
                       </div>
                     </div>
 
-            <!-- Project Description -->
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h5 class="mb-0">Description</h5>
-                        </div>
-                <div class="card-body">
-                    <p class="text-body-highlight">{{ project.description|default:'No description available.' }}</p>
-                          </div>
-                            </div>
+
+
 
             <!-- Activity Timeline -->
             <div class="card mb-4">
@@ -222,6 +212,7 @@
                         </div>
                 <div class="card-body">
                     <div class="bg-body-highlight rounded-2 p-4 mb-3" id="recent-activity">
+                        <!-- Project Creation Activity -->
                         <div class="row justify-content-between border-bottom border-translucent g-0 gy-2 pb-3">
                             <div class="col-12 col-sm">
                                 <p class="fs-9 text-body-secondary mb-2">
@@ -232,7 +223,54 @@
                                 <p class="text-body-secondary fw-semibold fs-10 mb-0">{{ project.created_at|date:'M j, Y' }}</p>
                             </div>
                         </div>
+                        
+                        <!-- Persistent Activities from Database -->
+                        {% for activity in recent_activities %}
+                        <div class="row justify-content-between border-bottom border-translucent g-0 gy-1 py-3 align-items-center" 
+                             data-activity-id="{{ activity.id }}" data-activity-type="{{ activity.activity_type }}">
+                            <div class="col-12 col-sm">
+                                <p class="fs-9 text-body-secondary mb-0">
+                                    {% if activity.activity_type == 'PROJECT_CREATED' %}
+                                        <span class="text-body-highlight fw-semibold me-1">Project</span> "{{ project.title }}" 
+                                        <span class="activity-status"><span class="text-primary">was created</span></span>
+                                    {% elif activity.activity_type == 'FILE_UPLOAD' %}
+                                        <span class="text-body-highlight fw-semibold me-1">File</span> "{{ activity.related_file.original_filename }}" 
+                                        <span class="activity-status"><span class="text-info">was uploaded</span></span>
+                                    {% elif activity.activity_type == 'FILE_DELETED' %}
+                                        <span class="text-body-highlight fw-semibold me-1">File</span> "{{ activity.description|slice:'6:-1' }}" 
+                                        <span class="activity-status"><span class="text-danger">was deleted</span></span>
+                                    {% elif activity.activity_type == 'TASK_CREATED' %}
+                                        <span class="text-body-highlight fw-semibold me-1">Task</span> "{{ activity.related_task.title }}" 
+                                        <span class="activity-status"><span class="text-primary">was created</span></span>
+                                    {% elif activity.activity_type == 'TASK_COMPLETED' %}
+                                        <span class="text-body-highlight fw-semibold me-1">Task</span> "{{ activity.related_task.title }}" 
+                                        <span class="activity-status"><span class="text-success">was completed</span></span>
+                                    {% elif activity.activity_type == 'TASK_REOPENED' %}
+                                        <span class="text-body-highlight fw-semibold me-1">Task</span> "{{ activity.related_task.title }}" 
+                                        <span class="activity-status"><span class="text-warning">was reopened</span></span>
+                                    {% elif activity.activity_type == 'PROJECT_COMPLETED' %}
+                                        <span class="text-body-highlight fw-semibold me-1">Project</span> "{{ project.title }}" 
+                                        <span class="activity-status"><span class="text-success">was completed</span></span>
+                                    {% elif activity.activity_type == 'PROJECT_REOPENED' %}
+                                        <span class="text-body-highlight fw-semibold me-1">Project</span> "{{ project.title }}" 
+                                        <span class="activity-status"><span class="text-warning">was reopened</span></span>
+                                    {% elif activity.activity_type == 'PROJECT_UPDATED' %}
+                                        <span class="text-body-highlight fw-semibold me-1">Project</span> "{{ project.title }}" 
+                                        <span class="activity-status"><span class="text-info">was updated</span></span>
+                                    {% else %}
+                                        {{ activity.description }}
+                                    {% endif %}
+                                </p>
+                            </div>
+                            <div class="col-12 col-sm-auto">
+                                <p class="text-body-secondary fw-semibold fs-10 mb-0">{{ activity.created_at|date:'M j, Y' }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                        <!-- Legacy Task Activities (for backward compatibility) -->
                         {% for task in project.tasks.all|slice:":3" %}
+                        {% if not recent_activities %}
                         <div class="row justify-content-between border-bottom border-translucent g-0 gy-1 py-3 align-items-center" data-task-id="{{ task.id }}">
                             <div class="col-12 col-sm">
                                 <p class="fs-9 text-body-secondary mb-0">
@@ -244,10 +282,11 @@
                                 <p class="text-body-secondary fw-semibold fs-10 mb-0">{{ task.created_at|date:'M j, Y' }}</p>
                             </div>
                         </div>
+                        {% endif %}
                         {% endfor %}
                         
                         <!-- Project Update Activity (if project was recently updated) -->
-                        {% if project.updated_at and project.updated_at != project.created_at %}
+                        {% if project.updated_at and project.updated_at != project.created_at and not recent_activities %}
                         <div class="row justify-content-between border-bottom border-translucent g-0 gy-1 py-3 align-items-center" data-project-update="true">
                             <div class="col-12 col-sm">
                                 <p class="fs-9 text-body-secondary mb-0">
@@ -263,85 +302,12 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Files Section -->
-            <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">Project Files</h5>
-                    <a href="{% url 'projects:project_update' project.id %}" class="btn btn-sm btn-outline-primary">
-                        <i class="fas fa-plus me-1"></i>Add Files
-                    </a>
-                </div>
-                <div class="card-body">
-                    {% if project.files %}
-                        <div class="border-top pt-3 pb-4">
-                            <div class="me-n3">
-                                <div class="d-flex flex-between-center">
-                                    <div class="d-flex mb-1">
-                                        <i class="fas fa-file me-2 text-body-tertiary fs-9"></i>
-                                        <p class="text-body-highlight mb-0 lh-1">
-                                            <a href="{{ project.files.url }}" target="_blank" class="text-decoration-none">
-                                                {{ project.file_name }}
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <div class="d-flex gap-2">
-                                        <a href="{{ project.files.url }}" target="_blank" class="btn btn-sm btn-outline-secondary">
-                                            <i class="fas fa-download me-1"></i>Download
-                                        </a>
-                                        <a href="{{ project.files.url }}" target="_blank" class="btn btn-sm btn-outline-info">
-                                            <i class="fas fa-eye me-1"></i>View
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% else %}
-                        <div class="border-top pt-3 pb-4">
-                            <div class="me-n3">
-                                <div class="d-flex flex-between-center">
-                                    <div class="d-flex mb-1">
-                                        <i class="fas fa-file me-2 text-body-tertiary fs-9"></i>
-                                        <p class="text-body-highlight mb-0 lh-1">No files uploaded yet</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3">
-                                <a href="{% url 'projects:project_update' project.id %}" class="btn btn-sm btn-outline-primary">
-                                    <i class="fas fa-plus me-1"></i>Upload Files
-                                </a>
-                            </div>
-                        </div>
-                    {% endif %}
-                </div>
-            </div>
         </div>
 
         <!-- Right Column - Actions -->
         <div class="col-lg-4">
-            <!-- Quick Actions -->
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h5 class="mb-0">Quick Actions</h5>
-                          </div>
-                <div class="card-body">
-                    <button class="btn btn-sm btn-subtle-secondary rounded-3 mb-2 d-flex align-items-center w-100">
-                        <i class="fas fa-user-plus me-2"></i>Add Assignee
-                    </button>
-                    <button class="btn btn-sm btn-subtle-secondary rounded-3 mb-2 d-flex align-items-center w-100">
-                        <i class="fas fa-tag me-2"></i>Add Labels
-                    </button>
-                    <button class="btn btn-sm btn-subtle-secondary rounded-3 mb-2 d-flex align-items-center w-100">
-                        <i class="fas fa-paperclip me-2"></i>Add Attachments
-                    </button>
-                    <button class="btn btn-sm btn-subtle-secondary rounded-3 mb-2 d-flex align-items-center w-100">
-                        <i class="fas fa-calendar-days me-2"></i>Set Due Date
-                    </button>
-                      </div>
-                          </div>
-
             <!-- Project Actions -->
-            <div class="card">
+            <div class="card mb-4">
                 <div class="card-header">
                     <h5 class="mb-0">Actions</h5>
                           </div>
@@ -363,8 +329,199 @@
                     </button>
                           </div>
                       </div>
+
+            <!-- Project Files -->
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Project Files</h5>
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#uploadFileModal">
+                        <i class="fas fa-plus me-1"></i>Add Files
+                    </button>
+                </div>
+                <div class="card-body">
+                    {% if project_files %}
+                        {% for project_file in project_files %}
+                        <div class="border-top pt-3 pb-4">
+                            <div class="me-n3">
+                                <div class="d-flex flex-between-center">
+                                    <div class="d-flex mb-1">
+                                        <i class="fas fa-file me-2 text-body-tertiary fs-9"></i>
+                                        <p class="text-body-highlight mb-0 lh-1">
+                                            <a href="{{ project_file.file.url }}" target="_blank" class="text-decoration-none">
+                                                {{ project_file.original_filename }}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="{{ project_file.file.url }}" target="_blank" class="btn btn-sm btn-outline-secondary">
+                                            <i class="fas fa-download me-1"></i>Download
+                                        </a>
+                                        <a href="{{ project_file.file.url }}" target="_blank" class="btn btn-sm btn-outline-info">
+                                            <i class="fas fa-eye me-1"></i>View
+                                        </a>
+                                        <button type="button" class="btn btn-sm btn-outline-danger delete-file-btn" 
+                                                data-file-id="{{ project_file.id }}"
+                                                data-file-name="{{ project_file.original_filename }}"
+                                                title="Delete file">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <small class="text-body-secondary">
+                                        Uploaded by {{ project_file.uploaded_by.user.username|default:"Unknown" }} on {{ project_file.uploaded_at|date:'M j, Y' }}
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% elif project.files %}
+                        <!-- Backward compatibility for old single file -->
+                        <div class="border-top pt-3 pb-4">
+                            <div class="me-n3">
+                                <div class="d-flex flex-between-center">
+                                    <div class="d-flex mb-1">
+                                        <i class="fas fa-file me-2 text-body-tertiary fs-9"></i>
+                                        <p class="text-body-highlight mb-0 lh-1">
+                                            <a href="{{ project.files.url }}" target="_blank" class="text-decoration-none">
+                                                {{ project.file_name }}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="{{ project.files.url }}" target="_blank" class="btn btn-sm btn-outline-secondary">
+                                            <i class="fas fa-download me-1"></i>Download
+                                        </a>
+                                        <a href="{{ project.files.url }}" target="_blank" class="btn btn-sm btn-outline-info">
+                                            <i class="fas fa-eye me-1"></i>View
+                                        </a>
+                                        <button type="button" class="btn btn-sm btn-outline-danger delete-file-btn" 
+                                                data-file-id="{{ project.id }}"
+                                                data-file-name="{{ project.file_name }}"
+                                                title="Delete file">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="border-top pt-3 pb-4">
+                            <div class="me-n3">
+                                <div class="d-flex flex-between-center">
+                                    <div class="d-flex mb-1">
+                                        <i class="fas fa-file me-2 text-body-tertiary fs-9"></i>
+                                        <p class="text-body-highlight mb-0 lh-1">No files uploaded yet</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+</div>
+
+<!-- File Upload Modal -->
+<div class="modal fade" id="uploadFileModal" tabindex="-1" aria-labelledby="uploadFileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="uploadFileModalLabel">Upload Project Files</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="fileUploadForm" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="projectFile" class="form-label">Choose Files</label>
+                        <input type="file" class="form-control" id="projectFile" name="files" accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.gif,.zip,.rar" multiple required>
+                        <div class="form-text">
+                            Supported formats: PDF, DOC, DOCX, TXT, JPG, PNG, GIF, ZIP, RAR. You can select multiple files.
+                        </div>
+                    </div>
+                    <div id="uploadProgress" class="progress d-none">
+                        <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="uploadBtn">
+                        <i class="fas fa-upload me-1"></i>Upload Files
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
+
+<!-- Add Task Modal -->
+<div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addTaskModalLabel">Add New Task</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="addTaskForm">
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <!-- Task Title -->
+                        <div class="col-12">
+                            <label for="taskTitle" class="form-label">Task Title <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="taskTitle" name="title" required>
+                        </div>
+
+
+                        <!-- Priority and Status -->
+                        <div class="col-md-6">
+                            <label for="taskPriority" class="form-label">Priority</label>
+                            <select class="form-select" id="taskPriority" name="priority">
+                                <option value="LOW">Low</option>
+                                <option value="MEDIUM" selected>Medium</option>
+                                <option value="HIGH">High</option>
+                                <option value="URGENT">Urgent</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label for="taskStatus" class="form-label">Status</label>
+                            <select class="form-select" id="taskStatus" name="status">
+                                <option value="TODO" selected>To Do</option>
+                                <option value="IN_PROGRESS">In Progress</option>
+                                <option value="REVIEW">Review</option>
+                                <option value="COMPLETED">Completed</option>
+                                <option value="CANCELLED">Cancelled</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Due Date -->
+                        <div class="col-md-6">
+                            <label for="taskDueDate" class="form-label">Due Date</label>
+                            <input type="datetime-local" class="form-control" id="taskDueDate" name="due_date">
+                        </div>
+                        
+                        <!-- Assigned Users -->
+                        <div class="col-md-6">
+                            <label for="taskAssignees" class="form-label">Assign Users</label>
+                            <select class="form-select" id="taskAssignees" name="assigned_users" multiple>
+                                {% for user in userprofiles %}
+                                    <option value="{{ user.id }}">{{ user.user.username }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="form-text">Hold Ctrl/Cmd to select multiple users</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="addTaskBtn">
+                        <i class="fas fa-plus me-1"></i>Create Task
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <!-- JavaScript for dynamic task completion -->
 <script>
@@ -821,6 +978,423 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    // Handle task creation form
+    const addTaskForm = document.getElementById('addTaskForm');
+    if (addTaskForm) {
+        addTaskForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const addTaskBtn = document.getElementById('addTaskBtn');
+            
+            // Show loading state
+            addTaskBtn.disabled = true;
+            addTaskBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>Creating...';
+            
+            // Send AJAX request
+            fetch(`/projects/{{ project.id }}/task/create-ajax/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken'),
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Add task to the table
+                    addTaskToTable(data);
+                    
+                    // Add activity
+                    addTaskCreationActivity(data.task_title);
+                    
+                    // Update task count
+                    updateTaskCount();
+                    
+                    // Show success message
+                    showNotification(data.message, 'success');
+                    
+                    // Close modal
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('addTaskModal'));
+                    modal.hide();
+                    
+                    // Reset form
+                    addTaskForm.reset();
+                } else {
+                    showNotification(data.message, 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('Error creating task', 'error');
+            })
+            .finally(() => {
+                addTaskBtn.disabled = false;
+                addTaskBtn.innerHTML = '<i class="fas fa-plus me-1"></i>Create Task';
+            });
+        });
+    }
+    
+    // Handle file upload form
+    const fileUploadForm = document.getElementById('fileUploadForm');
+    if (fileUploadForm) {
+        fileUploadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const uploadBtn = document.getElementById('uploadBtn');
+            const progressBar = document.querySelector('#uploadProgress .progress-bar');
+            const progressDiv = document.getElementById('uploadProgress');
+            
+            // Debug: Log form data
+            console.log('Form data entries:');
+            for (let [key, value] of formData.entries()) {
+                console.log(key, value);
+            }
+            
+            // Show progress bar
+            progressDiv.classList.remove('d-none');
+            uploadBtn.disabled = true;
+            uploadBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>Uploading...';
+            
+            // Send AJAX request
+            fetch(`/projects/project/{{ project.id }}/upload-file/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken'),
+                },
+                body: formData
+            })
+            .then(response => {
+                console.log('Response status:', response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Response data:', data);
+                if (data.success) {
+                    // Update the files section with multiple files
+                    data.files.forEach(file => {
+                        updateFilesSection(file.file_name, file.file_url, file.uploaded_at);
+                    });
+                    
+                    // Add file upload activities
+                    data.files.forEach(file => {
+                        addFileUploadActivity(file.file_name, file.uploaded_at);
+                    });
+                    
+                    // Show success message
+                    showNotification(data.message, 'success');
+                    
+                    // Close modal
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('uploadFileModal'));
+                    modal.hide();
+                    
+                    // Reset form
+                    fileUploadForm.reset();
+                } else {
+                    showNotification(data.message, 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('Error uploading files', 'error');
+            })
+            .finally(() => {
+                progressDiv.classList.add('d-none');
+                uploadBtn.disabled = false;
+                uploadBtn.innerHTML = '<i class="fas fa-upload me-1"></i>Upload Files';
+            });
+        });
+    }
+    
+    // Function to update files section
+    function updateFilesSection(fileName, fileUrl, uploadedAt = null) {
+        // Find the files section by looking for the card that contains "Project Files" in its header
+        const cards = document.querySelectorAll('.card');
+        let filesCardBody = null;
+        
+        for (let card of cards) {
+            const header = card.querySelector('.card-header h5');
+            if (header && header.textContent.includes('Project Files')) {
+                filesCardBody = card.querySelector('.card-body');
+                break;
+            }
+        }
+        
+        if (!filesCardBody) return;
+        
+        // Check if there's already a "No files uploaded yet" message
+        const noFilesMessage = filesCardBody.querySelector('.text-body-highlight');
+        if (noFilesMessage && noFilesMessage.textContent.includes('No files uploaded yet')) {
+            noFilesMessage.closest('.border-top').remove();
+        }
+        
+        // Create new file entry
+        const fileEntry = document.createElement('div');
+        fileEntry.className = 'border-top pt-3 pb-4';
+        fileEntry.innerHTML = `
+            <div class="me-n3">
+                <div class="d-flex flex-between-center">
+                    <div class="d-flex mb-1">
+                        <i class="fas fa-file me-2 text-body-tertiary fs-9"></i>
+                        <p class="text-body-highlight mb-0 lh-1">
+                            <a href="${fileUrl}" target="_blank" class="text-decoration-none">
+                                ${fileName}
+                            </a>
+                        </p>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <a href="${fileUrl}" target="_blank" class="btn btn-sm btn-outline-secondary">
+                            <i class="fas fa-download me-1"></i>Download
+                        </a>
+                        <a href="${fileUrl}" target="_blank" class="btn btn-sm btn-outline-info">
+                            <i class="fas fa-eye me-1"></i>View
+                        </a>
+                        <button type="button" class="btn btn-sm btn-outline-danger delete-file-btn" 
+                                data-file-name="${fileName}"
+                                title="Delete file">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                ${uploadedAt ? `
+                <div class="mt-2">
+                    <small class="text-body-secondary">
+                        Uploaded on ${uploadedAt}
+                    </small>
+                </div>
+                ` : ''}
+            </div>
+        `;
+        
+        // Add to the beginning of the files section
+        filesCardBody.insertBefore(fileEntry, filesCardBody.firstChild);
+    }
+    
+    // Function to add file upload activity
+    function addFileUploadActivity(fileName, uploadedAt = null) {
+        const recentActivity = document.getElementById('recent-activity');
+        if (!recentActivity) return;
+        
+        // Create new activity row for file upload
+        const newActivityRow = document.createElement('div');
+        newActivityRow.className = 'row justify-content-between border-bottom border-translucent g-0 gy-1 py-3 align-items-center';
+        newActivityRow.setAttribute('data-file-upload', 'true');
+        
+        const timestamp = uploadedAt || new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        
+        newActivityRow.innerHTML = `
+            <div class="col-12 col-sm">
+                <p class="fs-9 text-body-secondary mb-0">
+                    <span class="text-body-highlight fw-semibold me-1">File</span> "${fileName}" 
+                    <span class="activity-status"><span class="text-info">was uploaded</span></span>
+                </p>
+            </div>
+            <div class="col-12 col-sm-auto">
+                <p class="text-body-secondary fw-semibold fs-10 mb-0">${timestamp}</p>
+            </div>
+        `;
+        
+        // Insert after project creation row
+        const projectCreationRow = recentActivity.querySelector('.row:first-child');
+        if (projectCreationRow) {
+            recentActivity.insertBefore(newActivityRow, projectCreationRow.nextSibling);
+        } else {
+            recentActivity.appendChild(newActivityRow);
+        }
+        
+        // Remove oldest activity if we have more than 4 items
+        const allActivities = recentActivity.querySelectorAll('.row');
+        if (allActivities.length > 4) {
+            const oldestActivity = allActivities[allActivities.length - 1];
+            if (oldestActivity !== projectCreationRow) {
+                oldestActivity.remove();
+            }
+        }
+    }
+    
+    // Function to add task to table
+    function addTaskToTable(taskData) {
+        const tbody = document.getElementById('tasks-tbody');
+        if (!tbody) return;
+        
+        // Remove "No tasks" row if it exists
+        const noTasksRow = tbody.querySelector('tr td[colspan="6"]');
+        if (noTasksRow) {
+            noTasksRow.closest('tr').remove();
+        }
+        
+        // Create new task row
+        const newRow = document.createElement('tr');
+        newRow.setAttribute('data-task-id', taskData.task_id);
+        
+        // Determine status and priority badge classes
+        const statusClass = taskData.task_status === 'Completed' ? 'success' : 
+                           taskData.task_status === 'In Progress' ? 'info' : 
+                           taskData.task_status === 'Review' ? 'warning' : 
+                           taskData.task_status === 'Cancelled' ? 'danger' : 'secondary';
+        
+        const priorityClass = taskData.task_priority === 'Urgent' ? 'danger' : 
+                             taskData.task_priority === 'High' ? 'warning' : 
+                             taskData.task_priority === 'Medium' ? 'info' : 'secondary';
+        
+        // Format assigned users
+        const assignedUsers = taskData.assigned_users.length > 0 ? taskData.assigned_users.join(', ') : '-';
+        
+        newRow.innerHTML = `
+            <td><a href="/projects/task/${taskData.task_id}/">${taskData.task_title}</a></td>
+            <td>
+                <span class="badge badge-phoenix badge-phoenix-${statusClass}">
+                    ${taskData.task_status}
+                </span>
+            </td>
+            <td>
+                <span class="badge badge-phoenix badge-phoenix-${priorityClass}">
+                    ${taskData.task_priority}
+                </span>
+            </td>
+            <td>${taskData.due_date || '-'}</td>
+            <td>${assignedUsers}</td>
+            <td>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-success complete-task-btn" 
+                            data-task-id="${taskData.task_id}" 
+                            data-task-title="${taskData.task_title}"
+                            title="Mark as complete">
+                        <i class="fas fa-circle"></i>
+                    </button>
+                    <a href="/projects/task/${taskData.task_id}/update/" class="btn btn-sm btn-outline-secondary">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </div>
+            </td>
+        `;
+        
+        // Add event listener to the new complete button
+        const completeBtn = newRow.querySelector('.complete-task-btn');
+        if (completeBtn) {
+            attachTaskCompletionListener(completeBtn);
+        }
+        
+        // Insert at the beginning of the table
+        tbody.insertBefore(newRow, tbody.firstChild);
+    }
+    
+    // Function to add task creation activity
+    function addTaskCreationActivity(taskTitle) {
+        const recentActivity = document.getElementById('recent-activity');
+        if (!recentActivity) return;
+        
+        // Create new activity row for task creation
+        const newActivityRow = document.createElement('div');
+        newActivityRow.className = 'row justify-content-between border-bottom border-translucent g-0 gy-1 py-3 align-items-center';
+        newActivityRow.setAttribute('data-task-id', 'new');
+        
+        newActivityRow.innerHTML = `
+            <div class="col-12 col-sm">
+                <p class="fs-9 text-body-secondary mb-0">
+                    <span class="text-body-highlight fw-semibold me-1">Task</span> "${taskTitle}" 
+                    <span class="activity-status"><span class="text-success">was created</span></span>
+                </p>
+            </div>
+            <div class="col-12 col-sm-auto">
+                <p class="text-body-secondary fw-semibold fs-10 mb-0">${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+            </div>
+        `;
+        
+        // Insert after project creation row
+        const projectCreationRow = recentActivity.querySelector('.row:first-child');
+        if (projectCreationRow) {
+            recentActivity.insertBefore(newActivityRow, projectCreationRow.nextSibling);
+        } else {
+            recentActivity.appendChild(newActivityRow);
+        }
+        
+        // Remove oldest activity if we have more than 4 items
+        const allActivities = recentActivity.querySelectorAll('.row');
+        if (allActivities.length > 4) {
+            const oldestActivity = allActivities[allActivities.length - 1];
+            if (oldestActivity !== projectCreationRow) {
+                oldestActivity.remove();
+            }
+        }
+    }
+    
+    // Function to update task count
+    function updateTaskCount() {
+        const taskCountSpan = document.querySelector('.card-header h5 .text-body-tertiary');
+        if (taskCountSpan) {
+            const currentCount = parseInt(taskCountSpan.textContent.match(/\d+/)[0]);
+            taskCountSpan.textContent = `(${currentCount + 1})`;
+        }
+    }
+    
+    // Function to attach task completion listener
+    function attachTaskCompletionListener(button) {
+        button.addEventListener('click', function() {
+            const taskId = this.getAttribute('data-task-id');
+            const taskTitle = this.getAttribute('data-task-title');
+            const button = this;
+            
+            // Show loading state
+            button.disabled = true;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            
+            // Send AJAX request
+            fetch(`/projects/task/${taskId}/complete/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken'),
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Update task status badge
+                    const taskRow = button.closest('tr');
+                    const statusCell = taskRow.querySelector('td:nth-child(2) span');
+                    
+                    // Update status badge
+                    statusCell.textContent = data.task_status;
+                    statusCell.className = `badge badge-phoenix badge-phoenix-${data.task_completed ? 'success' : 'secondary'}`;
+                    
+                    // Update complete button
+                    if (data.task_completed) {
+                        button.className = 'btn btn-sm btn-success complete-task-btn';
+                        button.innerHTML = '<i class="fas fa-check-circle"></i>';
+                        button.title = 'Mark as incomplete';
+                    } else {
+                        button.className = 'btn btn-sm btn-outline-success complete-task-btn';
+                        button.innerHTML = '<i class="fas fa-circle"></i>';
+                        button.title = 'Mark as complete';
+                    }
+                    
+                    // Update project progress
+                    updateProjectProgress(data.project_stats);
+                    
+                    // Update project completion button
+                    updateProjectCompletionButton(data.project_stats);
+                    
+                    // Update recent activity
+                    updateRecentActivity(data);
+                    
+                    // Show success message
+                    showNotification(`${taskTitle} ${data.task_completed ? 'completed' : 'marked as incomplete'}`, 'success');
+                } else {
+                    showNotification('Error updating task status', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('Error updating task status', 'error');
+            })
+            .finally(() => {
+                button.disabled = false;
+            });
+        });
+    }
+    
     // Function to get CSRF token
     function getCookie(name) {
         let cookieValue = null;
@@ -857,6 +1431,114 @@ document.addEventListener('DOMContentLoaded', function() {
                 notification.remove();
             }
         }, 3000);
+    }
+
+    // Handle file deletion
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.delete-file-btn')) {
+            const button = e.target.closest('.delete-file-btn');
+            const fileId = button.getAttribute('data-file-id');
+            const fileName = button.getAttribute('data-file-name');
+            
+            if (confirm(`Are you sure you want to delete "${fileName}"?`)) {
+                // Show loading state
+                button.disabled = true;
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                
+                // Send delete request
+                fetch(`/projects/project/file/${fileId}/delete/`, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': getCookie('csrftoken'),
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Remove the file entry from the DOM
+                        const fileEntry = button.closest('.border-top');
+                        if (fileEntry) {
+                            fileEntry.remove();
+                        }
+                        
+                        // Add file deletion activity
+                        addFileDeletionActivity(fileName);
+                        
+                        // Show success message
+                        showNotification(data.message, 'success');
+                        
+                        // Check if no files remain and show "No files" message
+                        const filesSection = button.closest('.card-body');
+                        if (filesSection && filesSection.querySelectorAll('.border-top').length === 0) {
+                            filesSection.innerHTML = `
+                                <div class="border-top pt-3 pb-4">
+                                    <div class="me-n3">
+                                        <div class="d-flex flex-between-center">
+                                            <div class="d-flex mb-1">
+                                                <i class="fas fa-file me-2 text-body-tertiary fs-9"></i>
+                                                <p class="text-body-highlight mb-0 lh-1">No files uploaded yet</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    } else {
+                        showNotification(data.message, 'error');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showNotification('Error deleting file', 'error');
+                })
+                .finally(() => {
+                    button.disabled = false;
+                    button.innerHTML = '<i class="fas fa-trash"></i>';
+                });
+            }
+        }
+    });
+    
+    // Function to add file deletion activity
+    function addFileDeletionActivity(fileName) {
+        const recentActivity = document.getElementById('recent-activity');
+        if (!recentActivity) return;
+        
+        // Create new activity row for file deletion
+        const newActivityRow = document.createElement('div');
+        newActivityRow.className = 'row justify-content-between border-bottom border-translucent g-0 gy-1 py-3 align-items-center';
+        newActivityRow.setAttribute('data-file-deletion', 'true');
+        
+        const timestamp = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        
+        newActivityRow.innerHTML = `
+            <div class="col-12 col-sm">
+                <p class="fs-9 text-body-secondary mb-0">
+                    <span class="text-body-highlight fw-semibold me-1">File</span> "${fileName}" 
+                    <span class="activity-status"><span class="text-danger">was deleted</span></span>
+                </p>
+            </div>
+            <div class="col-12 col-sm-auto">
+                <p class="text-body-secondary fw-semibold fs-10 mb-0">${timestamp}</p>
+            </div>
+        `;
+        
+        // Insert after project creation row
+        const projectCreationRow = recentActivity.querySelector('.row:first-child');
+        if (projectCreationRow) {
+            recentActivity.insertBefore(newActivityRow, projectCreationRow.nextSibling);
+        } else {
+            recentActivity.appendChild(newActivityRow);
+        }
+        
+        // Remove oldest activity if we have more than 4 items
+        const allActivities = recentActivity.querySelectorAll('.row');
+        if (allActivities.length > 4) {
+            const oldestActivity = allActivities[allActivities.length - 1];
+            if (oldestActivity !== projectCreationRow) {
+                oldestActivity.remove();
+            }
+        }
     }
 });
 </script>
