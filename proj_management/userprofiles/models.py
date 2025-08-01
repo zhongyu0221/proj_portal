@@ -1,8 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -34,17 +31,3 @@ class UserProfile(models.Model):
 
     def get_full_name(self):
         return self.user.get_full_name()
-
-
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    """Create a UserProfile object when a new User is created"""
-    if created:
-        UserProfile.objects.create(user=instance)
-
-
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    """Save the UserProfile object when the User is saved"""
-    if hasattr(instance, 'userprofile'):
-        instance.userprofile.save()

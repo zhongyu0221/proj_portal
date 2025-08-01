@@ -4672,3 +4672,162 @@ WARNING:django.server:[2025-08-01 00:00:04] basehttp.py:187:"POST /projects/53/t
 INFO:django.server:[2025-08-01 00:00:06] basehttp.py:187:"GET /projects/project/53/ HTTP/1.1" 200 123291
 WARNING:django.server:[2025-08-01 00:00:11] basehttp.py:187:"POST /projects/53/task/create-ajax/ HTTP/1.1" 400 207
 WARNING:django.server:[2025-08-01 00:00:16] basehttp.py:187:"POST /projects/53/task/create-ajax/ HTTP/1.1" 400 207
+INFO:django.server:[2025-08-01 00:03:18] basehttp.py:187:"GET /home/ HTTP/1.1" 200 78298
+WARNING:django.server:[2025-08-01 00:03:18] basehttp.py:187:"GET /home/assets/img/team/30.webp HTTP/1.1" 404 2836
+INFO:django.server:[2025-08-01 00:03:27] basehttp.py:187:"GET /projects/project/project_list/ HTTP/1.1" 200 154377
+INFO:django.server:[2025-08-01 00:03:32] basehttp.py:187:"GET /projects/project/project_list/?&view_all=true HTTP/1.1" 200 421479
+INFO:django.server:[2025-08-01 00:03:35] basehttp.py:187:"GET /projects/project/48/ HTTP/1.1" 200 108212
+ERROR:django.request:[2025-08-01 00:03:39] log.py:241:Internal Server Error: /projects/task/123/complete/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 392, in post
+    UserProfile.objects.create(user=request.user)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 669, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/base.py", line 541, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py", line 340, in __set__
+    super().__set__(instance, value)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py", line 237, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x1073ee390>>": "UserProfile.user" must be a "User" instance.
+ERROR:django.server:[2025-08-01 00:03:39] basehttp.py:187:"POST /projects/task/123/complete/ HTTP/1.1" 500 106940
+ERROR:django.request:[2025-08-01 00:03:42] log.py:241:Internal Server Error: /projects/task/124/complete/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 392, in post
+    UserProfile.objects.create(user=request.user)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 669, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/base.py", line 541, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py", line 340, in __set__
+    super().__set__(instance, value)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py", line 237, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x10b1a3b10>>": "UserProfile.user" must be a "User" instance.
+ERROR:django.server:[2025-08-01 00:03:42] basehttp.py:187:"POST /projects/task/124/complete/ HTTP/1.1" 500 106940
+ERROR:django.request:[2025-08-01 00:03:44] log.py:241:Internal Server Error: /projects/task/123/complete/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 392, in post
+    UserProfile.objects.create(user=request.user)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 669, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/base.py", line 541, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py", line 340, in __set__
+    super().__set__(instance, value)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py", line 237, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x1073ed590>>": "UserProfile.user" must be a "User" instance.
+ERROR:django.server:[2025-08-01 00:03:44] basehttp.py:187:"POST /projects/task/123/complete/ HTTP/1.1" 500 106940
+ERROR:django.request:[2025-08-01 00:03:52] log.py:241:Internal Server Error: /projects/task/123/complete/
+Traceback (most recent call last):
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/project/views.py", line 392, in post
+    UserProfile.objects.create(user=request.user)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/query.py", line 669, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/base.py", line 541, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py", line 340, in __set__
+    super().__set__(instance, value)
+  File "/Users/zhongyu/Projects/Web_app/proj_portal/proj/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py", line 237, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x10b078c10>>": "UserProfile.user" must be a "User" instance.
+ERROR:django.server:[2025-08-01 00:03:52] basehttp.py:187:"POST /projects/task/123/complete/ HTTP/1.1" 500 106940
+INFO:django.server:[2025-08-01 00:03:53] basehttp.py:187:"GET /projects/project/48/ HTTP/1.1" 200 108212
+ERROR:django.request:[2025-08-01 00:04:10] log.py:241:Internal Server Error: /projects/project/48/upload-file/
+ERROR:django.server:[2025-08-01 00:04:10] basehttp.py:187:"POST /projects/project/48/upload-file/ HTTP/1.1" 500 222
+ERROR:django.request:[2025-08-01 00:04:13] log.py:241:Internal Server Error: /projects/project/48/upload-file/
+ERROR:django.server:[2025-08-01 00:04:13] basehttp.py:187:"POST /projects/project/48/upload-file/ HTTP/1.1" 500 222
+INFO:django.utils.autoreload:[2025-08-01 00:04:32] autoreload.py:266:/Users/zhongyu/Projects/Web_app/proj_portal/proj_management/userprofiles/models.py changed, reloading.
+INFO:django.utils.autoreload:[2025-08-01 00:04:32] autoreload.py:677:Watching for file changes with StatReloader
+INFO:django.server:[2025-08-01 00:04:37] basehttp.py:187:"GET /projects/project/48/ HTTP/1.1" 200 108212
+INFO:django.server:[2025-08-01 00:04:38] basehttp.py:187:"POST /projects/task/123/complete/ HTTP/1.1" 200 260
+INFO:django.server:[2025-08-01 00:04:40] basehttp.py:187:"POST /projects/task/124/complete/ HTTP/1.1" 200 261

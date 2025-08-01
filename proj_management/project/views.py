@@ -26,16 +26,12 @@ class ProjectCreateView(CreateView):
     def form_valid(self, form):
         response = super().form_valid(form)
         
-        # Ensure current user has a UserProfile
-        if not hasattr(self.request.user, 'userprofile'):
-            UserProfile.objects.create(user=self.request.user)
-        
         # Create activity record for project creation
         ProjectActivity.objects.create(
             project=self.object,
             activity_type='PROJECT_CREATED',
             description=f'Project "{self.object.title}" was created',
-            created_by=self.request.user.userprofile
+            created_by=self.request.user.userprofile if hasattr(self.request.user, 'userprofile') else None
         )
         
         messages.success(self.request, f'Project "{self.object}" created successfully.')
@@ -79,15 +75,11 @@ class ProjectUpdateView(AjaxUpdateView):
         
         # Create activity record if changes were made
         if changes_made:
-            # Ensure current user has a UserProfile
-            if not hasattr(self.request.user, 'userprofile'):
-                UserProfile.objects.create(user=self.request.user)
-            
             ProjectActivity.objects.create(
                 project=self.object,
                 activity_type='PROJECT_UPDATED',
                 description=f'Project "{self.object.title}" was updated (changes: {", ".join(changes_made)})',
-                created_by=self.request.user.userprofile
+                created_by=self.request.user.userprofile if hasattr(self.request.user, 'userprofile') else None
             )
             messages.success(self.request, f'Project "{self.object.title}" updated successfully. Changes made: {", ".join(changes_made)}.')
         else:
@@ -222,20 +214,8 @@ class ProjectDetailView(DetailView):
         # Get project files
         project_files = project.project_files.all()
         
-        # Get user profiles for task assignment - handle case where no UserProfiles exist
-        try:
-            userprofiles = UserProfile.objects.all()
-            if not userprofiles.exists():
-                # If no UserProfiles exist, create them for existing users
-                from django.contrib.auth.models import User
-                users = User.objects.all()
-                for user in users:
-                    if not hasattr(user, 'userprofile'):
-                        UserProfile.objects.create(user=user)
-                userprofiles = UserProfile.objects.all()
-        except Exception as e:
-            # Fallback to empty queryset if there's an error
-            userprofiles = UserProfile.objects.none()
+        # Get user profiles for task assignment
+        userprofiles = UserProfile.objects.all()
         
         context.update({
             'tasks': tasks,
@@ -279,10 +259,6 @@ class TaskCreateView(AjaxCreateView):
         return reverse_lazy('projects:project_detail', kwargs={'pk': self.project.id})
 
     def form_valid(self, form):
-        # Ensure current user has a UserProfile
-        if not hasattr(self.request.user, 'userprofile'):
-            UserProfile.objects.create(user=self.request.user)
-        
         form.instance.created_by = self.request.user.userprofile
         form.instance.project = self.project
         response = super().form_valid(form)
@@ -387,10 +363,6 @@ class TaskCompleteView(UpdateView):
     def post(self, request, *args, **kwargs):
         task = self.get_object()
         
-        # Ensure current user has a UserProfile
-        if not hasattr(request.user, 'userprofile'):
-            UserProfile.objects.create(user=request.user)
-        
         # Toggle completion status
         task.completed = not task.completed
         if task.completed:
@@ -407,7 +379,7 @@ class TaskCompleteView(UpdateView):
             project=task.project,
             activity_type=activity_type,
             description=activity_description,
-            created_by=request.user.userprofile,
+            created_by=request.user.userprofile if hasattr(request.user, 'userprofile') else None,
             related_task=task
         )
         
@@ -439,10 +411,6 @@ class ProjectCompleteView(UpdateView):
     def post(self, request, *args, **kwargs):
         project = self.get_object()
         
-        # Ensure current user has a UserProfile
-        if not hasattr(request.user, 'userprofile'):
-            UserProfile.objects.create(user=request.user)
-        
         # Toggle completion status
         project.completed = not project.completed
         if project.completed:
@@ -459,7 +427,7 @@ class ProjectCompleteView(UpdateView):
             project=project,
             activity_type=activity_type,
             description=activity_description,
-            created_by=request.user.userprofile
+            created_by=request.user.userprofile if hasattr(request.user, 'userprofile') else None
         )
         
         # Get project stats
@@ -506,16 +474,12 @@ class ProjectFileUploadView(UpdateView):
                 with transaction.atomic():
                     for uploaded_file in files:
                         try:
-                            # Ensure current user has a UserProfile
-                            if not hasattr(request.user, 'userprofile'):
-                                UserProfile.objects.create(user=request.user)
-                            
                             # Create ProjectFile instance
                             project_file = ProjectFile.objects.create(
                                 project=project,
                                 file=uploaded_file,
                                 original_filename=uploaded_file.name,
-                                uploaded_by=request.user.userprofile
+                                uploaded_by=request.user.userprofile if hasattr(request.user, 'userprofile') else None
                             )
                             
                             # Create activity record
@@ -523,7 +487,7 @@ class ProjectFileUploadView(UpdateView):
                                 project=project,
                                 activity_type='FILE_UPLOAD',
                                 description=f'File "{uploaded_file.name}" was uploaded',
-                                created_by=request.user.userprofile,
+                                created_by=request.user.userprofile if hasattr(request.user, 'userprofile') else None,
                                 related_file=project_file
                             )
                             
@@ -566,16 +530,12 @@ class ProjectFileDeleteView(DeleteView):
             project = project_file.project
             file_name = project_file.original_filename
             
-            # Ensure current user has a UserProfile
-            if not hasattr(request.user, 'userprofile'):
-                UserProfile.objects.create(user=request.user)
-            
             # Create activity record before deleting
             ProjectActivity.objects.create(
                 project=project,
                 activity_type='FILE_DELETED',
                 description=f'File "{file_name}" was deleted',
-                created_by=request.user.userprofile
+                created_by=request.user.userprofile if hasattr(request.user, 'userprofile') else None
             )
             
             # Delete the file
@@ -604,10 +564,6 @@ class TaskCreateAjaxView(CreateView):
         project = get_object_or_404(Project, pk=project_id)
         
         try:
-            # Ensure current user has a UserProfile
-            if not hasattr(request.user, 'userprofile'):
-                UserProfile.objects.create(user=request.user)
-            
             # Create task
             task = Task.objects.create(
                 project=project,
